@@ -1,0 +1,247 @@
+{
+  "meta": {
+    "title": "ETAX Ho Chi Minh | Business Consulting for Vietnamese & FDI Companies",
+    "description": "ETAX Ho Chi Minh - Your trusted strategic partner for Vietnamese and FDI companies from SMEs to large enterprises. Legal, tax, accounting, company formation, M&A, project management and HR services in Vietnam."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "careers": "Careers",
+    "contact": "Contact",
+    "consult_now": "Get Consultation"
+  },
+  "common": {
+    "company_name": "ETAX Ho Chi Minh",
+    "legal_name": "ETAX HCM Company Limited.",
+    "slogan": "ETAX Ho Chi Minh - Tangible Benefits Through Every Service.",
+    "tagline": "Tangible Benefits Through Every Service",
+    "philosophy": "Integrity – Quality – Efficiency",
+    "footer_rights": "© 2026 ETAX Ho Chi Minh. All rights reserved.",
+    "address": "54/6 Nguyen Xi Street, Binh Thanh Ward, Ho Chi Minh City, Vietnam",
+    "hotline": "(+84) 961.133.139",
+    "email": "business@etaxhcm.com",
+    "services_label": "SERVICES",
+    "view_detail": "VIEW DETAILS →",
+    "consult_now": "Get Free Consultation",
+    "submit_failed": "Submission failed",
+    "placeholder_position": "e.g. Tax Advisory Specialist",
+    "placeholder_message_contact": "Briefly describe your needs...",
+    "placeholder_message_careers": "Briefly introduce yourself and why you want to join ETAX...",
+    "hero_badge": "TANGIBLE BENEFITS THROUGH EVERY SERVICE",
+    "why_choose_us": "WHY CHOOSE US",
+    "about_us": "ABOUT US",
+    "our_philosophy": "OUR PHILOSOPHY",
+    "service_badge": "SERVICE",
+    "modal_contact_now": "Contact for Consultation",
+    "modal_close": "Close",
+    "footer_consult_button": "Request Consultation",
+    "careers_badge": "CAREERS",
+    "positions_count": "positions",
+    "professional_label": "PROFESSIONAL SERVICES",
+    "contact_badge": "CONTACT US"
+  },
+  "footer": {
+    "quick_links": "Quick Links",
+    "about_company": "About the Company",
+    "services_main": "Main Services",
+    "careers_opportunity": "Career Opportunities",
+    "contact_consult": "Contact & Consultation",
+    "contact_info": "Contact Information",
+    "philosophy_badge": "Integrity – Quality – Efficiency"
+  },
+  "home": {
+    "hero_title": "Comprehensive Consulting Solutions for Vietnamese & FDI Companies",
+    "hero_subtitle": "Tangible benefits through every service. Partnering with businesses from SMEs to large enterprises — from idea to sustainable operations.",
+    "cta_services": "Explore Services",
+    "cta_consult": "Get Free Consultation",
+    "why_title": "Why Choose ETAX Ho Chi Minh?",
+    "trusted_by": "Trusted by 300+ Vietnamese & FDI Companies",
+    "why_items": [
+      {
+        "title": "Deep Expertise in Vietnamese & FDI Businesses",
+        "desc": "Over 15 years of experience advising Vietnamese companies and hundreds of foreign-invested enterprises in Vietnam."
+      },
+      {
+        "title": "Multidisciplinary Expert Team",
+        "desc": "Lawyers, Chief Accountants, Tax Experts, and Valuers with international certifications and hands-on experience."
+      },
+      {
+        "title": "Transparent & Fast Process",
+        "desc": "Clear timelines, regular progress reports, and 24/7 support throughout the engagement."
+      },
+      {
+        "title": "Strong Government Network",
+        "desc": "Close relationships with the Ministry of Planning and Investment, provincial DPI, Tax Departments, and other authorities."
+      }
+    ],
+    "stats": [
+      {
+        "number": "17+",
+        "label": "Years of Experience"
+      },
+      {
+        "number": "300+",
+        "label": "Companies Served"
+      },
+      {
+        "number": "1200+",
+        "label": "Projects Completed"
+      },
+      {
+        "number": "99%",
+        "label": "Client Satisfaction"
+      }
+    ]
+  },
+  "about": {
+    "title": "About ETAX Ho Chi Minh",
+    "intro": "As Vietnam integrates deeper into the global economy, its legal system continues to improve with policies attracting both domestic and foreign investment. To protect investors and ensure their business strategies are backed by a solid legal framework, ETAX Ho Chi Minh's team of experts in economics, finance, accounting, investment, law, and IT are rigorously trained at prestigious institutions with extensive practical experience.",
+    "mission": "At ETAX Ho Chi Minh, clients can rest assured of service quality and work efficiency. We provide comprehensive solutions from legal services, tax, accounting, HR to investment consulting and project management for FDI enterprises and Vietnamese businesses.",
+    "philosophy_title": "Our Operating Philosophy",
+    "philosophy_desc": "Integrity – Quality – Efficiency. We are committed to delivering satisfaction to our clients from the very first interaction.",
+    "strength_title": "Our Key Strengths",
+    "strengths": [
+      "Deep specialization in foreign direct investment (FDI) in Vietnam",
+      "Team of experienced lawyers, accountants, and tax experts with real-world track records",
+      "Standardized, transparent processes with strict adherence to deadlines",
+      "End-to-end support from establishment to operations and restructuring",
+      "Strong, long-standing relationships with government regulatory bodies at all levels"
+    ]
+  },
+  "services": {
+    "title": "Our 8 Core Services",
+    "intro": "ETAX Ho Chi Minh offers a complete ecosystem of services to help Vietnamese companies and FDI enterprises operate efficiently, stay compliant, and optimize costs in Vietnam.",
+    "professional_label": "PROFESSIONAL SERVICES",
+    "list": [
+      {
+        "id": 1,
+        "title": "Legal Services & Company Formation",
+        "short_desc": "Full support for establishing, changing, suspending, or dissolving companies for both Vietnamese and foreign-invested enterprises. Covers LLCs, Joint Stock Companies, and Partnerships.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Service Details</h4><p class='mb-4'>With experience serving hundreds of clients, ETAX Ho Chi Minh guarantees timely delivery, high-quality advice, and dedicated service.</p><ul class='list-disc pl-5 space-y-2'><li>Advising on the most suitable investment form and company type</li><li>Investment incentive procedures: tax exemptions/reductions, land rent exemptions</li><li>Preparing formation documents, feasibility studies, and company charters</li><li>Handling changes to business registration (address, capital, business lines, legal representative)</li><li>Advising on temporary suspension and dissolution in accordance with the law</li><li>Initial tax registration support, digital signature purchase, and affordable invoice printing</li></ul><p class='mt-4 text-sm italic'>Special Offer: Free tax filing in the first month after establishment.</p>"
+      },
+      {
+        "id": 2,
+        "title": "Specialized Tax Advisory",
+        "short_desc": "Expert advice on VAT, CIT, PIT policies, tax refunds, exemptions, and reductions. We handle filing, finalization, and represent you before tax authorities. Always up-to-date with new regulations.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Service Details</h4><p class='mb-4'>ETAX Ho Chi Minh helps businesses avoid tax risks and make accurate business decisions.</p><ul class='list-disc pl-5 space-y-2'><li>Initial tax registration procedures and sector-specific tax policy advice</li><li>Advice on CIT and import duty incentives/exemptions/reductions</li><li>Representation for VAT, CIT, and PIT filing and finalization</li><li>Preparation of VAT refund and tax exemption/reduction dossiers</li><li>Review of legitimate deductible expenses for taxable income calculation</li><li>Explanation and tax settlement with inspection authorities</li><li>Rapid updates on new tax regulations</li></ul>"
+      },
+      {
+        "id": 3,
+        "title": "Accounting & Tax Services",
+        "short_desc": "Book cleanup and accounting system completion. Monthly/quarterly/annual tax filing and financial statement preparation. Chief Accountant secondment and financial supervision services.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Service Details</h4><p class='mb-4'>The accounting department plays a pivotal role in providing accurate and timely financial information to the Board of Directors.</p><ul class='list-disc pl-5 space-y-2'><li>Cleanup of historical accounting data and completion of books and vouchers</li><li>Monthly, quarterly, and annual tax filing and finalization (VAT, CIT, PIT)</li><li>Preparation of monthly, quarterly, and annual financial statements per standards</li><li>Consulting on building accounting information systems, books, and posting processes</li><li>Professional Chief Accountant secondment service</li><li>Monthly financial accounting supervision</li><li>Explanation of figures to tax authorities and auditors</li></ul>"
+      },
+      {
+        "id": 4,
+        "title": "HR, Payroll & Social Insurance",
+        "short_desc": "Supply of highly skilled personnel, HR management consulting, full payroll processing & social insurance (SI, HI, UI) administration. Training for accounting staff and labor regulation drafting.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Service Details</h4><p class='mb-4'>Helping businesses focus on core strategies without worrying about HR and insurance matters.</p><ul class='list-disc pl-5 space-y-2'><li>Supply of specialized personnel (accountants, technicians, interpreters, managers...)</li><li>Consulting on drafting labor regulations, employment contracts, and salary scales</li><li>Full payroll processing and monthly SI/HI/UI contribution management</li><li>First-time SI registration, SI book management, and handling of sick leave/maternity benefits</li><li>Accounting staff training programs for enterprises</li><li>Support in building corporate culture and performance evaluation</li></ul>"
+      },
+      {
+        "id": 5,
+        "title": "Business Management Consulting",
+        "short_desc": "Design of internal control systems, cash flow management, inventory control. Corporate restructuring advice, charter development, and corporate governance for joint stock companies.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Service Details</h4><p class='mb-4'>We aim to help clients continuously improve and enhance the efficiency of their production and business operations.</p><ul class='list-disc pl-5 space-y-2'><li>Design of internal control systems tailored to business needs</li><li>Cash flow management consulting and design of reporting/control templates</li><li>Inventory control system development, loss norms, and cost calculation</li><li>Corporate structure consulting and optimal restructuring</li><li>Development of company charter, Board of Directors regulations, and Supervisory Board rules</li><li>AGM organization consulting and professional shareholder register management</li><li>Customized training on governance topics</li></ul>"
+      },
+      {
+        "id": 6,
+        "title": "Foreign Investment Consulting (FDI)",
+        "short_desc": "Establishment of 100% foreign-owned companies, representative offices, and joint ventures. Investment project planning, project management, project transfer, and ongoing legal counsel for FDI enterprises.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Key Service Areas</h4><div class='grid grid-cols-1 md:grid-cols-2 gap-4'><div><h5 class='font-medium mb-2'>• 100% Foreign-Owned Company Formation</h5><p class='text-sm'>Investment registration procedures, Investment Certificates under the 2020 Investment Law, and related licensing.</p></div><div><h5 class='font-medium mb-2'>• Representative Offices & Foreign Contractors</h5><p class='text-sm'>Establishment of representative offices and foreign contractor permits in construction and consulting sectors.</p></div><div><h5 class='font-medium mb-2'>• Joint Ventures & Investment Projects</h5><p class='text-sm'>Joint venture structures, joint venture agreements, and feasibility study preparation.</p></div><div><h5 class='font-medium mb-2'>• Ongoing Legal Counsel for FDI</h5><p class='text-sm'>Corporate governance, contracts, IP, labor, tax compliance, and periodic reporting support.</p></div></div><p class='mt-4 text-sm'>ETAX Ho Chi Minh is a reputable foreign investment advisory firm with strong FDI expertise and a professional process from initial meeting to final handover.</p>"
+      },
+      {
+        "id": 7,
+        "title": "Financial & M&A - Restructuring Services",
+        "short_desc": "M&A advisory, financial restructuring, corporate type conversion (LLC ↔ JSC), equitization, and divestment support.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Service Details</h4><p class='mb-4'>Supporting businesses in strategic transactions and restructuring to optimize value and operational efficiency.</p><ul class='list-disc pl-5 space-y-2'><li>M&A strategy development, target search and selection</li><li>Business valuation and fair pricing advisory</li><li>M&A transaction structure advice and negotiation support</li><li>Financial due diligence and restructuring plan development</li><li>Corporate type conversion advisory (LLC to JSC and vice versa)</li><li>State-owned enterprise equitization and divestment consulting</li><li>Financial risk management (interest rates, exchange rates, stock prices)</li></ul>"
+      },
+      {
+        "id": 8,
+        "title": "Enterprise Management Software Solutions",
+        "short_desc": "Advisory on selection and implementation of accounting, inventory, sales, and HR software. Installation, training, maintenance, and customization services.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Service Details</h4><p class='mb-4'>Information technology creates new opportunities to improve operational efficiency. We help businesses choose and apply the most suitable software solutions.</p><ul class='list-disc pl-5 space-y-2'><li>Needs assessment and analysis of pros/cons of popular software options</li><li>Advisory on the most suitable accounting, warehouse, sales, and HR software</li><li>Demo, installation, implementation planning, and detailed user training</li><li>Customization of software to meet specific business requirements</li><li>Handover, acceptance, and periodic maintenance packages</li><li>Ongoing support for accounting entries and internal controls</li></ul><p class='mt-3 text-sm'>Popular solutions trusted by our clients: Online Accounting Software, Warehouse & Sales Management Software, HR Management Software.</p>"
+      }
+    ]
+  },
+  "careers": {
+    "title": "Career Opportunities",
+    "intro": "ETAX Ho Chi Minh is always looking for talented, passionate, and responsible individuals to join our professional, dynamic, and sustainable growth environment. We believe people are the key factor that makes the difference.",
+    "openings_title": "Current Openings",
+    "openings": [
+      {
+        "title": "Tax & Accounting Advisory Specialist (Senior/Junior)",
+        "location": "Ho Chi Minh City",
+        "type": "Full-time",
+        "desc": "Provide tax policy consulting, support filing and finalization, review legitimate expenses for FDI clients. Requirements: Bachelor's in Accounting/Tax, professional certificate or 2-5 years experience."
+      },
+      {
+        "title": "Lawyer / Foreign Investment Advisory Specialist",
+        "location": "Ho Chi Minh City",
+        "type": "Full-time",
+        "desc": "Advise on 100% foreign-owned company formation, representative offices, investment licenses, and joint venture agreements. Requirements: Law degree, FDI experience or practicing lawyer certificate."
+      },
+      {
+        "title": "Chief Accountant (Secondment)",
+        "location": "Ho Chi Minh City & Remote",
+        "type": "Full-time / Part-time",
+        "desc": "Act as Chief Accountant for multiple clients. Prepare financial statements, sign documents, advise on financial risks. Requirements: Chief Accountant certificate, 5+ years experience."
+      },
+      {
+        "title": "Project Assistant & HR Admin",
+        "location": "Ho Chi Minh City",
+        "type": "Full-time",
+        "desc": "Support project implementation, prepare dossiers, liaise with government agencies, manage internal HR. Requirements: Degree in Economics/Law/Public Administration, good English, careful and agile."
+      }
+    ],
+    "benefits_title": "Benefits of Working at ETAX",
+    "benefits": [
+      "Professional, transparent, and respectful work environment",
+      "Direct learning opportunities from lawyers, chief accountants, and experts with 15+ years experience",
+      "Competitive salary package, project bonuses, and year-end bonuses",
+      "Regular internal training + support for professional certifications",
+      "Full social, health, and unemployment insurance as per law",
+      "Annual leave, public holidays + yearly team building trips"
+    ],
+    "form_title": "Apply Now",
+    "form_note": "Please fill in all information. We will contact you within 3-5 working days.",
+    "form_full_name_label": "FULL NAME",
+    "form_email_label": "EMAIL",
+    "form_phone_label": "PHONE NUMBER",
+    "form_position_label": "POSITION APPLYING FOR",
+    "form_message_label": "COVER LETTER / MESSAGE",
+    "form_cv_label": "UPLOAD CV (PDF, DOC, DOCX)",
+    "form_submit_label": "SUBMIT APPLICATION",
+    "placeholder_position": "e.g. Tax Advisory Specialist",
+    "placeholder_message_careers": "Briefly introduce yourself and why you want to join ETAX..."
+  },
+  "contact": {
+    "title": "Contact & Free Consultation",
+    "intro": "Let ETAX Ho Chi Minh accompany your sustainable business development strategy. Submit your consultation request today to receive the most optimal solution.",
+    "form_title": "Submit Consultation Request",
+    "form_full_name": "FULL NAME *",
+    "form_email": "EMAIL *",
+    "form_phone": "PHONE NUMBER *",
+    "form_message": "MESSAGE / CONSULTATION REQUEST *",
+    "form_submit": "SEND CONSULTATION REQUEST",
+    "form_service_label": "Service of Interest",
+    "form_services_options": [
+      "Company / Representative Office Formation",
+      "Tax & Accounting Services",
+      "Corporate Legal Services",
+      "FDI Investment & Project Consulting",
+      "M&A / Restructuring Advisory",
+      "HR & Social Insurance Services",
+      "Management Consulting / Software",
+      "Other (please specify)"
+    ],
+    "info_title": "Contact Information",
+    "hotline_label": "HOTLINE",
+    "email_label": "EMAIL",
+    "address_label": "ADDRESS",
+    "map_title": "Our Office location",
+    "working_hours": "Working Hours: Monday - Friday | 08:00 - 17:30",
+    "placeholder_message_contact": "Briefly describe your needs...",
+    "response_commitment": "We commit to responding within 24 business hours."
+  }
+}

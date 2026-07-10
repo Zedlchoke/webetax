@@ -1,0 +1,247 @@
+{
+  "meta": {
+    "title": "ETAX Hồ Chí Minh | Tư vấn Doanh nghiệp Việt Nam & FDI | Pháp lý - Thuế - Kế toán",
+    "description": "ETAX Hồ Chí Minh - Đối tác chiến lược tin cậy cho doanh nghiệp Việt Nam và FDI từ nhỏ đến lớn. Dịch vụ tư vấn pháp lý, thuế, kế toán, thành lập công ty, M&A, quản lý dự án và nhân sự tại Việt Nam."
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "services": "Dịch vụ",
+    "careers": "Tuyển dụng",
+    "contact": "Liên hệ",
+    "consult_now": "Tư vấn ngay"
+  },
+  "common": {
+    "company_name": "ETAX Hồ Chí Minh",
+    "legal_name": "Công ty TNHH ETAX HCM",
+    "slogan": "ETAX Hồ Chí Minh - Lợi ích thiết thực qua từng dịch vụ.",
+    "tagline": "Lợi ích thiết thực qua từng dịch vụ",
+    "philosophy": "Uy tín – Chất lượng – Hiệu quả",
+    "footer_rights": "© 2026 ETAX Hồ Chí Minh. Mọi quyền được bảo lưu.",
+    "address": "54/6 Nguyễn Xí, Phường Bình Thạnh, TP. Hồ Chí Minh",
+    "hotline": "0961.133.139",
+    "email": "business@etaxhcm.com",
+    "services_label": "DỊCH VỤ",
+    "view_detail": "XEM CHI TIẾT →",
+    "consult_now": "Tư vấn ngay",
+    "submit_failed": "Gửi thất bại",
+    "placeholder_position": "Ví dụ: Chuyên viên Tư vấn Thuế",
+    "placeholder_message_contact": "Mô tả ngắn gọn nhu cầu của bạn...",
+    "placeholder_message_careers": "Giới thiệu ngắn gọn về bản thân và lý do bạn muốn gia nhập ETAX...",
+    "about_us": "VỀ CHÚNG TÔI",
+    "careers_badge": "TUYỂN DỤNG",
+    "footer_consult_button": "Yêu cầu tư vấn",
+    "hero_badge": "LỢI ÍCH THIẾT THỰC QUA TỪNG DỊCH VỤ",
+    "modal_close": "Đóng",
+    "modal_contact_now": "Liên hệ tư vấn ngay",
+    "our_philosophy": "PHƯƠNG CHÂM HOẠT ĐỘNG",
+    "positions_count": "vị trí",
+    "professional_label": "DỊCH VỤ CHUYÊN NGHIỆP",
+    "service_badge": "DỊCH VỤ",
+    "why_choose_us": "TẠI SAO CHỌN CHÚNG TÔI",
+    "contact_badge": "LIÊN HỆ CHÚNG TÔI"
+  },
+  "footer": {
+    "quick_links": "Liên kết nhanh",
+    "about_company": "Giới thiệu công ty",
+    "services_main": "Các dịch vụ chính",
+    "careers_opportunity": "Cơ hội nghề nghiệp",
+    "contact_consult": "Liên hệ & Tư vấn",
+    "contact_info": "Thông tin liên hệ",
+    "philosophy_badge": "Uy tín – Chất lượng – Hiệu quả"
+  },
+  "home": {
+    "hero_title": "Giải pháp tư vấn toàn diện cho Doanh nghiệp Việt Nam & FDI",
+    "hero_subtitle": "Lợi ích thiết thực qua từng dịch vụ. Đồng hành cùng doanh nghiệp từ nhỏ đến lớn — từ ý tưởng đến vận hành bền vững.",
+    "cta_services": "Khám phá dịch vụ",
+    "cta_consult": "Nhận tư vấn miễn phí",
+    "why_title": "Tại sao chọn ETAX Hồ Chí Minh?",
+    "trusted_by": "Được tin tưởng bởi 300+ công ty Việt Nam & FDI",
+    "why_items": [
+      {
+        "title": "Chuyên môn sâu về Doanh nghiệp & FDI",
+        "desc": "Hơn 15 năm kinh nghiệm tư vấn cho doanh nghiệp Việt Nam và hàng trăm doanh nghiệp có vốn đầu tư nước ngoài tại Việt Nam."
+      },
+      {
+        "title": "Đội ngũ chuyên gia đa lĩnh vực",
+        "desc": "Luật sư, Kế toán trưởng, Chuyên gia thuế, Thẩm định viên với chứng chỉ quốc tế và kinh nghiệm thực tiễn."
+      },
+      {
+        "title": "Quy trình minh bạch & nhanh chóng",
+        "desc": "Cam kết thời gian, báo cáo định kỳ, hỗ trợ 24/7 trong suốt quá trình thực hiện."
+      },
+      {
+        "title": "Mạng lưới quan hệ vững mạnh",
+        "desc": "Quan hệ chặt chẽ với Bộ Kế hoạch Đầu tư, Sở KH&ĐT, Cục Thuế và các cơ quan ban ngành."
+      }
+    ],
+    "stats": [
+      {
+        "number": "17+",
+        "label": "Năm kinh nghiệm"
+      },
+      {
+        "number": "300+",
+        "label": "Doanh nghiệp tin tưởng"
+      },
+      {
+        "number": "1200+",
+        "label": "Dự án hoàn thành"
+      },
+      {
+        "number": "99%",
+        "label": "Khách hàng hài lòng"
+      }
+    ]
+  },
+  "about": {
+    "title": "Giới thiệu ETAX Hồ Chí Minh",
+    "intro": "Trong xu thế hội nhập, hệ thống Pháp luật Việt Nam ngày càng hoàn thiện với nhiều chính sách thu hút đầu tư trong và ngoài nước. Để bảo vệ nhà đầu tư thực hiện chiến lược kinh doanh an toàn về hành lang pháp lý, đội ngũ chuyên gia của ETAX Hồ Chí Minh được đào tạo chính quy tại các trường uy tín với bề dày kinh nghiệm thực tiễn.",
+    "mission": "Đến với ETAX Hồ Chí Minh, Quý khách hàng sẽ yên tâm về chất lượng phục vụ và hiệu quả công việc. Chúng tôi cung cấp giải pháp toàn diện từ pháp lý, thuế, kế toán, nhân sự đến tư vấn đầu tư và quản lý dự án cho doanh nghiệp FDI và doanh nghiệp Việt Nam.",
+    "philosophy_title": "Phương châm hoạt động",
+    "philosophy_desc": "Uy tín – Chất lượng – Hiệu quả. Chúng tôi cam kết đem đến sự hài lòng cho Quý khách hàng ngay từ lần làm việc đầu tiên.",
+    "strength_title": "Điểm mạnh của chúng tôi",
+    "strengths": [
+      "Chuyên sâu về đầu tư nước ngoài (FDI) tại Việt Nam",
+      "Đội ngũ Luật sư, Kế toán, Chuyên gia thuế giàu kinh nghiệm thực chiến",
+      "Quy trình làm việc chuẩn mực, minh bạch và cam kết tiến độ",
+      "Hỗ trợ trọn gói từ thành lập đến vận hành và tái cấu trúc",
+      "Mối quan hệ bền chặt với cơ quan quản lý nhà nước các cấp"
+    ]
+  },
+  "services": {
+    "title": "8 Dịch vụ Chính",
+    "intro": "ETAX Hồ Chí Minh cung cấp hệ sinh thái dịch vụ toàn diện, giúp doanh nghiệp Việt Nam và doanh nghiệp có vốn đầu tư nước ngoài (FDI) hoạt động hiệu quả, tuân thủ pháp luật và tối ưu chi phí tại Việt Nam.",
+    "professional_label": "DỊCH VỤ CHUYÊN NGHIỆP",
+    "list": [
+      {
+        "id": 1,
+        "title": "Dịch vụ Pháp lý & Thành lập Doanh nghiệp",
+        "short_desc": "Tư vấn và thực hiện toàn bộ thủ tục thành lập, thay đổi, tạm ngừng, giải thể cho công ty Việt Nam và doanh nghiệp có vốn đầu tư nước ngoài. Hỗ trợ các loại hình TNHH, Cổ phần, Hợp danh.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Nội dung dịch vụ</h4><p class='mb-4'>Với kinh nghiệm làm dịch vụ pháp lý cho hàng trăm khách hàng, ETAX Hồ Chí Minh cam kết đảm bảo thời gian, chất lượng tư vấn và sự tận tình phục vụ.</p><ul class='list-disc pl-5 space-y-2'><li>Tư vấn lựa chọn hình thức đầu tư và loại hình doanh nghiệp phù hợp nhất</li><li>Tư vấn các thủ tục ưu đãi đầu tư: miễn giảm thuế, miễn giảm tiền thuê đất</li><li>Soạn thảo hồ sơ thành lập, dự án khả thi, Điều lệ công ty</li><li>Thay đổi nội dung đăng ký kinh doanh (địa chỉ, vốn, ngành nghề, người đại diện...)</li><li>Tư vấn tạm ngừng hoạt động và giải thể doanh nghiệp theo quy định pháp luật</li><li>Hỗ trợ kê khai thuế ban đầu, mua chữ ký số, in hóa đơn giá rẻ</li></ul><p class='mt-4 text-sm italic'>Ưu đãi: Miễn phí kê khai thuế trong tháng đầu sau thành lập.</p>"
+      },
+      {
+        "id": 2,
+        "title": "Dịch vụ Tư vấn Thuế Chuyên Sâu",
+        "short_desc": "Tư vấn chính sách thuế GTGT, TNDN, TNCN, hoàn thuế, miễn giảm thuế. Đại diện kê khai, quyết toán và làm việc với cơ quan thuế. Cập nhật nhanh các quy định mới.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Nội dung dịch vụ</h4><p class='mb-4'>ETAX Hồ Chí Minh giúp doanh nghiệp tránh các nguy cơ thiệt hại về thuế và ra quyết định kinh doanh chính xác.</p><ul class='list-disc pl-5 space-y-2'><li>Tư vấn thủ tục hồ sơ khai thuế ban đầu và chính sách thuế theo từng lĩnh vực</li><li>Tư vấn ưu đãi, miễn giảm thuế TNDN, thuế nhập khẩu</li><li>Đại diện kê khai và quyết toán thuế GTGT, TNDN, TNCN</li><li>Lập hồ sơ hoàn thuế GTGT, miễn giảm thuế</li><li>Rà soát chi phí hợp lý hợp lệ để tính thu nhập chịu thuế</li><li>Giải trình, quyết toán thuế với cơ quan thanh tra</li><li>Cập nhật nhanh chóng các quy định mới về thuế</li></ul>"
+      },
+      {
+        "id": 3,
+        "title": "Dịch vụ Kế toán & Thuế",
+        "short_desc": "Dọn dẹp sổ sách, hoàn thiện hệ thống kế toán. Kê khai thuế hàng tháng/quý/năm, lập báo cáo tài chính. Cho thuê Kế toán trưởng và giám sát tài chính.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Nội dung dịch vụ</h4><p class='mb-4'>Bộ phận kế toán có vai trò then chốt trong việc cung cấp thông tin tài chính chính xác, kịp thời cho Ban Giám đốc.</p><ul class='list-disc pl-5 space-y-2'><li>Dọn dẹp số liệu, hoàn thiện sổ sách, chứng từ kế toán các năm trước</li><li>Kê khai, quyết toán thuế hàng tháng, quý, năm (GTGT, TNDN, TNCN)</li><li>Lập báo cáo tài chính tháng, quý, năm theo chuẩn mực</li><li>Tư vấn thiết lập hệ thống thông tin kế toán, sổ sách, quy trình hạch toán</li><li>Dịch vụ cho thuê Kế toán trưởng chuyên nghiệp</li><li>Giám sát kế toán tài chính định kỳ hàng tháng</li><li>Giải trình số liệu với cơ quan thuế và kiểm toán</li></ul>"
+      },
+      {
+        "id": 4,
+        "title": "Dịch vụ Lao động, BHXH & Nhân sự",
+        "short_desc": "Cung ứng lao động chuyên môn cao, tư vấn quản lý nhân sự, tính lương & tham gia BHXH/BHYT/BHTN trọn gói. Đào tạo nhân sự kế toán và nội quy lao động.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Nội dung dịch vụ</h4><p class='mb-4'>Giúp doanh nghiệp tập trung vào chiến lược kinh doanh, không lo lắng về vấn đề nhân sự và bảo hiểm.</p><ul class='list-disc pl-5 space-y-2'><li>Cung ứng lao động có nghiệp vụ chuyên môn cao (kế toán, kỹ thuật, phiên dịch, quản lý...)</li><li>Tư vấn soạn thảo nội quy lao động, hợp đồng lao động, thang bảng lương</li><li>Dịch vụ tính lương, tham gia BHXH, BHYT, BHTN trọn gói hàng tháng</li><li>Đăng ký tham gia BHXH lần đầu, quản lý sổ BHXH, giải quyết chế độ ốm đau, thai sản</li><li>Đào tạo nhân sự kế toán cho doanh nghiệp</li><li>Hỗ trợ xây dựng văn hóa doanh nghiệp và đánh giá nhân sự</li></ul>"
+      },
+      {
+        "id": 5,
+        "title": "Dịch vụ Tư vấn Quản lý Doanh nghiệp",
+        "short_desc": "Thiết kế hệ thống kiểm soát nội bộ, quản trị dòng tiền, quản trị hàng tồn kho. Tư vấn tái cấu trúc, xây dựng điều lệ, quy chế hoạt động và quản trị công ty cổ phần.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Nội dung dịch vụ</h4><p class='mb-4'>Mong muốn cùng khách hàng cải tiến, hoàn thiện và nâng cao hiệu quả hoạt động sản xuất kinh doanh.</p><ul class='list-disc pl-5 space-y-2'><li>Thiết kế hệ thống kiểm soát nội bộ theo yêu cầu doanh nghiệp</li><li>Tư vấn quản trị dòng tiền, thiết kế mẫu biểu báo cáo kiểm soát</li><li>Xây dựng hệ thống kiểm soát hàng tồn kho, định mức hao hụt, tính giá vốn</li><li>Tư vấn cấu trúc doanh nghiệp, tái cấu trúc tối ưu</li><li>Xây dựng Điều lệ tổ chức và hoạt động, quy chế Hội đồng quản trị, Ban kiểm soát</li><li>Tư vấn tổ chức Đại hội đồng cổ đông, quản lý sổ cổ đông chuyên nghiệp</li><li>Đào tạo, tập huấn liên quan đến quản trị theo yêu cầu</li></ul>"
+      },
+      {
+        "id": 6,
+        "title": "Dịch vụ Tư vấn Đầu tư Nước Ngoài (FDI)",
+        "short_desc": "Thành lập công ty 100% vốn nước ngoài, văn phòng đại diện, công ty liên doanh. Tư vấn lập dự án đầu tư, quản lý dự án, chuyển nhượng dự án và pháp lý thường xuyên cho FDI.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Nội dung dịch vụ chính</h4><div class='grid grid-cols-1 md:grid-cols-2 gap-4'><div><h5 class='font-medium mb-2'>• Thành lập công ty 100% vốn nước ngoài</h5><p class='text-sm'>Tư vấn điều kiện, hồ sơ, thủ tục đăng ký đầu tư, Giấy chứng nhận đầu tư theo Luật Đầu tư 2020.</p></div><div><h5 class='font-medium mb-2'>• Văn phòng đại diện & Nhà thầu nước ngoài</h5><p class='text-sm'>Thủ tục thành lập văn phòng đại diện, xin Giấy phép nhà thầu nước ngoài trong lĩnh vực xây dựng, tư vấn.</p></div><div><h5 class='font-medium mb-2'>• Công ty liên doanh & Dự án đầu tư</h5><p class='text-sm'>Tư vấn hình thức liên doanh, soạn thảo hợp đồng liên doanh, lập dự án khả thi.</p></div><div><h5 class='font-medium mb-2'>• Tư vấn pháp luật thường xuyên cho FDI</h5><p class='text-sm'>Hỗ trợ quản trị doanh nghiệp, hợp đồng, sở hữu trí tuệ, lao động, thuế và báo cáo định kỳ.</p></div></div><p class='mt-4 text-sm'>ETAX Hồ Chí Minh là đơn vị tư vấn đầu tư nước ngoài uy tín, thế mạnh về FDI với quy trình chuyên nghiệp từ gặp gỡ, ký hợp đồng, chuẩn bị hồ sơ đến bàn giao kết quả.</p>"
+      },
+      {
+        "id": 7,
+        "title": "Dịch vụ Tài chính & M&A - Tái cấu trúc",
+        "short_desc": "Tư vấn Mua bán & Sáp nhập (M&A), tái cấu trúc tài chính doanh nghiệp, chuyển đổi loại hình (TNHH ↔ Cổ phần), cổ phần hóa và thoái vốn.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Nội dung dịch vụ</h4><p class='mb-4'>Hỗ trợ doanh nghiệp trong các giao dịch chiến lược và tái cấu trúc để tối ưu giá trị và hiệu quả hoạt động.</p><ul class='list-disc pl-5 space-y-2'><li>Xây dựng chiến lược M&A, tìm kiếm và lựa chọn đối tượng sáp nhập</li><li>Khảo sát, xác định giá trị doanh nghiệp và định giá hợp lý</li><li>Tư vấn phương thức mua bán, sáp nhập và hỗ trợ đàm phán</li><li>Phân tích hiện trạng tài chính, xây dựng kế hoạch tái cấu trúc tài chính</li><li>Tư vấn chuyển đổi loại hình doanh nghiệp (TNHH thành Cổ phần và ngược lại)</li><li>Tư vấn cổ phần hóa doanh nghiệp nhà nước và thoái vốn</li><li>Tư vấn quản lý rủi ro tài chính (lãi suất, tỷ giá, giá cổ phiếu)</li></ul>"
+      },
+      {
+        "id": 8,
+        "title": "Dịch vụ Phần mềm Quản trị Doanh nghiệp",
+        "short_desc": "Tư vấn lựa chọn, triển khai phần mềm kế toán online, quản lý kho, bán hàng, nhân sự. Cài đặt, đào tạo, bảo trì và chỉnh sửa theo yêu cầu.",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>Nội dung dịch vụ</h4><p class='mb-4'>Công nghệ thông tin tạo cơ hội nâng cao hiệu quả hoạt động. Chúng tôi giúp doanh nghiệp lựa chọn và áp dụng phần mềm phù hợp nhất.</p><ul class='list-disc pl-5 space-y-2'><li>Khảo sát nhu cầu, phân tích ưu nhược điểm của các phần mềm phổ biến</li><li>Tư vấn lựa chọn phần mềm kế toán, quản lý kho, bán hàng, nhân sự phù hợp</li><li>Demo, cài đặt, lập kế hoạch triển khai và hướng dẫn sử dụng chi tiết</li><li>Chỉnh sửa phần mềm theo yêu cầu đặc thù của doanh nghiệp</li><li>Nghiệm thu, chuyển giao và chế độ bảo trì định kỳ</li><li>Hỗ trợ hạch toán, kiểm soát khi sử dụng phần mềm</li></ul><p class='mt-3 text-sm'>Sản phẩm hiện đang được khách hàng tín nhiệm: Phần mềm kế toán online, Phần mềm quản lý kho & bán hàng, Phần mềm quản trị nhân sự.</p>"
+      }
+    ]
+  },
+  "careers": {
+    "title": "Cơ hội nghề nghiệp",
+    "intro": "ETAX Hồ Chí Minh luôn tìm kiếm những cá nhân tài năng, đam mê và có trách nhiệm để cùng xây dựng môi trường làm việc chuyên nghiệp, năng động và phát triển bền vững. Chúng tôi tin rằng con người là yếu tố then chốt tạo nên sự khác biệt.",
+    "openings_title": "Vị trí đang tuyển dụng",
+    "openings": [
+      {
+        "title": "Chuyên viên Tư vấn Thuế & Kế toán (Senior/Junior)",
+        "location": "TP. Hồ Chí Minh",
+        "type": "Toàn thời gian",
+        "desc": "Tư vấn chính sách thuế, hỗ trợ kê khai quyết toán, rà soát chi phí hợp lệ cho khách hàng FDI. Yêu cầu: Tốt nghiệp Đại học chuyên ngành Kế toán - Thuế, có chứng chỉ hành nghề hoặc kinh nghiệm 2-5 năm."
+      },
+      {
+        "title": "Luật sư / Chuyên viên Tư vấn Đầu tư Nước ngoài",
+        "location": "TP. Hồ Chí Minh",
+        "type": "Toàn thời gian",
+        "desc": "Tư vấn thành lập công ty 100% vốn nước ngoài, văn phòng đại diện, giấy phép đầu tư, hợp đồng liên doanh. Yêu cầu: Tốt nghiệp Luật, có kinh nghiệm FDI hoặc chứng chỉ hành nghề luật sư."
+      },
+      {
+        "title": "Chuyên viên Kế toán Trưởng (Cho thuê)",
+        "location": "TP. Hồ Chí Minh & Remote",
+        "type": "Toàn thời gian / Bán thời gian",
+        "desc": "Đảm nhận vai trò Kế toán trưởng cho nhiều khách hàng. Lập BCTC, ký chứng từ, tư vấn rủi ro tài chính. Yêu cầu: Có chứng chỉ Kế toán trưởng, kinh nghiệm 5+ năm."
+      },
+      {
+        "title": "Trợ lý Dự án & Hành chính Nhân sự",
+        "location": "TP. Hồ Chí Minh",
+        "type": "Toàn thời gian",
+        "desc": "Hỗ trợ triển khai dự án tư vấn, chuẩn bị hồ sơ, giao dịch với cơ quan nhà nước, quản lý nhân sự nội bộ. Yêu cầu: Tốt nghiệp Kinh tế/Luật/QLNN, tiếng Anh tốt, cẩn thận, nhanh nhẹn."
+      }
+    ],
+    "benefits_title": "Quyền lợi khi làm việc tại ETAX",
+    "benefits": [
+      "Môi trường làm việc chuyên nghiệp, minh bạch và tôn trọng lẫn nhau",
+      "Cơ hội học hỏi trực tiếp từ Luật sư, Kế toán trưởng, Chuyên gia có 15+ năm kinh nghiệm",
+      "Chế độ lương thưởng cạnh tranh, thưởng dự án và thưởng cuối năm",
+      "Đào tạo nội bộ thường xuyên + hỗ trợ chứng chỉ hành nghề",
+      "Bảo hiểm xã hội, y tế, thất nghiệp đầy đủ theo luật",
+      "Nghỉ phép năm, nghỉ lễ theo quy định + du lịch team building hàng năm"
+    ],
+    "form_title": "Ứng tuyển ngay",
+    "form_note": "Vui lòng điền đầy đủ thông tin. Chúng tôi sẽ liên hệ trong vòng 3-5 ngày làm việc.",
+    "form_full_name_label": "HỌ VÀ TÊN",
+    "form_email_label": "EMAIL",
+    "form_phone_label": "SỐ ĐIỆN THOẠI",
+    "form_position_label": "VỊ TRÍ ỨNG TUYỂN",
+    "form_message_label": "THƯ ỨNG TUYỂN / TIN NHẮN",
+    "form_cv_label": "TẢI LÊN CV (PDF, DOC, DOCX)",
+    "form_submit_label": "GỬI HỒ SƠ ỨNG TUYỂN",
+    "placeholder_position": "Ví dụ: Chuyên viên Tư vấn Thuế",
+    "placeholder_message_careers": "Giới thiệu ngắn gọn về bản thân và lý do bạn muốn gia nhập ETAX..."
+  },
+  "contact": {
+    "title": "Liên hệ & Tư vấn Miễn phí",
+    "intro": "Hãy để ETAX Hồ Chí Minh đồng hành cùng chiến lược phát triển bền vững của quý doanh nghiệp. Gửi yêu cầu tư vấn ngay hôm nay để nhận giải pháp tối ưu nhất.",
+    "form_title": "Gửi yêu cầu tư vấn",
+    "form_full_name": "HỌ VÀ TÊN *",
+    "form_email": "EMAIL *",
+    "form_phone": "SỐ ĐIỆN THOẠI *",
+    "form_message": "NỘI DUNG YÊU CẦU TƯ VẤN *",
+    "form_submit": "GỬI YÊU CẦU TƯ VẤN MIỄN PHÍ",
+    "form_service_label": "Dịch vụ quan tâm",
+    "form_services_options": [
+      "Tư vấn thành lập công ty / Văn phòng đại diện",
+      "Tư vấn thuế & Kế toán",
+      "Dịch vụ pháp lý doanh nghiệp",
+      "Tư vấn đầu tư FDI & Dự án",
+      "Tư vấn M&A / Tái cấu trúc",
+      "Dịch vụ lao động & BHXH",
+      "Tư vấn quản lý / Phần mềm",
+      "Khác (vui lòng nêu rõ)"
+    ],
+    "info_title": "Thông tin liên hệ",
+    "hotline_label": "HOTLINE",
+    "email_label": "EMAIL",
+    "address_label": "ĐỊA CHỈ",
+    "map_title": "Vị trí văn phòng",
+    "working_hours": "Giờ làm việc: Thứ Hai - Thứ Sáu | 08:00 - 17:30",
+    "placeholder_message_contact": "Mô tả ngắn gọn nhu cầu của bạn...",
+    "response_commitment": "Chúng tôi cam kết phản hồi trong vòng 24 giờ làm việc."
+  }
+}
