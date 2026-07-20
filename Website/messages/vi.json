@@ -13,6 +13,9 @@
   },
   "common": {
     "company_name": "ETAX Hồ Chí Minh",
+    "logo_alt": "Logo ETAX Hồ Chí Minh",
+    "logo_wordmark": "ETAX",
+    "logo_region": "HỒ CHÍ MINH",
     "legal_name": "Công ty TNHH ETAX HCM",
     "slogan": "ETAX Hồ Chí Minh - Lợi ích thiết thực qua từng dịch vụ.",
     "tagline": "Lợi ích thiết thực qua từng dịch vụ",
@@ -49,6 +52,18 @@
     "contact_consult": "Liên hệ & Tư vấn",
     "contact_info": "Thông tin liên hệ",
     "philosophy_badge": "Uy tín – Chất lượng – Hiệu quả"
+  },
+  "forms": {
+    "sending": "Đang gửi...",
+    "contact_success": "Cảm ơn bạn! Chúng tôi sẽ liên hệ lại trong 24h.",
+    "careers_success": "Hồ sơ đã được gửi thành công! Chúng tôi sẽ liên hệ sớm.",
+    "submit_failed_retry": "Gửi thất bại. Vui lòng thử lại sau.",
+    "generic_error": "Có lỗi xảy ra. Vui lòng thử lại sau.",
+    "file_too_large": "File quá lớn. Kích thước tối đa cho phép là 8MB.",
+    "contact_subject": "Liên hệ mới từ Website ETAX Hồ Chí Minh",
+    "contact_from_name": "ETAX Hồ Chí Minh Website",
+    "careers_subject": "Hồ sơ ứng tuyển mới từ Website ETAX Hồ Chí Minh",
+    "careers_from_name": "ETAX Hồ Chí Minh - Tuyển dụng"
   },
   "home": {
     "hero_title": "Giải pháp tư vấn toàn diện cho Doanh nghiệp Việt Nam & FDI",
@@ -98,6 +113,26 @@
     "title": "Giới thiệu ETAX Hồ Chí Minh",
     "intro": "Trong xu thế hội nhập, hệ thống Pháp luật Việt Nam ngày càng hoàn thiện với nhiều chính sách thu hút đầu tư trong và ngoài nước. Để bảo vệ nhà đầu tư thực hiện chiến lược kinh doanh an toàn về hành lang pháp lý, đội ngũ chuyên gia của ETAX Hồ Chí Minh được đào tạo chính quy tại các trường uy tín với bề dày kinh nghiệm thực tiễn.",
     "mission": "Đến với ETAX Hồ Chí Minh, Quý khách hàng sẽ yên tâm về chất lượng phục vụ và hiệu quả công việc. Chúng tôi cung cấp giải pháp toàn diện từ pháp lý, thuế, kế toán, nhân sự đến tư vấn đầu tư và quản lý dự án cho doanh nghiệp FDI và doanh nghiệp Việt Nam.",
+    "education_label": "NỀN TẢNG HỌC THUẬT",
+    "education_title": "Đội ngũ được đào tạo và giảng dạy trong các môi trường uy tín",
+    "education_intro": "Các chuyên viên của ETAX được bồi dưỡng chuyên môn qua những môi trường học thuật hàng đầu tại TP. Hồ Chí Minh, kết hợp góc nhìn pháp lý, tài chính, quản trị và vận hành doanh nghiệp.",
+    "education_items": [
+      {
+        "initials": "UL",
+        "name": "Đại học Luật TP.HCM",
+        "location": "Pháp lý doanh nghiệp"
+      },
+      {
+        "initials": "RMIT",
+        "name": "RMIT South Saigon",
+        "location": "Quản trị & kinh doanh"
+      },
+      {
+        "initials": "UEH",
+        "name": "Đại học Kinh tế TP.HCM (UEH)",
+        "location": "Tài chính & kinh tế"
+      }
+    ],
     "philosophy_title": "Phương châm hoạt động",
     "philosophy_desc": "Uy tín – Chất lượng – Hiệu quả. Chúng tôi cam kết đem đến sự hài lòng cho Quý khách hàng ngay từ lần làm việc đầu tiên.",
     "strength_title": "Điểm mạnh của chúng tôi",
@@ -113,6 +148,15 @@
     "title": "8 Dịch vụ Chính",
     "intro": "ETAX Hồ Chí Minh cung cấp hệ sinh thái dịch vụ toàn diện, giúp doanh nghiệp Việt Nam và doanh nghiệp có vốn đầu tư nước ngoài (FDI) hoạt động hiệu quả, tuân thủ pháp luật và tối ưu chi phí tại Việt Nam.",
     "professional_label": "DỊCH VỤ CHUYÊN NGHIỆP",
+    "consultation_badge": "TƯ VẤN MIỄN PHÍ",
+    "consultation_title": "Chưa chắc nên chọn giải pháp nào?",
+    "consultation_desc": "Chia sẻ hiện trạng hệ thống, nhu cầu tuân thủ và điểm nghẽn vận hành. ETAX sẽ gợi ý hướng xử lý thực tế trước khi bạn ra quyết định.",
+    "consultation_points": [
+      "Rà soát nhanh nhu cầu",
+      "Định hướng dịch vụ phù hợp",
+      "Buổi tư vấn đầu tiên miễn phí"
+    ],
+    "consultation_button": "Liên hệ tư vấn miễn phí",
     "list": [
       {
         "id": 1,

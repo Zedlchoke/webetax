@@ -13,6 +13,9 @@
   },
   "common": {
     "company_name": "ETAX Ho Chi Minh",
+    "logo_alt": "ETAX Ho Chi Minh Logo",
+    "logo_wordmark": "ETAX",
+    "logo_region": "HO CHI MINH",
     "legal_name": "ETAX HCM Company Limited.",
     "slogan": "ETAX Ho Chi Minh - Tangible Benefits Through Every Service.",
     "tagline": "Tangible Benefits Through Every Service",
@@ -49,6 +52,18 @@
     "contact_consult": "Contact & Consultation",
     "contact_info": "Contact Information",
     "philosophy_badge": "Integrity – Quality – Efficiency"
+  },
+  "forms": {
+    "sending": "Sending...",
+    "contact_success": "Thank you! We will contact you within 24 hours.",
+    "careers_success": "Application submitted successfully! We will contact you soon.",
+    "submit_failed_retry": "Submission failed. Please try again later.",
+    "generic_error": "An error occurred. Please try again later.",
+    "file_too_large": "File is too large. Maximum allowed size is 8MB.",
+    "contact_subject": "New consultation request from ETAX Ho Chi Minh Website",
+    "contact_from_name": "ETAX Ho Chi Minh Website",
+    "careers_subject": "New job application from ETAX Ho Chi Minh Website",
+    "careers_from_name": "ETAX Ho Chi Minh - Careers"
   },
   "home": {
     "hero_title": "Comprehensive Consulting Solutions for Vietnamese & FDI Companies",
@@ -98,6 +113,26 @@
     "title": "About ETAX Ho Chi Minh",
     "intro": "As Vietnam integrates deeper into the global economy, its legal system continues to improve with policies attracting both domestic and foreign investment. To protect investors and ensure their business strategies are backed by a solid legal framework, ETAX Ho Chi Minh's team of experts in economics, finance, accounting, investment, law, and IT are rigorously trained at prestigious institutions with extensive practical experience.",
     "mission": "At ETAX Ho Chi Minh, clients can rest assured of service quality and work efficiency. We provide comprehensive solutions from legal services, tax, accounting, HR to investment consulting and project management for FDI enterprises and Vietnamese businesses.",
+    "education_label": "ACADEMIC FOUNDATION",
+    "education_title": "A team shaped by leading business and legal institutions",
+    "education_intro": "Our specialists are trained and professionally guided through respected academic environments in Ho Chi Minh City, bringing a balanced view of law, finance, governance, and operations.",
+    "education_items": [
+      {
+        "initials": "UL",
+        "name": "Ho Chi Minh City University of Law",
+        "location": "Legal Training"
+      },
+      {
+        "initials": "RMIT",
+        "name": "RMIT South Saigon",
+        "location": "Business & Management"
+      },
+      {
+        "initials": "UEH",
+        "name": "University of Economics Ho Chi Minh City",
+        "location": "Finance & Economics"
+      }
+    ],
     "philosophy_title": "Our Operating Philosophy",
     "philosophy_desc": "Integrity – Quality – Efficiency. We are committed to delivering satisfaction to our clients from the very first interaction.",
     "strength_title": "Our Key Strengths",
@@ -113,6 +148,15 @@
     "title": "Our 8 Core Services",
     "intro": "ETAX Ho Chi Minh offers a complete ecosystem of services to help Vietnamese companies and FDI enterprises operate efficiently, stay compliant, and optimize costs in Vietnam.",
     "professional_label": "PROFESSIONAL SERVICES",
+    "consultation_badge": "FREE CONSULTATION",
+    "consultation_title": "Need help choosing the right solution?",
+    "consultation_desc": "Tell us your current system, compliance needs, and operating pain points. ETAX will suggest a practical next step before you commit.",
+    "consultation_points": [
+      "Quick needs review",
+      "Suitable service direction",
+      "No-obligation first consultation"
+    ],
+    "consultation_button": "Contact for Free Consultation",
     "list": [
       {
         "id": 1,

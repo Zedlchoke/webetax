@@ -13,6 +13,9 @@
   },
   "common": {
     "company_name": "ETAX胡志明市公司",
+    "logo_alt": "ETAX胡志明市公司标志",
+    "logo_wordmark": "ETAX",
+    "logo_region": "胡志明市",
     "legal_name": "ETAX HCM Company Limited。",
     "slogan": "ETAX胡志明市 — 让每一项服务都带来切实价值。",
     "tagline": "每一项服务都带来实实在在的利益",
@@ -49,6 +52,18 @@
     "contact_consult": "联系与咨询",
     "contact_info": "联系信息",
     "philosophy_badge": "诚信 – 品质 – 效率"
+  },
+  "forms": {
+    "sending": "发送中...",
+    "contact_success": "谢谢！我们将在24小时内与您联系。",
+    "careers_success": "申请已成功提交！我们将尽快与您联系。",
+    "submit_failed_retry": "提交失败。请稍后再试。",
+    "generic_error": "发生错误。请稍后再试。",
+    "file_too_large": "文件太大。最大支持 8MB。",
+    "contact_subject": "来自 ETAX 胡志明市网站的新咨询请求",
+    "contact_from_name": "ETAX 胡志明市网站",
+    "careers_subject": "来自 ETAX 胡志明市网站的新求职申请",
+    "careers_from_name": "ETAX 胡志明市 - 招聘"
   },
   "home": {
     "hero_title": "越南企业及外资企业的一站式咨询解决方案",
@@ -98,6 +113,26 @@
     "title": "关于ETAX胡志明市公司",
     "intro": "在全球化与经济一体化不断发展的背景下，越南法律体系日趋完善，并持续推出多项鼓励国内外投资的政策措施。为了帮助投资者在合规、安全的法律环境下开展经营活动，ETAX 胡志明市汇聚了一支受过正规专业教育、拥有丰富实践经验的顾问团队。",
     "mission": "ETAX 胡志明市始终坚持以客户为中心，为企业提供高品质、高效率的专业服务。我们专注于为外资企业及越南本土企业提供涵盖法律、税务、会计、人力资源、投资咨询及项目管理等领域的一站式服务解决方案，为企业的发展保驾护航。",
+    "education_label": "学术基础",
+    "education_title": "团队受益于领先法律与商科教育环境",
+    "education_intro": "ETAX 的专业团队通过胡志明市具有影响力的学术环境接受培训与专业指导，融合企业法律、财务、治理与运营视角。",
+    "education_items": [
+      {
+        "initials": "UL",
+        "name": "胡志明市法律大学",
+        "location": "企业法律"
+      },
+      {
+        "initials": "RMIT",
+        "name": "RMIT South Saigon",
+        "location": "商业与管理"
+      },
+      {
+        "initials": "UEH",
+        "name": "胡志明市经济大学 UEH",
+        "location": "金融与经济"
+      }
+    ],
     "philosophy_title": "经营理念",
     "philosophy_desc": "诚信 – 品质 – 效率。我们承诺从第一次合作开始，便为客户提供专业、高效、值得信赖的服务，确保客户满意。",
     "strength_title": "我们的优势",
@@ -113,6 +148,15 @@
     "title": "八大核心服务",
     "intro": "ETAX胡志明市构建一站式企业服务体系，助力越南本土企业及外资企业（FDI）高效合规运营，实现法律合规、成本优化与业务可持续发展。",
     "professional_label": "专业服务",
+    "consultation_badge": "免费咨询",
+    "consultation_title": "不确定该选择哪项方案？",
+    "consultation_desc": "告诉我们您的系统现状、合规需求和运营痛点。ETAX 将在您决策前提供务实的下一步建议。",
+    "consultation_points": [
+      "快速需求评估",
+      "匹配合适服务方向",
+      "首次咨询不收取费用"
+    ],
+    "consultation_button": "联系免费咨询",
     "list": [
       {
         "id": 1,

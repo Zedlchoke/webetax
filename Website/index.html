@@ -133,10 +133,10 @@
             <div class="px-6 lg:px-10 py-4 flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center gap-x-3 cursor-pointer" @click="navigateTo('home')">
-                    <img src="/assets/logo.png" alt="ETAX Hồ Chí Minh Logo" class="h-12 w-auto object-contain">
+                    <img src="/assets/logo.png" :alt="t('common.logo_alt')" class="h-12 w-auto object-contain">
                     <div>
-                        <div class="font-semibold text-[15px] tracking-tight text-slate-900">ETAX</div>
-                        <div class="text-[10px] text-slate-500 -mt-1 font-medium">HỒ CHÍ MINH</div>
+                        <div class="font-semibold text-[15px] tracking-tight text-slate-900" x-text="t('common.logo_wordmark')"></div>
+                        <div class="text-[10px] text-slate-500 -mt-1 font-medium" x-text="t('common.logo_region')"></div>
                     </div>
                 </div>
 
@@ -653,8 +653,7 @@
 
                     // Đa ngôn ngữ cho nút đang gửi
                     const locale = this.currentLocale;
-                    const sendingText = locale === 'en' ? 'Sending...' : 
-                                       (locale === 'zh' ? '发送中...' : 'Đang gửi...');
+                    const sendingText = this.t('forms.sending');
                     
                     submitBtn.innerHTML = sendingText;
                     submitBtn.disabled = true;
@@ -670,20 +669,14 @@
                         const result = await response.json();
 
                         if (result.success) {
-                            const successMsg = locale === 'en' ? 'Thank you! We will contact you within 24 hours.' : 
-                                              (locale === 'zh' ? '谢谢！我们将在24小时内与您联系。' : 'Cảm ơn bạn! Chúng tôi sẽ liên hệ lại trong 24h.');
-                            this.showToastMessage(successMsg);
+                            this.showToastMessage(this.t('forms.contact_success'));
                             form.reset();
                         } else {
-                            const failMsg = locale === 'en' ? 'Submission failed. Please try again later.' : 
-                                           (locale === 'zh' ? '提交失败。请稍后再试。' : 'Gửi thất bại. Vui lòng thử lại sau.');
-                            this.showToastMessage(failMsg);
+                            this.showToastMessage(this.t('forms.submit_failed_retry'));
                             console.error('Web3Forms Error:', result);
                         }
                     } catch (error) {
-                        const errMsg = locale === 'en' ? 'An error occurred. Please try again later.' : 
-                                      (locale === 'zh' ? '发生错误。请稍后再试。' : 'Có lỗi xảy ra. Vui lòng thử lại sau.');
-                        this.showToastMessage(errMsg);
+                        this.showToastMessage(this.t('forms.generic_error'));
                         console.error('Network Error:', error);
                     } finally {
                         submitBtn.innerHTML = originalText;
@@ -698,8 +691,7 @@
 
                     // Đa ngôn ngữ cho nút đang gửi
                     const locale = this.currentLocale;
-                    const sendingText = locale === 'en' ? 'Sending...' : 
-                                    (locale === 'zh' ? '发送中...' : 'Đang gửi...');
+                    const sendingText = this.t('forms.sending');
                     
                     submitBtn.innerHTML = sendingText;
                     submitBtn.disabled = true;
@@ -711,9 +703,7 @@
                         const maxSize = 8 * 1024 * 1024; // 8MB
 
                         if (file.size > maxSize) {
-                            const sizeMsg = locale === 'en' ? 'File is too large. Maximum allowed size is 8MB.' : 
-                                        (locale === 'zh' ? '文件太大。最大支持 8MB。' : 'File quá lớn. Kích thước tối đa cho phép là 8MB.');
-                            this.showToastMessage(sizeMsg);
+                            this.showToastMessage(this.t('forms.file_too_large'));
                             submitBtn.innerHTML = originalText;
                             submitBtn.disabled = false;
                             return;
@@ -731,14 +721,11 @@
                         const result = await response.json();
 
                         if (result.success) {
-                            const successMsg = locale === 'en' ? 'Application submitted successfully! We will contact you soon.' : 
-                                            (locale === 'zh' ? '申请已成功提交！我们将尽快与您联系。' : 'Hồ sơ đã được gửi thành công! Chúng tôi sẽ liên hệ sớm.');
-                            this.showToastMessage(successMsg);
+                            this.showToastMessage(this.t('forms.careers_success'));
                             form.reset();
                         } else {
                             // Hiển thị lỗi chi tiết hơn từ Web3Forms
-                            let failMsg = locale === 'en' ? 'Submission failed. Please try again later.' : 
-                                        (locale === 'zh' ? '提交失败。请稍后再试。' : 'Gửi thất bại. Vui lòng thử lại sau.');
+                            let failMsg = this.t('forms.submit_failed_retry');
                             
                             if (result.message) {
                                 failMsg = result.message;
@@ -751,9 +738,7 @@
                             console.log('Full response object:', JSON.stringify(result, null, 2));
                         }
                     } catch (error) {
-                        const errMsg = locale === 'en' ? 'An error occurred. Please try again later.' : 
-                                    (locale === 'zh' ? '发生错误。请稍后再试。' : 'Có lỗi xảy ra. Vui lòng thử lại sau.');
-                        this.showToastMessage(errMsg);
+                        this.showToastMessage(this.t('forms.generic_error'));
                         console.error('Network Error:', error);
                     } finally {
                         submitBtn.innerHTML = originalText;
@@ -894,6 +879,7 @@
                 
                 getAboutHTML() {
                     const strengths = this.t('about.strengths') || [];
+                    const educationItems = this.t('about.education_items') || [];
                     
                     return `
                         <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-14">
@@ -907,6 +893,31 @@
                                     <p class="lead text-xl">${this.t('about.intro')}</p>
                                     
                                     <p class="mt-6">${this.t('about.mission')}</p>
+                                </div>
+
+                                <div class="mt-12 bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm">
+                                    <div class="grid lg:grid-cols-5">
+                                        <div class="lg:col-span-2 bg-[#0f172a] text-white p-8 flex flex-col justify-between">
+                                            <div>
+                                                <div class="uppercase tracking-[2.5px] text-xs font-bold text-amber-300 mb-4">${this.t('about.education_label')}</div>
+                                                <h2 class="text-3xl font-semibold tracking-tight leading-tight">${this.t('about.education_title')}</h2>
+                                            </div>
+                                            <p class="mt-6 text-sm leading-relaxed text-slate-300">${this.t('about.education_intro')}</p>
+                                        </div>
+                                        <div class="lg:col-span-3 p-7 lg:p-8">
+                                            <div class="grid sm:grid-cols-3 gap-4">
+                                                ${educationItems.map(item => `
+                                                    <div class="rounded-2xl border border-slate-100 bg-slate-50 p-5 min-h-[132px] flex flex-col justify-between">
+                                                        <div class="h-9 w-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-semibold text-sm">${item.initials}</div>
+                                                        <div>
+                                                            <div class="mt-5 font-semibold tracking-tight text-slate-900 leading-snug">${item.name}</div>
+                                                            <div class="mt-1 text-xs uppercase tracking-[1.5px] text-slate-500">${item.location}</div>
+                                                        </div>
+                                                    </div>
+                                                `).join('')}
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 
                                 <div class="my-14 border-t border-b py-9 grid md:grid-cols-5 gap-y-8">
@@ -938,6 +949,7 @@
                 
                 getServicesHTML() {
                     const services = this.t('services.list') || [];
+                    const consultationPoints = this.t('services.consultation_points') || [];
                     
                     return `
                         <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-14">
@@ -970,6 +982,23 @@
                                         </div>
                                     </div>
                                 `).join('')}
+                                <div class="bg-[#0f172a] text-white border border-slate-900 rounded-3xl p-7 flex flex-col min-h-[308px]">
+                                    <div class="inline-block px-3.5 py-1 text-xs font-bold tracking-wider bg-amber-300/15 text-amber-200 rounded-full mb-5">${this.t('services.consultation_badge')}</div>
+                                    <h3 class="font-semibold text-2xl tracking-tight leading-tight">${this.t('services.consultation_title')}</h3>
+                                    <p class="mt-4 text-[15px] text-slate-300 leading-relaxed">${this.t('services.consultation_desc')}</p>
+                                    <div class="mt-5 space-y-2">
+                                        ${consultationPoints.map(point => `
+                                            <div class="flex items-center gap-x-2 text-sm text-slate-200">
+                                                <span class="h-1.5 w-1.5 rounded-full bg-amber-300"></span>
+                                                <span>${point}</span>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <button onclick="goTo('contact')"
+                                            class="mt-auto w-full h-12 rounded-2xl bg-[#d4af37] hover:bg-amber-300 text-[#0f172a] font-semibold text-sm transition-all active:scale-[0.985]">
+                                        ${this.t('services.consultation_button')}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     `;
@@ -1034,9 +1063,9 @@
                                 <form id="careers-form" class="space-y-5">
                                     <!-- Web3Forms Hidden Fields -->
                                     <input type="hidden" name="access_key" value="c17d7f46-9701-4a9d-8d66-7bb837c83c8b">
-                                    <input type="hidden" name="subject" value="Hồ sơ ứng tuyển mới từ Website ETAX Hồ Chí Minh">
-                                    <input type="hidden" name="from_name" value="ETAX Hồ Chí Minh - Tuyển dụng">
-                                    <input type="hidden" name="replyto" value="business@etaxhcm.com">
+                                    <input type="hidden" name="subject" value="${this.t('forms.careers_subject')}">
+                                    <input type="hidden" name="from_name" value="${this.t('forms.careers_from_name')}">
+                                    <input type="hidden" name="replyto" value="${this.t('common.email')}">
                                     <!-- Honeypot chống spam -->
                                     <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
@@ -1101,9 +1130,9 @@
                                     <form id="contact-form" class="space-y-6">
                                         <!-- Web3Forms Hidden Fields -->
                                         <input type="hidden" name="access_key" value="c17d7f46-9701-4a9d-8d66-7bb837c83c8b">
-                                        <input type="hidden" name="subject" value="Liên hệ mới từ Website ETAX Hồ Chí Minh">
-                                        <input type="hidden" name="from_name" value="ETAX Hồ Chí Minh Website">
-                                        <input type="hidden" name="replyto" value="business@etaxhcm.com">
+                                        <input type="hidden" name="subject" value="${this.t('forms.contact_subject')}">
+                                        <input type="hidden" name="from_name" value="${this.t('forms.contact_from_name')}">
+                                        <input type="hidden" name="replyto" value="${this.t('common.email')}">
                                         <!-- Honeypot chống spam -->
                                         <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
