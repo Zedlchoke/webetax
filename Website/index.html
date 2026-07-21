@@ -4,6 +4,942 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ETAX Hồ Chí Minh - Đối tác chiến lược tin cậy cho doanh nghiệp Việt Nam và FDI từ nhỏ đến lớn. Dịch vụ tư vấn pháp lý, thuế, kế toán, thành lập công ty, M&A và quản lý dự án tại Việt Nam.">
+    <title>ETAX Hồ Chí Minh | Tư vấn Đầu tư Nước Ngoài & Dịch vụ Doanh nghiệp FDI</title>
+    
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/favicon-64.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap');
+        
+        :root {
+            --navy: #0f172a;
+            --navy-light: #1e3a5f;
+            --gold: #d4af37;
+            --gold-light: #f0d78c;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+        }
+
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #d4af37, #f0d78c);
+            border-radius: 3px;
+        }
+
+        .nav-active {
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #f0d78c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .navy-bg {
+            background-color: #0f172a;
+        }
+
+        .modal {
+            animation: modalPopIn 0.2s ease-out forwards;
+        }
+
+        @keyframes modalPopIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Marquee Animation for Clients */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+            display: flex;
+            width: max-content;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        .language-option {
+            transition: all 0.1s ease;
+        }
+        
+        .language-option:hover {
+            background-color: #f8fafc;
+        }
+
+        .prose-custom h4 {
+            color: #0f172a;
+            font-weight: 600;
+        }
+        
+        .prose-custom ul {
+            margin-top: 0.5rem;
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .sticky-header {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255,255,255,0.95);
+        }
+
+        .page-transition {
+            animation: fadeInUp 0.4s ease forwards;
+        }
+
+        .flag {
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800" x-data="etaxApp()">
+    <header class="sticky top-0 z-50 border-b border-slate-200 sticky-header">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-6 lg:px-10 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-x-3 cursor-pointer" @click="navigateTo('home')">
+                    <img src="/assets/logo.png" :alt="t('common.logo_alt')" class="h-12 w-auto object-contain">
+                    <div>
+                        <div class="font-semibold text-[15px] tracking-tight text-slate-900" x-text="t('common.logo_wordmark')"></div>
+                        <div class="text-[10px] text-slate-500 -mt-1 font-medium" x-text="t('common.logo_region')"></div>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#" @click.prevent="navigateTo('home')" 
+                       class="hover:text-[#d4af37] transition-colors" 
+                       :class="{ 'nav-active': currentPage === 'home' }" x-text="t('nav.home')"></a>
+                    <a href="#" @click.prevent="navigateTo('about')" 
+                       class="hover:text-[#d4af37] transition-colors"
+                       :class="{ 'nav-active': currentPage === 'about' }" x-text="t('nav.about')"></a>
+                    <a href="#" @click.prevent="navigateTo('services')" 
+                       class="hover:text-[#d4af37] transition-colors"
+                       :class="{ 'nav-active': currentPage === 'services' }" x-text="t('nav.services')"></a>
+                    <a href="#" @click.prevent="navigateTo('careers')" 
+                       class="hover:text-[#d4af37] transition-colors"
+                       :class="{ 'nav-active': currentPage === 'careers' }" x-text="t('nav.careers')"></a>
+                    <a href="#" @click.prevent="navigateTo('contact')" 
+                       class="hover:text-[#d4af37] transition-colors"
+                       :class="{ 'nav-active': currentPage === 'contact' }" x-text="t('nav.contact')"></a>
+                </nav>
+
+                <div class="flex items-center gap-x-3">
+                    <div class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" 
+                                class="flex items-center gap-x-2 px-3.5 py-2 rounded-xl border border-slate-200 hover:bg-white transition-all text-sm font-medium bg-white shadow-sm">
+                            <span class="flag" x-text="getCurrentFlag()"></span>
+                            <span class="font-semibold text-slate-700" x-text="getCurrentLangName()"></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        
+                        <div x-show="open" @click.away="open = false"
+                             class="absolute right-0 mt-2 w-48 bg-white rounded-2xl shadow-xl border border-slate-100 py-1 z-50 text-sm"
+                             x-transition:enter="transition ease-out duration-200"
+                             x-transition:enter-start="opacity-0 scale-95"
+                             x-transition:enter-end="opacity-100 scale-100">
+                            
+                            <template x-for="lang in languages" :key="lang.code">
+                                <button @click="switchLanguage(lang.code); open = false"
+                                        class="language-option w-full flex items-center gap-x-3 px-4 py-2.5 text-left hover:bg-slate-50"
+                                        :class="{ 'bg-amber-50 text-amber-700 font-semibold': currentLocale === lang.code }">
+                                    <span class="flag text-lg" x-text="lang.flag"></span>
+                                    <span x-text="lang.name"></span>
+                                </button>
+                            </template>
+                        </div>
+                    </div>
+
+                    <button @click="navigateTo('contact')"
+                            class="hidden sm:flex items-center gap-x-2 bg-[#0f172a] hover:bg-slate-900 transition-all text-white text-sm font-semibold px-6 py-2.5 rounded-2xl shadow-lg shadow-slate-900/20 active:scale-[0.985]">
+                        <span x-text="t('nav.consult_now')"></span>
+                    </button>
+
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" 
+                            class="md:hidden p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false"
+             class="md:hidden border-t border-slate-100 bg-white px-6 py-4 text-sm font-medium">
+            <div class="flex flex-col gap-y-1">
+                <a href="#" @click.prevent="navigateTo('home'); mobileMenuOpen=false" class="py-3 px-4 rounded-xl hover:bg-slate-50" x-text="t('nav.home')"></a>
+                <a href="#" @click.prevent="navigateTo('about'); mobileMenuOpen=false" class="py-3 px-4 rounded-xl hover:bg-slate-50" x-text="t('nav.about')"></a>
+                <a href="#" @click.prevent="navigateTo('services'); mobileMenuOpen=false" class="py-3 px-4 rounded-xl hover:bg-slate-50" x-text="t('nav.services')"></a>
+                <a href="#" @click.prevent="navigateTo('careers'); mobileMenuOpen=false" class="py-3 px-4 rounded-xl hover:bg-slate-50" x-text="t('nav.careers')"></a>
+                <a href="#" @click.prevent="navigateTo('contact'); mobileMenuOpen=false" class="py-3 px-4 rounded-xl hover:bg-slate-50" x-text="t('nav.contact')"></a>
+                
+                <div class="pt-3 border-t mt-2">
+                    <button @click="navigateTo('contact'); mobileMenuOpen=false"
+                            class="w-full flex justify-center items-center gap-x-2 bg-[#0f172a] text-white py-3 rounded-2xl font-semibold text-sm">
+                        <span x-text="t('nav.consult_now')"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="page-content" class="min-h-[calc(100vh-140px)]">
+        </main>
+
+    <footer class="bg-[#0f172a] text-slate-300 pt-14 pb-8">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-10">
+            <div class="flex flex-col md:flex-row md:justify-between gap-y-10 md:gap-x-8">
+                <div class="text-sm md:max-w-[520px]">
+                    <div class="font-semibold text-white mb-4 tracking-wider text-xs uppercase" x-text="t('footer.contact_info')"></div>
+                    <div class="font-semibold text-white mb-2" x-text="t('common.legal_name')"></div>
+                    <div class="space-y-3 text-slate-400">
+                        <div class="flex items-start gap-x-3">
+                            <span class="mt-1">📍</span>
+                            <span x-text="t('common.address')"></span>
+                        </div>
+                        <div class="flex items-center gap-x-3">
+                            <span>📞</span>
+                            <a :href="'tel:' + t('common.hotline')" class="hover:text-white transition-colors" x-text="t('common.hotline')"></a>
+                        </div>
+                        <div class="flex items-center gap-x-3">
+                            <span>✉️</span>
+                            <a :href="'mailto:' + t('common.email')" class="hover:text-white transition-colors" x-text="t('common.email')"></a>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button @click="navigateTo('contact')"
+                                class="inline-flex items-center gap-x-2 text-sm font-semibold px-5 py-2.5 rounded-2xl border border-white/30 hover:bg-white hover:text-[#0f172a] transition-all active:scale-[0.985]">
+                            <span x-text="t('common.footer_consult_button')"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="text-sm md:text-right">
+                    <div class="font-semibold text-white mb-4 tracking-wider text-xs uppercase" x-text="t('footer.quick_links')"></div>
+                    <div class="space-y-2.5">
+                        <div @click="navigateTo('about')" class="cursor-pointer hover:text-white transition-colors" x-text="t('footer.about_company')"></div>
+                        <div @click="navigateTo('services')" class="cursor-pointer hover:text-white transition-colors" x-text="t('footer.services_main')"></div>
+                        <div @click="navigateTo('careers')" class="cursor-pointer hover:text-white transition-colors" x-text="t('footer.careers_opportunity')"></div>
+                        <div @click="navigateTo('contact')" class="cursor-pointer hover:text-white transition-colors" x-text="t('footer.contact_consult')"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-14 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-y-2">
+                <div x-text="t('common.footer_rights')"></div>
+                <div x-text="t('common.slogan')"></div>
+            </div>
+        </div>
+    </footer>
+
+    <div x-show="showServiceModal" 
+         class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         @click="showServiceModal = false">
+        
+        <div @click.stop 
+             class="modal bg-white w-full max-w-4xl max-h-[92vh] overflow-hidden rounded-3xl shadow-2xl flex flex-col"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 scale-95 translate-y-8"
+             x-transition:enter-end="opacity-100 scale-100 translate-y-0">
+            
+            <div class="px-8 py-5 border-b flex items-center justify-between bg-slate-50">
+                <div>
+                    <div class="uppercase tracking-[1.5px] text-xs font-semibold text-amber-600" x-text="t('common.service_badge')"></div>
+                    <h3 class="text-2xl font-semibold text-slate-900" x-text="selectedService?.title"></h3>
+                </div>
+                <button @click="showServiceModal = false" 
+                        class="text-slate-400 hover:text-slate-600 p-2 -mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M6 18L18 6M6 6h12v12" />
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="p-8 overflow-y-auto flex-1 prose-custom text-[15px] leading-relaxed text-slate-700" 
+                 x-html="selectedService?.full_content">
+            </div>
+            
+            <div class="px-8 py-5 border-t bg-white flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                    <button @click="showServiceModal = false; navigateTo('contact')" 
+                            class="px-8 py-3 rounded-2xl bg-[#0f172a] text-white text-sm font-semibold flex-1 sm:flex-none" x-text="t('common.modal_contact_now')">
+                    </button>
+                    
+                    <button @click="showServiceModal = false" 
+                            class="px-6 py-3 rounded-2xl border text-sm font-medium" x-text="t('common.modal_close')">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div x-show="showToast" 
+         class="fixed bottom-20 right-6 z-[200] bg-white border border-slate-200 shadow-xl rounded-2xl px-5 py-4 flex items-center gap-x-3 max-w-sm"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0 translate-y-2"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0">
+        <div class="text-emerald-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+        </div>
+        <div>
+            <div class="font-semibold text-emerald-700" x-text="toastMessage"></div>
+        </div>
+    </div>
+
+    <script>
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent-gold', '#d4af37');
+            
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .prose-custom { font-size: 15px; line-height: 1.7; }
+                .prose-custom h4 { margin-top: 1.25rem; margin-bottom: .5rem; }
+                .prose-custom ul { padding-left: 1.25rem; }
+                .prose-custom li { margin-bottom: .35rem; }
+            `;
+            document.head.append(style);
+        }
+
+        function etaxApp() {
+            return {
+                currentLocale: 'en',
+                currentPage: 'home',
+                translations: {},
+                translationsCache: {},
+                languages: [
+                    { code: 'en', name: 'English' },
+                    { code: 'vi', name: 'Tiếng Việt'},
+                    { code: 'zh', name: '中文' }
+                ],
+                
+                mobileMenuOpen: false,
+                showServiceModal: false,
+                selectedService: null,
+                showToast: false,
+                toastMessage: '',
+                
+                async init() {
+                    initializeTailwind();
+                    this.detectLocaleFromURL();
+                    await this.loadTranslations(this.currentLocale);
+                    this.renderCurrentPage();
+                    
+                    window.addEventListener('popstate', () => {
+                        this.detectLocaleFromURL();
+                        this.renderCurrentPage();
+                    });
+                    
+                    this.updateSEO();
+                    
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape' && this.showServiceModal) {
+                            this.showServiceModal = false;
+                        }
+                    });
+                },
+                
+                detectLocaleFromURL() {
+                    const path = window.location.pathname;
+                    const segments = path.split('/').filter(Boolean);
+                    let locale = 'en';
+                    let page = 'home';
+                    
+                    if (segments.length > 0) {
+                        const first = segments[0];
+                        if (first === 'vi') {
+                            locale = 'vi';
+                            if (segments.length > 1) page = this.mapSlugToPage(segments[1]);
+                        } else if (first === 'zh') {
+                            locale = 'zh';
+                            if (segments.length > 1) page = this.mapSlugToPage(segments[1]);
+                        } else {
+                            page = this.mapSlugToPage(first);
+                        }
+                    }
+                    this.currentLocale = locale;
+                    this.currentPage = page;
+                },
+                
+                mapSlugToPage(slug) {
+                    const mapping = {
+                        '': 'home',
+                        'trang-chu': 'home',
+                        'home': 'home',
+                        'gioi-thieu': 'about',
+                        'about': 'about',
+                        'dich-vu': 'services',
+                        'services': 'services',
+                        'tuyen-dung': 'careers',
+                        'careers': 'careers',
+                        'lien-he': 'contact',
+                        'contact': 'contact'
+                    };
+                    return mapping[slug] || 'home';
+                },
+                
+                getPageSlug(page) {
+                    const reverseMap = {
+                        'home': '',
+                        'about': 'about',
+                        'services': 'services',
+                        'careers': 'careers',
+                        'contact': 'contact'
+                    };
+                    return reverseMap[page] || '';
+                },
+                
+                updateURL() {
+                    const slug = this.getPageSlug(this.currentPage);
+                    let newPath = '/';
+                    if (this.currentLocale === 'vi') newPath = '/vi/';
+                    else if (this.currentLocale === 'zh') newPath = '/zh/';
+                    
+                    if (slug) newPath += slug;
+                    
+                    if (window.location.pathname !== newPath) {
+                        history.pushState({ locale: this.currentLocale }, '', newPath);
+                    }
+                },
+                
+                async switchLanguage(newLocale) {
+                    if (newLocale === this.currentLocale) return;
+                    this.currentLocale = newLocale;
+                    await this.loadTranslations(newLocale);
+                    this.updateURL();
+                    this.renderCurrentPage();
+                    this.updateSEO();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                },
+                
+                getCurrentFlag() {
+                    const lang = this.languages.find(l => l.code === this.currentLocale);
+                    return lang ? lang.flag : '🇻🇳';
+                },
+                
+                getCurrentLangName() {
+                    const lang = this.languages.find(l => l.code === this.currentLocale);
+                    return lang ? lang.name.split(' ')[0] : 'Tiếng Việt';
+                },
+                
+                t(key) {
+                    if (!this.translations) return key;
+                    const keys = key.split('.');
+                    let value = this.translations;
+                    
+                    for (const k of keys) {
+                        if (value && typeof value === 'object' && k in value) {
+                            value = value[k];
+                        } else return key; 
+                    }
+                    return value || key;
+                },
+                
+                async loadTranslations(locale) {
+                    if (this.translationsCache[locale]) {
+                        this.translations = this.translationsCache[locale];
+                        return;
+                    }
+                    try {
+                        const res = await fetch(`/messages/${locale}.json`);
+                        if (!res.ok) throw new Error('Failed to load translations');
+                        const data = await res.json();
+                        this.translationsCache[locale] = data;
+                        this.translations = data;
+                    } catch (error) {
+                        if (locale !== 'vi') await this.loadTranslations('vi');
+                    }
+                },
+                
+                renderCurrentPage() {
+                    const container = document.getElementById('page-content');
+                    if (!container) return;
+
+                    let html = '';
+                    switch (this.currentPage) {
+                        case 'home': html = this.getHomeHTML(); break;
+                        case 'about': html = this.getAboutHTML(); break;
+                        case 'services': html = this.getServicesHTML(); break;
+                        case 'careers': html = this.getCareersHTML(); break;
+                        case 'contact': html = this.getContactHTML(); break;
+                        default: html = this.getHomeHTML();
+                    }
+                    
+                    container.innerHTML = html;
+                    this.attachFormListeners();
+                },
+                
+                attachFormListeners() {
+                    const contactForm = document.getElementById('contact-form');
+                    if (contactForm) {
+                        contactForm.addEventListener('submit', (e) => {
+                            e.preventDefault();
+                            this.handleContactSubmit(e.target);
+                        });
+                    }
+                    
+                    const careersForm = document.getElementById('careers-form');
+                    if (careersForm) {
+                        careersForm.addEventListener('submit', (e) => {
+                            e.preventDefault();
+                            this.handleCareersSubmit(e.target);
+                        });
+                    }
+                    this.attachServiceCardListeners();
+                },
+
+                attachServiceCardListeners() {
+                    const grid = document.getElementById('services-grid');
+                    if (!grid) return;
+                    grid.onclick = null;
+                    grid.addEventListener('click', (e) => {
+                        const card = e.target.closest('.service-card');
+                        if (card && card.dataset.serviceId) {
+                            const serviceId = parseInt(card.dataset.serviceId);
+                            this.openServiceModal(serviceId);
+                        }
+                    });
+                },
+                
+                async handleContactSubmit(form) {
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = this.t('forms.sending');
+                    submitBtn.disabled = true;
+
+                    try {
+                        const formData = new FormData(form);
+                        const response = await fetch('https://api.web3forms.com/submit', {
+                            method: 'POST', body: formData
+                        });
+                        const result = await response.json();
+
+                        if (result.success) {
+                            this.showToastMessage(this.t('forms.contact_success'));
+                            form.reset();
+                        } else {
+                            this.showToastMessage(this.t('forms.submit_failed_retry'));
+                        }
+                    } catch (error) {
+                        this.showToastMessage(this.t('forms.generic_error'));
+                    } finally {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }
+                },
+
+                async handleCareersSubmit(form) {
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = this.t('forms.sending');
+                    submitBtn.disabled = true;
+
+                    const fileInput = form.querySelector('input[type="file"][name="attachment"]');
+                    if (fileInput && fileInput.files.length > 0) {
+                        if (fileInput.files[0].size > (8 * 1024 * 1024)) {
+                            this.showToastMessage(this.t('forms.file_too_large'));
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                            return;
+                        }
+                    }
+
+                    try {
+                        const formData = new FormData(form);
+                        const response = await fetch('https://api.web3forms.com/submit', {
+                            method: 'POST', body: formData
+                        });
+                        const result = await response.json();
+
+                        if (result.success) {
+                            this.showToastMessage(this.t('forms.careers_success'));
+                            form.reset();
+                        } else {
+                            this.showToastMessage(result.message || this.t('forms.submit_failed_retry'));
+                        }
+                    } catch (error) {
+                        this.showToastMessage(this.t('forms.generic_error'));
+                    } finally {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }
+                },
+                
+                showToastMessage(message) {
+                    this.toastMessage = message;
+                    this.showToast = true;
+                    setTimeout(() => { this.showToast = false; }, 4500);
+                },
+                
+                updateSEO() {
+                    try {
+                        const meta = this.t('meta') || {};
+                        if (meta.title) document.title = meta.title;
+                        const descTag = document.querySelector('meta[name="description"]');
+                        if (descTag && meta.description) descTag.setAttribute('content', meta.description);
+                    } catch (e) {}
+                },
+                
+                navigateTo(page) {
+                    this.currentPage = page;
+                    this.updateURL();
+                    this.renderCurrentPage();
+                    this.mobileMenuOpen = false;
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                },
+                
+                openServiceModal(serviceId) {
+                    const services = this.t('services.list') || [];
+                    const service = services.find(s => s.id == serviceId);
+                    if (service) {
+                        this.selectedService = service;
+                        this.showServiceModal = true;
+                    }
+                },
+                
+                getHomeHTML() {
+                    const whyItems = this.t('home.why_items') || [];
+                    const stats = this.t('home.stats') || [];
+                    const clients = this.t('home.clients_list') || [];
+                    const scrollItems = [...clients, ...clients];
+                    
+                    return `
+                        <div class="relative text-white overflow-hidden bg-cover bg-center" 
+                             style="background-image: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.88)), url('/assets/bason-bridge.jpg'); min-height: 620px; background-position: center 25%;">
+                            <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 pt-16 pb-20">
+                                <div class="max-w-3xl">
+                                    <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 text-xs font-semibold tracking-[2px] mb-6">
+                                        ${this.t('common.hero_badge')}
+                                    </div>
+                                    <h1 class="text-5xl lg:text-6xl font-semibold tracking-tighter leading-none">${this.t('home.hero_title')}</h1>
+                                    <p class="mt-6 text-xl text-slate-300 max-w-2xl">${this.t('home.hero_subtitle')}</p>
+                                    <div class="mt-10 flex flex-wrap gap-4">
+                                        <button onclick="goTo('services')" class="inline-flex items-center justify-center gap-x-3 bg-[#d4af37] hover:bg-amber-400 transition-all text-[#0f172a] font-semibold px-8 h-14 rounded-2xl text-base">${this.t('home.cta_services')}</button>
+                                        <button onclick="goTo('contact')" class="inline-flex items-center justify-center gap-x-3 border border-white/40 hover:bg-white/10 font-semibold px-8 h-14 rounded-2xl text-base transition-all">${this.t('home.cta_consult')}</button>
+                                    </div>
+                                    <div class="mt-10 text-sm">
+                                        <div class="text-xs text-slate-400">${this.t('home.trusted_by')}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="py-10 bg-slate-50 border-b overflow-hidden">
+                            <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 mb-5 text-center">
+                                <h3 class="text-[11px] font-bold tracking-[3px] text-amber-600 uppercase" x-text="t('home.clients_title')"></h3>
+                            </div>
+                            <div class="relative w-full flex overflow-x-hidden group mt-4">
+                                <div class="animate-marquee gap-6">
+                                    ${scrollItems.map(client => `
+                                        <div class="flex-shrink-0 bg-white border border-slate-200 px-6 py-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow min-w-[320px] max-w-[320px]">
+                                            <div class="font-semibold text-slate-900 text-[15px] truncate">${client.name}</div>
+                                            <div class="text-[11px] text-amber-600 font-bold mt-1.5 uppercase tracking-wider">${client.tax_code}</div>
+                                            <div class="text-sm text-slate-500 mt-2.5 line-clamp-2">${client.service}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-16">
+                            <div class="text-center mb-12">
+                                <div class="text-xs font-bold tracking-[3px] text-amber-600 mb-3" x-text="t('common.why_choose_us')"></div>
+                                <h2 class="text-4xl font-semibold tracking-tight">${this.t('home.why_title')}</h2>
+                            </div>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                ${whyItems.map((item, idx) => `
+                                    <div class="bg-white border border-slate-100 p-7 rounded-3xl hover:shadow-xl transition-all group">
+                                        <div class="w-11 h-11 flex items-center justify-center bg-amber-100 text-amber-600 rounded-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                            <span class="font-bold text-xl">${idx + 1}</span>
+                                        </div>
+                                        <div class="font-semibold text-xl mb-3 tracking-tight">${item.title}</div>
+                                        <p class="text-[15px] text-slate-600 leading-relaxed">${item.desc}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border-y">
+                            <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-9">
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8 text-center">
+                                    ${stats.map(stat => `
+                                        <div>
+                                            <div class="text-5xl font-semibold tracking-tighter text-slate-900 stat-number">${stat.number}</div>
+                                            <div class="mt-1.5 text-sm font-medium text-slate-500">${stat.label}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                },
+                
+                getAboutHTML() {
+                    const strengths = this.t('about.strengths') || [];
+                    const educationItems = this.t('about.education_items') || [];
+                    const certificates = this.t('about.cert_items') || [];
+                    
+                    return `
+                        <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-14">
+                            <div class="max-w-3xl mx-auto text-center mb-14">
+                                <div class="uppercase text-xs tracking-[3px] text-amber-600 font-bold mb-3" x-text="t('common.about_us')"></div>
+                                <h1 class="text-5xl font-semibold tracking-tighter">${this.t('about.title')}</h1>
+                            </div>
+                            
+                            <div class="max-w-5xl mx-auto">
+                                <div class="prose prose-lg max-w-none text-[15.5px] text-slate-700 text-center max-w-3xl mx-auto">
+                                    <p class="lead text-xl">${this.t('about.intro')}</p>
+                                    <p class="mt-6">${this.t('about.mission')}</p>
+                                </div>
+
+                                <div class="mt-16 bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm">
+                                    <div class="grid lg:grid-cols-5">
+                                        <div class="lg:col-span-2 bg-[#0f172a] text-white p-8 flex flex-col justify-between">
+                                            <div>
+                                                <div class="uppercase tracking-[2.5px] text-xs font-bold text-amber-300 mb-4">${this.t('about.education_label')}</div>
+                                                <h2 class="text-3xl font-semibold tracking-tight leading-tight">${this.t('about.education_title')}</h2>
+                                            </div>
+                                            <p class="mt-6 text-sm leading-relaxed text-slate-300">${this.t('about.education_intro')}</p>
+                                        </div>
+                                        <div class="lg:col-span-3 p-7 lg:p-8">
+                                            <div class="grid sm:grid-cols-3 gap-4">
+                                                ${educationItems.map(item => `
+                                                    <div class="rounded-2xl border border-slate-100 bg-slate-50 p-5 min-h-[132px] flex flex-col justify-between">
+                                                        <div class="h-9 w-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-semibold text-sm">${item.initials}</div>
+                                                        <div>
+                                                            <div class="mt-5 font-semibold tracking-tight text-slate-900 leading-snug">${item.name}</div>
+                                                            <div class="mt-1 text-xs uppercase tracking-[1.5px] text-slate-500">${item.location}</div>
+                                                        </div>
+                                                    </div>
+                                                `).join('')}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-16 mb-8">
+                                    <div class="text-center mb-10">
+                                        <div class="uppercase tracking-[2.5px] text-xs font-bold text-amber-600 mb-3">${this.t('about.certificates_title')}</div>
+                                        <h2 class="text-3xl font-semibold tracking-tight text-slate-900">${this.t('about.certificates_heading')}</h2>
+                                        <p class="mt-4 text-slate-600 max-w-2xl mx-auto">${this.t('about.certificates_desc')}</p>
+                                    </div>
+                                    
+                                    <div class="grid md:grid-cols-3 gap-6">
+                                        ${certificates.map(cert => `
+                                            <div class="bg-white border border-slate-100 rounded-3xl p-8 hover:border-amber-200 hover:shadow-lg transition-all text-center group">
+                                                <div class="w-16 h-16 mx-auto bg-[#0f172a] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                                    <span class="text-amber-300 font-bold text-xl">
+                                                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                                                    </span>
+                                                </div>
+                                                <h3 class="font-semibold text-lg mb-3 tracking-tight text-slate-900">${cert.title}</h3>
+                                                <p class="text-[14.5px] text-slate-600 leading-relaxed">${cert.desc}</p>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                                
+                                <div class="my-14 border-t border-b py-9 grid md:grid-cols-5 gap-y-8">
+                                    <div class="md:col-span-2">
+                                        <div class="uppercase tracking-widest text-xs font-bold text-amber-600 mb-3" x-text="t('common.our_philosophy')"></div>
+                                        <div class="text-4xl font-semibold tracking-tight leading-none">${this.t('about.philosophy_title')}</div>
+                                    </div>
+                                    <div class="md:col-span-3 text-[15.5px]">
+                                        ${this.t('about.philosophy_desc')}
+                                    </div>
+                                </div>
+                                
+                                <div class="max-w-3xl mx-auto">
+                                    <div class="uppercase tracking-[2.5px] text-xs font-bold text-amber-600 mb-4 text-center">${this.t('about.strength_title')}</div>
+                                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-[15px]">
+                                        ${strengths.map(s => `
+                                            <div class="flex items-start gap-x-3">
+                                                <span class="mt-1.5 text-emerald-500">●</span>
+                                                <span>${s}</span>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                },
+                
+                // Other existing functions remain the same (getServicesHTML, getCareersHTML, getContactHTML)...
+                getServicesHTML() {
+                    const services = this.t('services.list') || [];
+                    const consultationPoints = this.t('services.consultation_points') || [];
+                    return `<div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-14">
+                            <div class="max-w-2xl mb-10">
+                                <div class="text-xs tracking-[3px] text-amber-600 font-bold mb-2" x-text="t('common.professional_label')"></div>
+                                <h1 class="text-5xl font-semibold tracking-tighter">${this.t('services.title')}</h1>
+                                <p class="mt-4 text-lg text-slate-600">${this.t('services.intro')}</p>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6" id="services-grid">
+                                ${services.map((service, index) => `
+                                    <div data-service-id="${service.id}" onclick="openServiceModal(${service.id})" class="service-card group cursor-pointer bg-white border border-slate-100 hover:border-amber-200 rounded-3xl p-7 flex flex-col h-full">
+                                        <div class="flex-1">
+                                            <div class="inline-block px-3.5 py-1 text-xs font-bold tracking-wider bg-amber-100 text-amber-700 rounded-full mb-5" x-text="t('common.service_badge') + ' ' + (index + 1)"></div>
+                                            <h3 class="font-semibold text-2xl tracking-tight leading-tight mb-4 group-hover:text-amber-700 transition-colors">${service.title}</h3>
+                                            <p class="text-[15px] text-slate-600 leading-relaxed line-clamp-4">${service.short_desc}</p>
+                                        </div>
+                                        <div class="mt-auto pt-6 flex items-center text-sm font-semibold text-amber-700 group-hover:gap-x-2 transition-all">
+                                            <span x-text="t('common.view_detail')"></span>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                                <div class="bg-[#0f172a] text-white border border-slate-900 rounded-3xl p-7 flex flex-col min-h-[308px]">
+                                    <div class="inline-block px-3.5 py-1 text-xs font-bold tracking-wider bg-amber-300/15 text-amber-200 rounded-full mb-5">${this.t('services.consultation_badge')}</div>
+                                    <h3 class="font-semibold text-2xl tracking-tight leading-tight">${this.t('services.consultation_title')}</h3>
+                                    <p class="mt-4 text-[15px] text-slate-300 leading-relaxed">${this.t('services.consultation_desc')}</p>
+                                    <div class="mt-5 space-y-2">
+                                        ${consultationPoints.map(point => `<div class="flex items-center gap-x-2 text-sm text-slate-200"><span class="h-1.5 w-1.5 rounded-full bg-amber-300"></span><span>${point}</span></div>`).join('')}
+                                    </div>
+                                    <button onclick="goTo('contact')" class="mt-auto w-full h-12 rounded-2xl bg-[#d4af37] hover:bg-amber-300 text-[#0f172a] font-semibold text-sm transition-all active:scale-[0.985]">${this.t('services.consultation_button')}</button>
+                                </div>
+                            </div>
+                        </div>`;
+                },
+                getCareersHTML() {
+                    const openings = this.t('careers.openings') || [];
+                    const benefits = this.t('careers.benefits') || [];
+                    return `<div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-14">
+                            <div class="max-w-3xl"><div class="uppercase tracking-[3px] text-xs font-bold text-amber-600" x-text="t('common.careers_badge')"></div><h1 class="text-5xl font-semibold tracking-tighter mt-2">${this.t('careers.title')}</h1><p class="mt-5 text-xl text-slate-600">${this.t('careers.intro')}</p></div>
+                            <div class="mt-12"><div class="font-semibold tracking-tight text-2xl mb-6 flex items-center gap-x-3">${this.t('careers.openings_title')}<span class="text-xs px-3 py-1 bg-emerald-100 text-emerald-700 font-bold rounded-full">${openings.length} <span x-text="t('common.positions_count')"></span></span></div>
+                            <div class="space-y-4">
+                                ${openings.map(job => `<div class="border bg-white rounded-3xl p-7 flex flex-col lg:flex-row lg:items-center gap-y-5"><div class="flex-1"><div class="font-semibold text-xl tracking-tight">${job.title}</div><div class="text-sm text-slate-500 mt-1 flex items-center gap-x-4"><span>${job.location}</span><span class="inline-block w-1 h-1 bg-slate-300 rounded-full"></span><span>${job.type}</span></div><p class="mt-3 text-[15px] text-slate-600 pr-6">${job.desc}</p></div></div>`).join('')}
+                            </div></div>
+                            <div class="mt-14"><div class="font-semibold text-2xl tracking-tight mb-6">${this.t('careers.benefits_title')}</div><div class="grid md:grid-cols-2 gap-x-8 gap-y-3 text-[15px]">
+                                ${benefits.map(b => `<div class="flex items-start gap-x-3 py-1"><span class="text-emerald-500 mt-1">✓</span><span>${b}</span></div>`).join('')}
+                            </div></div>
+                            <div id="careers-form-section" class="mt-16 bg-white border rounded-3xl p-9 max-w-3xl">
+                                <h3 class="font-semibold text-2xl tracking-tight mb-2">${this.t('careers.form_title')}</h3><p class="text-sm text-slate-500 mb-8">${this.t('careers.form_note')}</p>
+                                <form id="careers-form" class="space-y-5">
+                                    <input type="hidden" name="access_key" value="c17d7f46-9701-4a9d-8d66-7bb837c83c8b"><input type="hidden" name="subject" value="${this.t('forms.careers_subject')}"><input type="hidden" name="from_name" value="${this.t('forms.careers_from_name')}"><input type="hidden" name="replyto" value="${this.t('common.email')}"><input type="checkbox" name="botcheck" class="hidden" style="display:none">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5"><div><label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5" x-text="t('careers.form_full_name_label')"></label><input type="text" name="full_name" required class="w-full border border-slate-200 focus:border-amber-400 rounded-2xl px-5 h-12 text-sm outline-none"></div><div><label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5" x-text="t('careers.form_email_label')"></label><input type="email" name="email" required class="w-full border border-slate-200 focus:border-amber-400 rounded-2xl px-5 h-12 text-sm outline-none"></div></div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5"><div><label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5" x-text="t('careers.form_phone_label')"></label><input type="tel" name="phone" required class="w-full border border-slate-200 focus:border-amber-400 rounded-2xl px-5 h-12 text-sm outline-none"></div><div><label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5" x-text="t('careers.form_position_label')"></label><input type="text" name="position" placeholder="${this.t('careers.placeholder_position')}" required class="w-full border border-slate-200 focus:border-amber-400 rounded-2xl px-5 h-12 text-sm outline-none"></div></div>
+                                    <div><label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5" x-text="t('careers.form_message_label')"></label><textarea name="message" rows="4" required placeholder="${this.t('careers.placeholder_message_careers')}" class="w-full border border-slate-200 focus:border-amber-400 rounded-3xl px-5 py-4 text-sm outline-none resize-y"></textarea></div>
+                                    <div><label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5" x-text="t('careers.form_cv_label')"></label><input type="file" name="attachment" accept=".pdf,.doc,.docx" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2.5 file:px-6 file:rounded-2xl file:border-0 file:text-sm file:font-semibold file:bg-slate-100 hover:file:bg-slate-200"></div>
+                                    <button type="submit" class="mt-3 w-full bg-[#0f172a] hover:bg-black transition text-white font-semibold h-14 rounded-2xl text-sm tracking-wider" x-text="t('careers.form_submit_label')"></button>
+                                </form>
+                            </div></div>`;
+                },
+                getContactHTML() {
+                    const options = this.t('contact.form_services_options') || [];
+                    return `<div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-14">
+                            <div class="max-w-2xl mb-10"><div class="text-xs tracking-[3px] text-amber-600 font-bold" x-text="t('common.contact_badge')"></div><h1 class="text-5xl font-semibold tracking-tighter mt-1">${this.t('contact.title')}</h1><p class="mt-4 text-xl text-slate-600">${this.t('contact.intro')}</p></div>
+                            <div class="grid lg:grid-cols-5 gap-x-8 gap-y-12">
+                                <div class="lg:col-span-3 bg-white border rounded-3xl p-9"><h3 class="font-semibold text-2xl tracking-tight mb-7">${this.t('contact.form_title')}</h3>
+                                    <form id="contact-form" class="space-y-6">
+                                        <input type="hidden" name="access_key" value="c17d7f46-9701-4a9d-8d66-7bb837c83c8b"><input type="hidden" name="subject" value="${this.t('forms.contact_subject')}"><input type="hidden" name="from_name" value="${this.t('forms.contact_from_name')}"><input type="hidden" name="replyto" value="${this.t('common.email')}"><input type="checkbox" name="botcheck" class="hidden" style="display:none">
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-6"><div><label class="block text-xs font-bold tracking-widest text-slate-500 mb-2" x-text="t('contact.form_full_name')"></label><input type="text" name="full_name" required class="w-full h-12 border border-slate-200 focus:border-amber-400 px-5 rounded-2xl text-sm"></div><div><label class="block text-xs font-bold tracking-widest text-slate-500 mb-2" x-text="t('contact.form_email')"></label><input type="email" name="email" required class="w-full h-12 border border-slate-200 focus:border-amber-400 px-5 rounded-2xl text-sm"></div></div>
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-6"><div><label class="block text-xs font-bold tracking-widest text-slate-500 mb-2" x-text="t('contact.form_phone')"></label><input type="tel" name="phone" required class="w-full h-12 border border-slate-200 focus:border-amber-400 px-5 rounded-2xl text-sm"></div><div><label class="block text-xs font-bold tracking-widest text-slate-500 mb-2">${this.t('contact.form_service_label')} *</label><select name="service" required class="w-full h-12 border border-slate-200 focus:border-amber-400 px-5 rounded-2xl text-sm bg-white">${options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}</select></div></div>
+                                        <div><label class="block text-xs font-bold tracking-widest text-slate-500 mb-2" x-text="t('contact.form_message')"></label><textarea name="message" rows="5" required placeholder="${this.t('contact.placeholder_message_contact')}" class="w-full border border-slate-200 focus:border-amber-400 px-5 py-4 rounded-3xl text-sm"></textarea></div>
+                                        <button type="submit" class="w-full h-14 bg-[#0f172a] active:bg-black text-white font-semibold rounded-2xl text-sm tracking-[0.5px]" x-text="t('contact.form_submit')"></button><p class="text-center text-xs text-slate-400" x-text="t('contact.response_commitment')"></p>
+                                    </form>
+                                </div>
+                                <div class="lg:col-span-2 space-y-8">
+                                    <div class="bg-white border rounded-3xl p-8"><div class="font-semibold tracking-tight text-xl mb-6">${this.t('contact.info_title')}</div><div class="font-semibold text-lg text-[#0f172a] mb-4">${this.t('common.legal_name')}</div><div class="space-y-5 text-sm"><div><div class="text-xs text-slate-500" x-text="t('contact.hotline_label')"></div><a :href="'tel:' + this.t('common.hotline').replace(/[^0-9+]/g, '')" class="block mt-0.5 text-xl font-semibold text-[#0f172a] hover:text-amber-700">${this.t('common.hotline')}</a></div><div><div class="text-xs text-slate-500" x-text="t('contact.email_label')"></div><a :href="'mailto:' + t('common.email')" class="block mt-0.5 text-lg font-medium hover:text-amber-700 break-all" x-text="t('common.email')"></a></div><div><div class="text-xs text-slate-500" x-text="t('contact.address_label')"></div><div class="mt-0.5 leading-snug">${this.t('common.address')}</div></div><div class="pt-3 border-t text-xs text-emerald-600 font-medium">${this.t('contact.working_hours')}</div></div></div>
+                                    <div><div class="text-xs font-bold tracking-wider text-slate-500 mb-3 px-1">${this.t('contact.map_title')}</div><div class="aspect-video w-full rounded-3xl overflow-hidden border shadow-inner"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14165.441850465686!2d106.6997399!3d10.8136457!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403d9b4ce2038f97%3A0xcf0ceefd87d0ba40!2sC%C3%B4ng%20ty%20TNHH%20Royal%20Vi%E1%BB%87t%20Nam!5e1!3m2!1svi!2s!4v1783570631110!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+                                </div>
+                            </div>
+                        </div>`;
+                }
+            }
+        }
+        
+        window.goTo = function(page) {
+            const alpineEl = document.querySelector('[x-data]');
+            if (alpineEl && alpineEl.__x && alpineEl.__x.$data && typeof alpineEl.__x.$data.navigateTo === 'function') {
+                alpineEl.__x.$data.navigateTo(page);
+            } else {
+                const path = window.location.pathname;
+                let locale = 'en';
+                if (path.startsWith('/vi')) locale = 'vi';
+                else if (path.startsWith('/zh')) locale = 'zh';
+
+                let url = '/';
+                if (locale === 'vi') url = '/vi/';
+                else if (locale === 'zh') url = '/zh/';
+
+                if (page === 'services') url += 'services';
+                else if (page === 'contact') url += 'contact';
+                else if (page === 'about') url += 'about';
+                else if (page === 'careers') url += 'careers';
+
+                window.location.href = url;
+            }
+        };
+
+        window.openServiceModal = function(serviceId) {
+            const alpineEl = document.querySelector('[x-data]');
+            if (alpineEl && alpineEl.__x && alpineEl.__x.$data) {
+                const data = alpineEl.__x.$data;
+                if (typeof data.openServiceModal === 'function') data.openServiceModal(parseInt(serviceId));
+            }
+        };
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ETAX Hồ Chí Minh - Đối tác chiến lược tin cậy cho doanh nghiệp Việt Nam và FDI từ nhỏ đến lớn. Dịch vụ tư vấn pháp lý, thuế, kế toán, thành lập công ty, M&A và quản lý dự án tại Việt Nam.">
     <title>ETAX Hồ Chí Minh | Tư vấn Đầu tư Nước Ngoài &amp; Dịch vụ Doanh nghiệp FDI</title>
     
     <!-- Favicon -->
