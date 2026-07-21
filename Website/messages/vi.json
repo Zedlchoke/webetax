@@ -107,6 +107,34 @@
         "number": "99%",
         "label": "Khách hàng hài lòng"
       }
+    ],
+    "clients_title": "NHỮNG ĐỐI TÁC TIN CẬY CỦA CHÚNG TÔI",
+    "clients_list": [
+      {
+        "name": "CÔNG TY TNHH HÓA CHẤT SAO VÀNG",
+        "tax_code": "MST: 0309919046",
+        "service": "Sản xuất & kinh doanh hóa chất"
+      },
+      {
+        "name": "CTY TNHH MAY XUẤT KHẨU L & D",
+        "tax_code": "MST: 3700375063",
+        "service": "Sản xuất & xuất khẩu may mặc"
+      },
+      {
+        "name": "CÔNG TY CP QUẢN LÝ BĐS NAM SÀI GÒN",
+        "tax_code": "MST: 0312082791",
+        "service": "Quản lý và vận hành bất động sản"
+      },
+      {
+        "name": "CTY TNHH SX BAO BÌ HOÀNG NAM",
+        "tax_code": "MST: 0315319223",
+        "service": "Sản xuất bao bì các loại"
+      },
+      {
+        "name": "CTY TNHH DV-TM-KỸ THUẬT AN PHƯỚC",
+        "tax_code": "MST: 0307923174",
+        "service": "Dịch vụ kỹ thuật & thương mại"
+      }
     ]
   },
   "about": {
@@ -131,6 +159,23 @@
         "initials": "UEH",
         "name": "Đại học Kinh tế TP.HCM (UEH)",
         "location": "Tài chính & kinh tế"
+      }
+    ],
+    "certificates_title": "NĂNG LỰC CHUYÊN MÔN",
+    "certificates_heading": "Hệ thống chứng chỉ nghề nghiệp chuẩn Quốc tế và Việt Nam",
+    "certificates_desc": "Đội ngũ ETAX tự hào sở hữu các bằng cấp và chứng chỉ danh giá, khẳng định cam kết mang lại dịch vụ minh bạch, chuẩn mực và chất lượng cao nhất.",
+    "cert_items": [
+      {
+        "title": "CPA Việt Nam & CPA Australia",
+        "desc": "Chứng chỉ Kiểm toán viên công chứng được công nhận rộng rãi, khẳng định năng lực chuyên môn và sự tuân thủ các chuẩn mực cao nhất."
+      },
+      {
+        "title": "Chứng chỉ Kế toán trưởng & Hành nghề Kế toán",
+        "desc": "Chứng nhận chuyên môn sâu rộng và tư cách pháp lý trong việc thiết lập, quản lý và vận hành trực tiếp hệ thống kế toán doanh nghiệp."
+      },
+      {
+        "title": "ACCA & ICAEW ACA (UK)",
+        "desc": "Những chứng chỉ danh giá bậc nhất từ Hiệp hội Kế toán Vương Quốc Anh, đảm bảo chất lượng dịch vụ tài chính theo tiêu chuẩn quốc tế."
       }
     ],
     "philosophy_title": "Phương châm hoạt động",
