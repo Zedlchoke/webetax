@@ -107,34 +107,6 @@
         "number": "99%",
         "label": "Client Satisfaction"
       }
-    ],
-    "clients_title": "OUR TRUSTED PARTNERS",
-    "clients_list": [
-      {
-        "name": "SAO VANG CHEMICAL CO., LTD",
-        "tax_code": "Tax Code: 0309919046",
-        "service": "Chemical manufacturing & trading"
-      },
-      {
-        "name": "L & D GARMENT EXPORT CO., LTD",
-        "tax_code": "Tax Code: 3700375063",
-        "service": "Garment manufacturing & export"
-      },
-      {
-        "name": "NAM SAI GON REAL ESTATE MGT",
-        "tax_code": "Tax Code: 0312082791",
-        "service": "Real estate management & operation"
-      },
-      {
-        "name": "HOANG NAM PACKAGING PRODUCTION",
-        "tax_code": "Tax Code: 0315319223",
-        "service": "Packaging manufacturing"
-      },
-      {
-        "name": "AN PHUOC TECHNICAL SVC CO., LTD",
-        "tax_code": "Tax Code: 0307923174",
-        "service": "Technical & trading services"
-      }
     ]
   },
   "about": {
@@ -157,25 +129,8 @@
       },
       {
         "initials": "UEH",
-        "name": "University of Economics HCMC",
+        "name": "University of Economics Ho Chi Minh City",
         "location": "Finance & Economics"
-      }
-    ],
-    "certificates_title": "PROFESSIONAL CERTIFICATIONS",
-    "certificates_heading": "International and National Accreditation",
-    "certificates_desc": "The ETAX team proudly holds prestigious degrees and certificates, affirming our commitment to providing transparent, standardized, and high-quality services.",
-    "cert_items": [
-      {
-        "title": "CPA Vietnam & CPA Australia",
-        "desc": "Widely recognized Certified Public Accountant certificates affirming professional competence and compliance with the highest standards."
-      },
-      {
-        "title": "Practicing Accountant & Chief Accountant Certs",
-        "desc": "Certification of deep expertise and legal status in establishing, managing, and operating corporate accounting systems."
-      },
-      {
-        "title": "ACCA & ICAEW ACA (UK)",
-        "desc": "Prestigious certifications from UK Associations ensuring the quality of our financial services meets global standards."
       }
     ],
     "philosophy_title": "Our Operating Philosophy",
