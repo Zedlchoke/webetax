@@ -72,6 +72,18 @@
     "cta_consult": "Get Free Consultation",
     "why_title": "Why Choose ETAX Ho Chi Minh?",
     "trusted_by": "Trusted by 300+ Vietnamese & FDI Companies",
+    "credentials_label": "Professional credentials",
+    "credentials": [
+      "ACCA",
+      "Vietnam CPA",
+      "Tax Practice Certificate",
+      "Lawyer Practising Certificate",
+      "Chief Accountant Certificate"
+    ],
+    "final_cta_badge": "START WITH A CONVERSATION",
+    "final_cta_title": "Not sure which solution your business needs?",
+    "final_cta_desc": "Share your current situation and business goals. The ETAX team will help identify a practical, clear and suitable course of action.",
+    "final_cta_button": "Book a Free Consultation",
     "why_items": [
       {
         "title": "Deep Expertise in Vietnamese & FDI Businesses",

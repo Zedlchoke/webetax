@@ -72,6 +72,18 @@
     "cta_consult": "Nhận tư vấn miễn phí",
     "why_title": "Tại sao chọn ETAX Hồ Chí Minh?",
     "trusted_by": "Được tin tưởng bởi 300+ công ty Việt Nam & FDI",
+    "credentials_label": "Năng lực & chứng chỉ hành nghề",
+    "credentials": [
+      "ACCA",
+      "CPA Việt Nam",
+      "Chứng chỉ hành nghề dịch vụ thuế",
+      "Chứng chỉ hành nghề luật sư",
+      "Chứng chỉ Kế toán trưởng"
+    ],
+    "final_cta_badge": "BẮT ĐẦU TỪ MỘT CUỘC TRAO ĐỔI",
+    "final_cta_title": "Chưa chắc doanh nghiệp của bạn cần giải pháp nào?",
+    "final_cta_desc": "Chia sẻ hiện trạng và mục tiêu của doanh nghiệp. Đội ngũ ETAX sẽ giúp bạn xác định hướng xử lý phù hợp, rõ ràng và thực tế.",
+    "final_cta_button": "Đặt lịch tư vấn miễn phí",
     "why_items": [
       {
         "title": "Chuyên môn sâu về Doanh nghiệp & FDI",

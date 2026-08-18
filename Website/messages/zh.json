@@ -72,6 +72,18 @@
     "cta_consult": "获取免费咨询",
     "why_title": "为什么众多企业选择 ETAX 胡志明市公司？",
     "trusted_by": "深受300多家越南企业及外资企业信赖",
+    "credentials_label": "专业资质与执业证书",
+    "credentials": [
+      "ACCA 国际注册会计师",
+      "越南注册会计师（CPA）",
+      "税务代理执业证书",
+      "律师执业证书",
+      "总会计师证书"
+    ],
+    "final_cta_badge": "从一次沟通开始",
+    "final_cta_title": "不确定您的企业需要哪种解决方案？",
+    "final_cta_desc": "告诉我们企业的现状与目标。ETAX 团队将协助您制定清晰、务实且合适的处理方向。",
+    "final_cta_button": "预约免费咨询",
     "why_items": [
       {
         "title": "深耕企业与外资企业服务领域",
