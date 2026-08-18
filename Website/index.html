@@ -35,6 +35,17 @@
             font-weight: 700;
         }
 
+        .credential-chip {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+
+        .editorial-card {
+            border-radius: 1rem;
+            box-shadow: 0 1px 2px rgb(15 23 42 / 0.03);
+        }
+
         .section-header {
             position: relative;
             display: inline-block;
@@ -129,7 +140,7 @@
 <body class="bg-slate-50 text-slate-800" x-data="etaxApp()">
     <!-- HEADER / NAV -->
     <header class="sticky top-0 z-50 border-b border-slate-200 sticky-header">
-        <div class="max-w-screen-2xl mx-auto">
+        <div class="max-w-7xl mx-auto">
             <div class="px-6 lg:px-10 py-4 flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center gap-x-3 cursor-pointer" @click="navigateTo('home')">
@@ -234,7 +245,7 @@
 
     <!-- FOOTER -->
     <footer class="bg-[#0f172a] text-slate-300 pt-14 pb-8">
-        <div class="max-w-screen-2xl mx-auto px-6 lg:px-10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
             <!-- 
                 CẬP NHẬT MỚI: 
                 Dùng Flex + justify-between để đẩy 2 khối sát 2 mép trái - phải.
@@ -247,15 +258,15 @@
                     <div class="font-semibold text-white mb-2" x-text="t('common.legal_name')"></div>
                     <div class="space-y-3 text-slate-400">
                         <div class="flex items-start gap-x-3">
-                            <span class="mt-1">📍</span>
+                            <svg class="mt-0.5 h-4 w-4 shrink-0 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
                             <span x-text="t('common.address')"></span>
                         </div>
                         <div class="flex items-center gap-x-3">
-                            <span>📞</span>
+                            <svg class="h-4 w-4 shrink-0 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92Z"/></svg>
                             <a :href="'tel:' + t('common.hotline')" class="hover:text-white transition-colors" x-text="t('common.hotline')"></a>
                         </div>
                         <div class="flex items-center gap-x-3">
-                            <span>✉️</span>
+                            <svg class="h-4 w-4 shrink-0 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
                             <a :href="'mailto:' + t('common.email')" class="hover:text-white transition-colors" x-text="t('common.email')"></a>
                         </div>
                     </div>
@@ -296,7 +307,7 @@
          @click="showServiceModal = false">
         
         <div @click.stop 
-             class="modal bg-white w-full max-w-4xl max-h-[92vh] overflow-hidden rounded-3xl shadow-2xl flex flex-col"
+             class="modal bg-white w-full max-w-4xl max-h-[92vh] overflow-hidden rounded-2xl shadow-2xl flex flex-col"
              x-transition:enter="transition ease-out duration-300"
              x-transition:enter-start="opacity-0 scale-95 translate-y-8"
              x-transition:enter-end="opacity-100 scale-100 translate-y-0">
@@ -803,55 +814,65 @@
                 getHomeHTML() {
                     const whyItems = this.t('home.why_items') || [];
                     const stats = this.t('home.stats') || [];
+                    const credentials = this.t('home.credentials') || [];
                     
                     return `
-                        <!-- HERO SECTION VỚI ẢNH CẦU BASON (assets/bason-bridge.jpg) - in mờ mờ -->
+                        <!-- HERO SECTION -->
                         <div class="relative text-white overflow-hidden bg-cover bg-center" 
-                             style="background-image: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.88)), url('/assets/bason-bridge.jpg'); min-height: 620px; background-position: center 25%;">
-                            <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 pt-16 pb-20">
+                             style="background-image: linear-gradient(90deg, rgba(15,23,42,.96) 0%, rgba(15,23,42,.88) 46%, rgba(15,23,42,.38) 100%), url('/assets/bason-bridge.jpg'); min-height: 660px; background-position: center 25%;">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-16">
                                 <div class="max-w-3xl">
                                     <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 text-xs font-semibold tracking-[2px] mb-6">
                                         ${this.t('common.hero_badge')}
                                     </div>
                                     
-                                    <h1 class="text-5xl lg:text-6xl font-semibold tracking-tighter leading-none">
+                                    <h1 class="heading-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.06]">
                                         ${this.t('home.hero_title')}
                                     </h1>
                                     
-                                    <p class="mt-6 text-xl text-slate-300 max-w-2xl">
+                                    <p class="mt-6 text-lg sm:text-xl leading-relaxed text-slate-200 max-w-2xl">
                                         ${this.t('home.hero_subtitle')}
                                     </p>
                                     
                                     <div class="mt-10 flex flex-wrap gap-4">
                                         <button onclick="goTo('services')" 
-                                                class="inline-flex items-center justify-center gap-x-3 bg-[#d4af37] hover:bg-amber-400 transition-all text-[#0f172a] font-semibold px-8 h-14 rounded-2xl text-base">
+                                                class="w-full sm:w-auto inline-flex items-center justify-center gap-x-3 bg-[#d4af37] hover:bg-amber-300 transition-all text-[#0f172a] font-semibold px-8 h-14 rounded-xl text-base shadow-lg shadow-black/10">
                                             ${this.t('home.cta_services')}
                                         </button>
                                         
                                         <button onclick="goTo('contact')" 
-                                                class="inline-flex items-center justify-center gap-x-3 border border-white/40 hover:bg-white/10 font-semibold px-8 h-14 rounded-2xl text-base transition-all">
+                                                class="w-full sm:w-auto inline-flex items-center justify-center gap-x-3 border border-white/40 hover:bg-white/10 font-semibold px-8 h-14 rounded-xl text-base transition-all">
                                             ${this.t('home.cta_consult')}
                                         </button>
                                     </div>
                                     
-                                    <div class="mt-10 text-sm">
-                                        <div class="text-xs text-slate-400" x-text="t('home.trusted_by')"></div>
+                                    <div class="mt-10 border-t border-white/15 pt-6">
+                                        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+                                            <div class="text-[11px] uppercase tracking-[2px] font-semibold text-amber-200 sm:max-w-[150px]">${this.t('home.credentials_label')}</div>
+                                            <div class="flex flex-wrap gap-2">
+                                                ${credentials.map(credential => `
+                                                    <span class="credential-chip rounded-lg px-3 py-2 text-xs font-semibold tracking-wide text-white">${credential}</span>
+                                                `).join('')}
+                                            </div>
+                                        </div>
+                                        <div class="mt-5 text-xs text-slate-400">${this.t('home.trusted_by')}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- WHY CHOOSE US -->
-                        <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-16">
+                        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
                             <div class="text-center mb-12">
                                 <div class="text-xs font-bold tracking-[3px] text-amber-600 mb-3" x-text="t('common.why_choose_us')"></div>
-                                <h2 class="text-4xl font-semibold tracking-tight">${this.t('home.why_title')}</h2>
+                                <h2 class="heading-serif text-3xl sm:text-4xl tracking-tight">${this.t('home.why_title')}</h2>
                             </div>
                             
                             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                                 ${whyItems.map((item, idx) => `
-                                    <div class="bg-white border border-slate-100 p-7 rounded-3xl hover:shadow-xl transition-all group">
-                                        <div class="w-11 h-11 flex items-center justify-center bg-amber-100 text-amber-600 rounded-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                    <div class="editorial-card bg-white border border-slate-200/80 p-7 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-900/5 transition-all duration-300 group">
+                                        <div class="w-11 h-11 flex items-center justify-center bg-amber-100 text-amber-700 rounded-xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
                                             <span class="font-bold text-xl">${idx + 1}</span>
                                         </div>
                                         <div class="font-semibold text-xl mb-3 tracking-tight">${item.title}</div>
@@ -863,7 +884,7 @@
                         
                         <!-- STATS -->
                         <div class="bg-white border-y">
-                            <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-9">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-10">
                                 <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8 text-center">
                                     ${stats.map(stat => `
                                         <div>
@@ -871,6 +892,24 @@
                                             <div class="mt-1.5 text-sm font-medium text-slate-500">${stat.label}</div>
                                         </div>
                                     `).join('')}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FINAL CTA -->
+                        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 sm:py-20">
+                            <div class="relative overflow-hidden rounded-2xl bg-[#0f172a] px-7 py-10 sm:px-12 sm:py-12 text-white">
+                                <div class="absolute -right-20 -top-24 h-72 w-72 rounded-full border border-amber-300/20"></div>
+                                <div class="absolute -right-6 -top-8 h-44 w-44 rounded-full bg-amber-300/10 blur-2xl"></div>
+                                <div class="relative flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+                                    <div class="max-w-2xl">
+                                        <div class="text-xs font-bold tracking-[2.5px] text-amber-300">${this.t('home.final_cta_badge')}</div>
+                                        <h2 class="heading-serif mt-3 text-3xl sm:text-4xl leading-tight">${this.t('home.final_cta_title')}</h2>
+                                        <p class="mt-4 text-slate-300 leading-relaxed">${this.t('home.final_cta_desc')}</p>
+                                    </div>
+                                    <button onclick="goTo('contact')" class="shrink-0 inline-flex h-14 items-center justify-center rounded-xl bg-[#d4af37] px-8 font-semibold text-slate-950 transition hover:bg-amber-300 active:scale-[.985]">
+                                        ${this.t('home.final_cta_button')}
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -882,10 +921,10 @@
                     const educationItems = this.t('about.education_items') || [];
                     
                     return `
-                        <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-14">
+                        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
                             <div class="max-w-3xl mx-auto text-center mb-14">
                                 <div class="uppercase text-xs tracking-[3px] text-amber-600 font-bold mb-3" x-text="t('common.about_us')"></div>
-                                <h1 class="text-5xl font-semibold tracking-tighter">${this.t('about.title')}</h1>
+                                <h1 class="heading-serif text-4xl sm:text-5xl tracking-tight">${this.t('about.title')}</h1>
                             </div>
                             
                             <div class="max-w-4xl mx-auto">
@@ -895,7 +934,7 @@
                                     <p class="mt-6">${this.t('about.mission')}</p>
                                 </div>
 
-                                <div class="mt-12 bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm">
+                                <div class="mt-12 bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm">
                                     <div class="grid lg:grid-cols-5">
                                         <div class="lg:col-span-2 bg-[#0f172a] text-white p-8 flex flex-col justify-between">
                                             <div>
@@ -950,12 +989,22 @@
                 getServicesHTML() {
                     const services = this.t('services.list') || [];
                     const consultationPoints = this.t('services.consultation_points') || [];
+                    const serviceIcons = [
+                        '<path d="M4 21h16M6 21V7l6-4 6 4v14M9 10h6M9 14h6M9 18h6"/>',
+                        '<path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14M8 7h8M8 11h3M15 11h1M8 15h3M15 15h1M3 21h18"/>',
+                        '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2"/>',
+                        '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+                        '<path d="M3 3v18h18M7 16l4-5 3 3 5-7"/><path d="M16 7h3v3"/>',
+                        '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/>',
+                        '<path d="M8 3v4M16 3v4M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z"/><path d="m9 15 2 2 4-5"/>',
+                        '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h4v4H7zM14 8h3M14 12h3M7 16h10"/>'
+                    ];
                     
                     return `
-                        <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-14">
+                        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
                             <div class="max-w-2xl mb-10">
                                 <div class="text-xs tracking-[3px] text-amber-600 font-bold mb-2" x-text="t('common.professional_label')"></div>
-                                <h1 class="text-5xl font-semibold tracking-tighter">${this.t('services.title')}</h1>
+                                <h1 class="heading-serif text-4xl sm:text-5xl tracking-tight">${this.t('services.title')}</h1>
                                 <p class="mt-4 text-lg text-slate-600">${this.t('services.intro')}</p>
                             </div>
                             
@@ -963,10 +1012,15 @@
                                 ${services.map((service, index) => `
                                     <div data-service-id="${service.id}" 
                                          onclick="openServiceModal(${service.id})"
-                                         class="service-card group cursor-pointer bg-white border border-slate-100 hover:border-amber-200 rounded-3xl p-7 flex flex-col h-full">
+                                         class="service-card editorial-card group cursor-pointer bg-white border border-slate-200/80 hover:border-amber-300 p-7 flex flex-col h-full">
                                         
                                         <div class="flex-1">
-                                            <div class="inline-block px-3.5 py-1 text-xs font-bold tracking-wider bg-amber-100 text-amber-700 rounded-full mb-5" x-text="t('common.service_badge') + ' ' + (index + 1)"></div>
+                                            <div class="mb-6 flex items-center justify-between">
+                                                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700 transition-colors group-hover:bg-amber-600 group-hover:text-white">
+                                                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${serviceIcons[index] || serviceIcons[0]}</svg>
+                                                </div>
+                                                <span class="text-xs font-semibold tabular-nums text-slate-400">0${index + 1}</span>
+                                            </div>
                                             
                                             <h3 class="font-semibold text-2xl tracking-tight leading-tight mb-4 group-hover:text-amber-700 transition-colors">
                                                 ${service.title}
@@ -982,7 +1036,7 @@
                                         </div>
                                     </div>
                                 `).join('')}
-                                <div class="bg-[#0f172a] text-white border border-slate-900 rounded-3xl p-7 flex flex-col min-h-[308px]">
+                                <div class="editorial-card bg-[#0f172a] text-white border border-slate-900 p-7 flex flex-col min-h-[308px]">
                                     <div class="inline-block px-3.5 py-1 text-xs font-bold tracking-wider bg-amber-300/15 text-amber-200 rounded-full mb-5">${this.t('services.consultation_badge')}</div>
                                     <h3 class="font-semibold text-2xl tracking-tight leading-tight">${this.t('services.consultation_title')}</h3>
                                     <p class="mt-4 text-[15px] text-slate-300 leading-relaxed">${this.t('services.consultation_desc')}</p>
@@ -1009,10 +1063,10 @@
                     const benefits = this.t('careers.benefits') || [];
                     
                     return `
-                        <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-14">
+                        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
                             <div class="max-w-3xl">
                                 <div class="uppercase tracking-[3px] text-xs font-bold text-amber-600" x-text="t('common.careers_badge')"></div>
-                                <h1 class="text-5xl font-semibold tracking-tighter mt-2">${this.t('careers.title')}</h1>
+                                <h1 class="heading-serif text-4xl sm:text-5xl tracking-tight mt-2">${this.t('careers.title')}</h1>
                                 <p class="mt-5 text-xl text-slate-600">${this.t('careers.intro')}</p>
                             </div>
                             
@@ -1025,7 +1079,7 @@
                                 
                                 <div class="space-y-4">
                                     ${openings.map(job => `
-                                        <div class="border bg-white rounded-3xl p-7 flex flex-col lg:flex-row lg:items-center gap-y-5">
+                                        <div class="editorial-card border border-slate-200/80 bg-white p-7 flex flex-col lg:flex-row lg:items-center gap-y-5">
                                             <div class="flex-1">
                                                 <div class="font-semibold text-xl tracking-tight">${job.title}</div>
                                                 <div class="text-sm text-slate-500 mt-1 flex items-center gap-x-4">
@@ -1056,7 +1110,7 @@
                             </div>
                             
                             <!-- Application Form -->
-                            <div id="careers-form-section" class="mt-16 bg-white border rounded-3xl p-9 max-w-3xl">
+                            <div id="careers-form-section" class="mt-16 bg-white border border-slate-200/80 rounded-2xl p-7 sm:p-9 max-w-3xl">
                                 <h3 class="font-semibold text-2xl tracking-tight mb-2">${this.t('careers.form_title')}</h3>
                                 <p class="text-sm text-slate-500 mb-8">${this.t('careers.form_note')}</p>
                                 
@@ -1093,7 +1147,7 @@
                                     
                                     <div>
                                         <label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5" x-text="t('careers.form_message_label')"></label>
-                                        <textarea name="message" rows="4" required placeholder="${this.t('careers.placeholder_message_careers')}" class="w-full border border-slate-200 focus:border-amber-400 rounded-3xl px-5 py-4 text-sm outline-none resize-y"></textarea>
+                                        <textarea name="message" rows="4" required placeholder="${this.t('careers.placeholder_message_careers')}" class="w-full border border-slate-200 focus:border-amber-400 rounded-xl px-5 py-4 text-sm outline-none resize-y"></textarea>
                                     </div>
                                     
                                     <div>
@@ -1115,16 +1169,16 @@
                     const options = this.t('contact.form_services_options') || [];
                     
                     return `
-                        <div class="max-w-screen-2xl mx-auto px-6 lg:px-10 py-14">
+                        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
                             <div class="max-w-2xl mb-10">
                                 <div class="text-xs tracking-[3px] text-amber-600 font-bold" x-text="t('common.contact_badge')"></div>
-                                <h1 class="text-5xl font-semibold tracking-tighter mt-1">${this.t('contact.title')}</h1>
+                                <h1 class="heading-serif text-4xl sm:text-5xl tracking-tight mt-1">${this.t('contact.title')}</h1>
                                 <p class="mt-4 text-xl text-slate-600">${this.t('contact.intro')}</p>
                             </div>
                             
                             <div class="grid lg:grid-cols-5 gap-x-8 gap-y-12">
                                 <!-- Form -->
-                                <div class="lg:col-span-3 bg-white border rounded-3xl p-9">
+                                <div class="lg:col-span-3 bg-white border border-slate-200/80 rounded-2xl p-7 sm:p-9">
                                     <h3 class="font-semibold text-2xl tracking-tight mb-7">${this.t('contact.form_title')}</h3>
                                     
                                     <form id="contact-form" class="space-y-6">
@@ -1162,7 +1216,7 @@
                                         
                                         <div>
                                             <label class="block text-xs font-bold tracking-widest text-slate-500 mb-2" x-text="t('contact.form_message')"></label>
-                                            <textarea name="message" rows="5" required placeholder="${this.t('contact.placeholder_message_contact')}" class="w-full border border-slate-200 focus:border-amber-400 px-5 py-4 rounded-3xl text-sm"></textarea>
+                                            <textarea name="message" rows="5" required placeholder="${this.t('contact.placeholder_message_contact')}" class="w-full border border-slate-200 focus:border-amber-400 px-5 py-4 rounded-xl text-sm"></textarea>
                                         </div>
                                         
                                         <button type="submit"
@@ -1175,7 +1229,7 @@
                                 
                                 <!-- Contact Info + Map -->
                                 <div class="lg:col-span-2 space-y-8">
-                                    <div class="bg-white border rounded-3xl p-8">
+                                    <div class="bg-white border border-slate-200/80 rounded-2xl p-8">
                                         <div class="font-semibold tracking-tight text-xl mb-6">${this.t('contact.info_title')}</div>
                                         <div class="font-semibold text-lg text-[#0f172a] mb-4">${this.t('common.legal_name')}</div>
                                         <div class="space-y-5 text-sm">
@@ -1207,7 +1261,7 @@
                                     <!-- Google Map -->
                                     <div>
                                         <div class="text-xs font-bold tracking-wider text-slate-500 mb-3 px-1">${this.t('contact.map_title')}</div>
-                                        <div class="aspect-video w-full rounded-3xl overflow-hidden border shadow-inner">
+                                        <div class="aspect-video w-full rounded-2xl overflow-hidden border shadow-inner">
                                             <!-- ĐÃ CẬP NHẬT: Dùng link embed chính thức từ Google Maps (thay vì share link) -->
                                             <iframe 
                                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14165.441850465686!2d106.6997399!3d10.8136457!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403d9b4ce2038f97%3A0xcf0ceefd87d0ba40!2sC%C3%B4ng%20ty%20TNHH%20Royal%20Vi%E1%BB%87t%20Nam!5e1!3m2!1svi!2s!4v1783570631110!5m2!1svi!2s" 
