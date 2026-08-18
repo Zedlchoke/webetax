@@ -17,7 +17,7 @@
     <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap');
         
         :root {
             --navy: #0f172a;
@@ -30,11 +30,6 @@
             font-family: 'Inter', system_ui, sans-serif;
         }
         
-        .heading-serif {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 700;
-        }
-
         .credential-chip {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.18);
@@ -827,7 +822,7 @@
                                         ${this.t('common.hero_badge')}
                                     </div>
                                     
-                                    <h1 class="heading-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.06]">
+                                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08]">
                                         ${this.t('home.hero_title')}
                                     </h1>
                                     
@@ -866,7 +861,7 @@
                         <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
                             <div class="text-center mb-12">
                                 <div class="text-xs font-bold tracking-[3px] text-amber-600 mb-3" x-text="t('common.why_choose_us')"></div>
-                                <h2 class="heading-serif text-3xl sm:text-4xl tracking-tight">${this.t('home.why_title')}</h2>
+                                <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">${this.t('home.why_title')}</h2>
                             </div>
                             
                             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -904,7 +899,7 @@
                                 <div class="relative flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
                                     <div class="max-w-2xl">
                                         <div class="text-xs font-bold tracking-[2.5px] text-amber-300">${this.t('home.final_cta_badge')}</div>
-                                        <h2 class="heading-serif mt-3 text-3xl sm:text-4xl leading-tight">${this.t('home.final_cta_title')}</h2>
+                                        <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight leading-tight">${this.t('home.final_cta_title')}</h2>
                                         <p class="mt-4 text-slate-300 leading-relaxed">${this.t('home.final_cta_desc')}</p>
                                     </div>
                                     <button onclick="goTo('contact')" class="shrink-0 inline-flex h-14 items-center justify-center rounded-xl bg-[#d4af37] px-8 font-semibold text-slate-950 transition hover:bg-amber-300 active:scale-[.985]">
@@ -924,7 +919,7 @@
                         <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
                             <div class="max-w-3xl mx-auto text-center mb-14">
                                 <div class="uppercase text-xs tracking-[3px] text-amber-600 font-bold mb-3" x-text="t('common.about_us')"></div>
-                                <h1 class="heading-serif text-4xl sm:text-5xl tracking-tight">${this.t('about.title')}</h1>
+                                <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">${this.t('about.title')}</h1>
                             </div>
                             
                             <div class="max-w-4xl mx-auto">
@@ -1004,7 +999,7 @@
                         <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
                             <div class="max-w-2xl mb-10">
                                 <div class="text-xs tracking-[3px] text-amber-600 font-bold mb-2" x-text="t('common.professional_label')"></div>
-                                <h1 class="heading-serif text-4xl sm:text-5xl tracking-tight">${this.t('services.title')}</h1>
+                                <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">${this.t('services.title')}</h1>
                                 <p class="mt-4 text-lg text-slate-600">${this.t('services.intro')}</p>
                             </div>
                             
@@ -1066,7 +1061,7 @@
                         <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
                             <div class="max-w-3xl">
                                 <div class="uppercase tracking-[3px] text-xs font-bold text-amber-600" x-text="t('common.careers_badge')"></div>
-                                <h1 class="heading-serif text-4xl sm:text-5xl tracking-tight mt-2">${this.t('careers.title')}</h1>
+                                <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mt-2">${this.t('careers.title')}</h1>
                                 <p class="mt-5 text-xl text-slate-600">${this.t('careers.intro')}</p>
                             </div>
                             
@@ -1172,7 +1167,7 @@
                         <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
                             <div class="max-w-2xl mb-10">
                                 <div class="text-xs tracking-[3px] text-amber-600 font-bold" x-text="t('common.contact_badge')"></div>
-                                <h1 class="heading-serif text-4xl sm:text-5xl tracking-tight mt-1">${this.t('contact.title')}</h1>
+                                <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mt-1">${this.t('contact.title')}</h1>
                                 <p class="mt-4 text-xl text-slate-600">${this.t('contact.intro')}</p>
                             </div>
                             
