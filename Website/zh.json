@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "title": "ETAX胡志明市公司 | 越南企业与FDI企业咨询服务",
+    "description": "ETAX胡志明市公司 - 从中小企业到大型企业，越南本土企业与FDI企业的值得信赖战略伙伴。提供法律、税务、会计、公司设立、并购、项目管理及人力资源服务。"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "services": "服务项目",
+    "careers": "人才招聘",
+    "contact": "联系我们",
+    "consult_now": "立即咨询"
+  },
+  "common": {
+    "company_name": "ETAX胡志明市公司",
+    "logo_alt": "ETAX胡志明市公司标志",
+    "logo_wordmark": "ETAX",
+    "logo_region": "胡志明市",
+    "legal_name": "ETAX HCM Company Limited。",
+    "slogan": "ETAX胡志明市 — 让每一项服务都带来切实价值。",
+    "tagline": "每一项服务都带来实实在在的利益",
+    "philosophy": "诚信 – 品质 – 效率",
+    "footer_rights": "© 2026 ETAX胡志明市公司. 保留所有权利。",
+    "address": "胡志明市平盛郡阮西街54/6号",
+    "hotline": "(+84) 961.133.139",
+    "email": "business@etaxhcm.com",
+    "services_label": "服务",
+    "view_detail": "查看详情 →",
+    "consult_now": "获取免费咨询",
+    "submit_failed": "提交失败",
+    "placeholder_position": "例如：税务顾问专员",
+    "placeholder_message_contact": "简要描述您的需求...",
+    "placeholder_message_careers": "简要介绍自己及加入ETAX的原因...",
+    "about_us": "关于我们",
+    "our_philosophy": "经营理念",
+    "service_badge": "服务",
+    "modal_contact_now": "联系咨询",
+    "modal_close": "关闭",
+    "hero_badge": "让每一项服务都带来切实价值。",
+    "positions_count": "个职位",
+    "professional_label": "专业服务",
+    "careers_badge": "人才招聘",
+    "footer_consult_button": "请求咨询",
+    "why_choose_us": "为什么选择我们",
+    "contact_badge": "联系我们"
+  },
+  "footer": {
+    "quick_links": "快速链接",
+    "about_company": "关于公司",
+    "services_main": "主要服务",
+    "careers_opportunity": "职业机会",
+    "contact_consult": "联系与咨询",
+    "contact_info": "联系信息",
+    "philosophy_badge": "诚信 – 品质 – 效率"
+  },
+  "forms": {
+    "sending": "发送中...",
+    "contact_success": "谢谢！我们将在24小时内与您联系。",
+    "careers_success": "申请已成功提交！我们将尽快与您联系。",
+    "submit_failed_retry": "提交失败。请稍后再试。",
+    "generic_error": "发生错误。请稍后再试。",
+    "file_too_large": "文件太大。最大支持 8MB。",
+    "contact_subject": "来自 ETAX 胡志明市网站的新咨询请求",
+    "contact_from_name": "ETAX 胡志明市网站",
+    "careers_subject": "来自 ETAX 胡志明市网站的新求职申请",
+    "careers_from_name": "ETAX 胡志明市 - 招聘"
+  },
+  "home": {
+    "hero_title": "越南企业及外资企业的一站式咨询解决方案",
+    "hero_subtitle": "每一项服务都带来实实在在的利益。陪伴从中小企业到大型企业——从创意到可持续运营。",
+    "cta_services": "了解服务",
+    "cta_consult": "获取免费咨询",
+    "why_title": "为什么众多企业选择 ETAX 胡志明市公司？",
+    "trusted_by": "深受300多家越南企业及外资企业信赖",
+    "credentials_label": "专业资质与执业证书",
+    "credentials": [
+      "ACCA 国际注册会计师",
+      "越南注册会计师（CPA）",
+      "税务代理执业证书",
+      "律师执业证书",
+      "总会计师证书"
+    ],
+    "final_cta_badge": "从一次沟通开始",
+    "final_cta_title": "不确定您的企业需要哪种解决方案？",
+    "final_cta_desc": "告诉我们企业的现状与目标。ETAX 团队将协助您制定清晰、务实且合适的处理方向。",
+    "final_cta_button": "预约免费咨询",
+    "why_items": [
+      {
+        "title": "深耕企业与外资企业服务领域",
+        "desc": "拥有15年以上专业咨询经验，为越南本土企业以及数百家在越南投资经营的外资企业提供咨询服务。"
+      },
+      {
+        "title": "跨领域专家团队",
+        "desc": "团队汇聚律师、总会计师、税务专家及评估师，拥有国际专业资格认证和丰富的实战经验。"
+      },
+      {
+        "title": "流程透明高效",
+        "desc": "承诺服务时效，定期提交报告，并在项目实施全过程中提供 24/7 全天候支持。"
+      },
+      {
+        "title": "强大的政企资源网络",
+        "desc": "与计划投资部、计划与投资厅、税务局及相关政府部门保持紧密合作关系。"
+      }
+    ],
+    "stats": [
+      {
+        "number": "17+",
+        "label": "年行业经验"
+      },
+      {
+        "number": "300+",
+        "label": "家企业信赖之选"
+      },
+      {
+        "number": "1200+",
+        "label": "个项目成功完成"
+      },
+      {
+        "number": "99%",
+        "label": "客户满意率"
+      }
+    ]
+  },
+  "about": {
+    "title": "关于ETAX胡志明市公司",
+    "intro": "在全球化与经济一体化不断发展的背景下，越南法律体系日趋完善，并持续推出多项鼓励国内外投资的政策措施。为了帮助投资者在合规、安全的法律环境下开展经营活动，ETAX 胡志明市汇聚了一支受过正规专业教育、拥有丰富实践经验的顾问团队。",
+    "mission": "ETAX 胡志明市始终坚持以客户为中心，为企业提供高品质、高效率的专业服务。我们专注于为外资企业及越南本土企业提供涵盖法律、税务、会计、人力资源、投资咨询及项目管理等领域的一站式服务解决方案，为企业的发展保驾护航。",
+    "education_label": "学术基础",
+    "education_title": "团队受益于领先法律与商科教育环境",
+    "education_intro": "ETAX 的专业团队通过胡志明市具有影响力的学术环境接受培训与专业指导，融合企业法律、财务、治理与运营视角。",
+    "education_items": [
+      {
+        "initials": "UL",
+        "name": "胡志明市法律大学",
+        "location": "企业法律"
+      },
+      {
+        "initials": "RMIT",
+        "name": "RMIT South Saigon",
+        "location": "商业与管理"
+      },
+      {
+        "initials": "UEH",
+        "name": "胡志明市经济大学 UEH",
+        "location": "金融与经济"
+      }
+    ],
+    "philosophy_title": "经营理念",
+    "philosophy_desc": "诚信 – 品质 – 效率。我们承诺从第一次合作开始，便为客户提供专业、高效、值得信赖的服务，确保客户满意。",
+    "strength_title": "我们的优势",
+    "strengths": [
+      "专注越南FDI与企业服务领域",
+      "资深律师、税务及财务专家团队",
+      "高标准、透明化、可追踪的执行流程",
+      "全生命周期企业服务（设立—运营—重组)",
+      "稳固的政府及监管机构合作网络"
+    ]
+  },
+  "services": {
+    "title": "八大核心服务",
+    "intro": "ETAX胡志明市构建一站式企业服务体系，助力越南本土企业及外资企业（FDI）高效合规运营，实现法律合规、成本优化与业务可持续发展。",
+    "professional_label": "专业服务",
+    "consultation_badge": "免费咨询",
+    "consultation_title": "不确定该选择哪项方案？",
+    "consultation_desc": "告诉我们您的系统现状、合规需求和运营痛点。ETAX 将在您决策前提供务实的下一步建议。",
+    "consultation_points": [
+      "快速需求评估",
+      "匹配合适服务方向",
+      "首次咨询不收取费用"
+    ],
+    "consultation_button": "联系免费咨询",
+    "list": [
+      {
+        "id": 1,
+        "title": "法律服务与企业设立",
+        "short_desc": "提供公司设立、变更、暂停经营及解散等全流程法律服务，涵盖越南本土企业及外商投资企业（FDI）。支持有限责任公司、股份公司等多种企业类型的注册与运营。",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>服务内容</h4><p class='mb-4'>凭借为数百家客户提供法律服务的丰富经验，ETAX胡志明市承诺在服务时效、咨询质量以及服务态度方面均保持高标准与专业性。</p><ul class='list-disc pl-5 space-y-2'><li>提供最适合的投资形式及企业类型选择咨询</li><li>提供投资优惠政策咨询：税收减免、土地租金减免等 </li><li>起草公司设立文件、可行性报告及公司章程 </li><li>办理企业登记内容变更（地址、注册资本、经营范围、法定代表人等)</li><li>提供企业暂停经营及依法解散的专业咨询服务</li><li>协助初始税务申报、购买数字签名、低成本发票开具</li></ul><p class='mt-4 text-sm italic'>优惠：公司成立后首月免费税务申报服务 。</p>"
+      },
+      {
+        "id": 2,
+        "title": "专业税务咨询",
+        "short_desc": "增值税、企业所得税、个人所得税政策咨询，退税、减免税服务。代为申报、汇算清缴并代表与税务机关沟通。及时更新最新法规。",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>服务详情</h4><p class='mb-4'>ETAX胡志明市帮助企业规避税务风险，做出准确的商业决策。</p><ul class='list-disc pl-5 space-y-2'><li>初始税务登记程序及行业税务政策咨询</li><li>企业所得税和进口关税优惠/减免咨询</li><li>增值税、企业所得税、个人所得税申报和汇算清缴代理</li><li>增值税退税和税收减免申请文件准备</li><li>审核可扣除合法费用以计算应税收入</li><li>与检查机关解释和税务清算</li><li>快速更新最新税务法规</li></ul>"
+      },
+      {
+        "id": 3,
+        "title": "会计与税务服务",
+        "short_desc": "账簿清理和会计系统完善。月度/季度/年度税务申报及财务报表编制。总会计师外派及财务监督服务。",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>服务详情</h4><p class='mb-4'>会计部门在为董事会提供准确及时的财务信息方面发挥关键作用。</p><ul class='list-disc pl-5 space-y-2'><li>历史会计数据清理和账簿凭证完善</li><li>月度、季度、年度税务申报和汇算清缴（增值税、企业所得税、个人所得税）</li><li>按标准编制月度、季度、年度财务报表</li><li>会计信息系统、账簿和记账流程建设咨询</li><li>专业总会计师外派服务</li><li>每月财务会计监督</li><li>向税务机关和审计师解释数据</li></ul>"
+      },
+      {
+        "id": 4,
+        "title": "人力资源、薪酬与社保",
+        "short_desc": "高素质人才供应、人力资源管理咨询、全薪酬处理及社保（社保、医保、失业保险）管理。会计人员培训及劳动法规起草。",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>服务详情</h4><p class='mb-4'>帮助企业专注于核心战略，无需担心人力资源和保险事务。</p><ul class='list-disc pl-5 space-y-2'><li>专业人才供应（会计、技术人员、翻译、管理人员等）</li><li>劳动法规、劳动合同和薪酬体系起草咨询</li><li>全薪酬处理及每月社保/医保/失业保险缴费管理</li><li>首次社保登记、社保手册管理及病假/产假福利处理</li><li>企业会计人员培训项目</li><li>企业文化建设和绩效评估支持</li></ul>"
+      },
+      {
+        "id": 5,
+        "title": "企业管理咨询服务",
+        "short_desc": "设计内部控制体系、现金流管理及库存管理方案。提供企业重组咨询服务，并协助制定公司章程、运营制度及股份有限公司治理规则。",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>服务内容</h4><p class='mb-4'>致力于与客户共同改进、完善并提升企业生产经营效率，实现持续优化与价值增长。</p><ul class='list-disc pl-5 space-y-2'><li>根据企业需求设计内部控制体系 </li><li>提供现金流管理咨询，并设计管理与控制报表模板 </li><li>建立库存控制体系，包括损耗定额与成本核算管理 </li><li>提供企业架构优化及重组咨询服务</li><li>制定公司章程及组织与运营制度，完善董事会与监事会管理规则</li><li>提供股东大会组织咨询及专业股东名册管理服务 </li><li>根据需求提供企业管理相关培训与内部指导</li></ul>"
+      },
+      {
+        "id": 6,
+        "title": "外商投资（FDI）咨询服务",
+        "short_desc": "100%外资公司、代表处及合资企业设立。投资项目规划、项目管理、项目转让及FDI企业持续法律顾问服务。",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>主要服务内容</h4><div class='grid grid-cols-1 md:grid-cols-2 gap-4'><div><h5 class='font-medium mb-2'>• 设立100%外资企业</h5><p class='text-sm'>提供投资条件咨询、资料准备及投资登记手续办理服务，并协助申请《投资登记证》，符合《2020年投资法》规定。</p></div><div><h5 class='font-medium mb-2'>• 代表处及外国承包商服务</h5><p class='text-sm'>办理代表处设立手续，协助申请建筑及咨询领域的外国承包商许可。</p></div><div><h5 class='font-medium mb-2'>• 合资公司与投资项目咨询</h5><p class='text-sm'>提供合资投资模式咨询，起草合资合同，并协助编制可行性投资项目方案。</p></div><div><h5 class='font-medium mb-2'>• FDI常年法律咨询服务</h5><p class='text-sm'>提供企业治理、合同管理、知识产权、劳动用工、税务及定期合规报告等全方位支持。</p></div></div><p class='mt-4 text-sm'>ETAX胡志明市是一家专业可靠的外商投资咨询机构，专注FDI领域，拥有成熟的服务流程，从初次沟通、合同签订、资料准备到最终成果交付，均提供高效、专业的一站式服务。</p>"
+      },
+      {
+        "id": 7,
+        "title": "财务与并购（M&A）及企业重组服务",
+        "short_desc": "提供企业并购（M&A）咨询服务、财务重组方案设计，以及公司组织形式转换（有限责任公司 ↔ 股份有限公司）、股份制改造与股权退出等专业服务。",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>服务内容</h4><p class='mb-4'>协助企业开展战略性交易与结构重组，优化企业价值与运营效率，实现可持续增长。</p><ul class='list-disc pl-5 space-y-2'><li>制定并购（M&A）战略，筛选并匹配合适的并购对象 </li><li>开展企业尽职调查及价值评估，提供合理估值方案 </li><li>提供并购交易结构设计与谈判支持服务</li><li>分析企业财务现状并制定财务重组方案</li><li>提供企业组织形式转换咨询（有限责任公司 ↔ 股份有限公司)</li><li>提供国有企业股份制改造及股权退出咨询服务 </li><li>提供财务风险管理咨询（利率风险、汇率风险及股价风险等）</li></ul>"
+      },
+      {
+        "id": 8,
+        "title": "企业管理软件服务",
+        "short_desc": "提供在线会计软件、库存管理系统、销售管理系统及人力资源管理系统的选型与实施咨询服务，并提供系统安装、培训、维护及按需定制调整支持。",
+        "full_content": "<h4 class='font-semibold text-lg mb-3'>服务内容</h4><p class='mb-4'>信息技术为企业提升运营效率提供了重要机遇。我们协助企业选择并应用最适合的管理软件解决方案。</p><ul class='list-disc pl-5 space-y-2'><li>调研企业需求，分析主流软件的优劣势</li><li>提供会计软件、库存管理、销售及人力资源系统选型咨询 </li><li>提供软件演示、安装部署、实施规划及详细使用培训</li><li>根据企业特殊需求进行软件定制与功能调整 </li><li>系统验收、交付及定期维护服务</li><li>提供软件使用过程中的会计核算与内部控制支持 </li></ul><p class='mt-3 text-sm'>目前客户信赖产品: 在线会计软件。库存与销售管理软件。人力资源管理软件</p>"
+      }
+    ]
+  },
+  "careers": {
+    "title": "职业发展机会",
+    "intro": "ETAX胡志明市始终致力于寻找有才华、充满热情并具备责任感的人才，共同打造一个专业、活力且可持续发展的工作环境。我们坚信，人才是创造差异与价值的关键因素。",
+    "openings_title": "招聘职位",
+    "openings": [
+      {
+        "title": "税务与会计顾问（高级/初级)",
+        "location": "胡志明市",
+        "type": "全职岗位",
+        "desc": "负责为客户提供税务政策咨询，协助纳税申报与年度结算，审核与优化客户（尤其是FDI企业）的合规成本。岗位要求： 会计/税务相关专业本科及以上学历。持有相关执业证书或具备2–5年工作经验。熟悉税务法规及企业财务流程"
+      },
+      {
+        "title": "律师 / 外商投资顾问",
+        "location": "胡志明市",
+        "type": "全职岗位",
+        "desc": "负责提供外商投资相关法律与咨询服务，包括设立100%外资企业、代表处、投资许可证办理及合资合同起草等。岗位要求：法律专业本科及以上学历。具备FDI相关经验或持有律师执业证书。熟悉外商投资法律及企业合规流程。"
+      },
+      {
+        "title": "首席会计（租赁服务）专员",
+        "location": "胡志明市 & 远程办公",
+        "type": "全职 / 兼职",
+        "desc": "负责为多家客户担任首席会计师角色，包括编制财务报表、审核与签署会计凭证，并提供财务风险咨询与管理支持。岗位要求：持有首席会计师资格证书。具备5年以上相关工作经验。熟悉企业财务报表编制及税务合规流程。"
+      },
+      {
+        "title": "项目助理 & 行政人事专员",
+        "location": "胡志明市",
+        "type": "全职",
+        "desc": "负责支持咨询项目实施，包括资料准备、与政府机关沟通协调，以及内部人力资源管理工作。岗位要求：经济学/法律/公共管理相关专业本科及以上学历。英语能力良好。工作细致、反应敏捷、具备良好执行力。"
+      }
+    ],
+    "benefits_title": "在ETAX工作的福利",
+    "benefits": [
+      "专业、透明并互相尊重的工作环境",
+      "直接向拥有15年以上经验的律师、首席会计师及专家学习的机会",
+      "具有竞争力的薪酬与奖金制度（项目奖金 + 年终奖金）",
+      "定期内部培训 + 职业资格证书支持",
+      "按照法律规定享有完整的社会保险、医疗保险及失业保险",
+      "带薪年假、法定节假日休息 + 每年团队旅游与团建活动"
+    ],
+    "form_title": "立即申请",
+    "form_note": "请完整填写信息，我们将在3–5个工作日内与您联系。",
+    "form_full_name_label": "姓名",
+    "form_email_label": "电子邮箱",
+    "form_phone_label": "电话号码",
+    "form_position_label": "申请职位",
+    "form_message_label": "申请信 / 留言",
+    "form_cv_label": "上传简历 (PDF, DOC, DOCX)",
+    "form_submit_label": "提交申请",
+    "placeholder_position": "例如：税务咨询专员",
+    "placeholder_message_careers": "请简要介绍您自己以及为什么想加入ETAX…"
+  },
+  "contact": {
+    "title": "免费咨询服务",
+    "intro": "让ETAX胡志明市与贵企业携手同行，共同推动可持续发展战略。欢迎您立即提交咨询申请，我们将为您量身定制最优解决方案。",
+    "form_title": "提交咨询申请",
+    "form_full_name": "姓名 *",
+    "form_email": "电子邮箱 *",
+    "form_phone": "联系电话 *",
+    "form_message": "请选择您感兴趣的服务 *",
+    "form_submit": "提交免费咨询申请",
+    "form_service_label": "感兴趣的服务",
+    "form_services_options": [
+      "公司/代表处设立",
+      "税务与会计服务",
+      "企业法律服务",
+      "FDI投资与项目咨询",
+      "并购/重组咨询",
+      "人力资源与社保服务",
+      "管理咨询/软件",
+      "其他（请注明）"
+    ],
+    "info_title": "联系我们",
+    "hotline_label": "热线电话",
+    "email_label": "电子邮箱",
+    "address_label": "地址",
+    "map_title": "办公室位置",
+    "working_hours": "办公时间：周一至周五 08:00—17:30",
+    "placeholder_message_contact": "请简要描述您的需求...",
+    "response_commitment": "我们承诺将在 24 个工作小时内 回复您。"
+  }
+}
