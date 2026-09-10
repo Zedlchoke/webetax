@@ -17,7 +17,7 @@
     <script defer src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"></script>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap');
         
         :root {
             --navy: #0f172a;
@@ -27,7 +27,12 @@
         }
         
         body {
-            font-family: 'Inter', system_ui, sans-serif;
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            letter-spacing: -0.02em;
         }
         
         .credential-chip {
@@ -38,7 +43,133 @@
 
         .editorial-card {
             border-radius: 1rem;
-            box-shadow: 0 1px 2px rgb(15 23 42 / 0.03);
+            box-shadow: 0 1px 2px rgb(15 23 42 / 0.04);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .editorial-card:hover {
+            border-color: rgba(212, 175, 55, 0.45);
+            box-shadow: 0 16px 32px -12px rgb(15 23 42 / 0.12);
+        }
+
+        .feature-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, #f0d78c);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .btn-primary {
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 12px 24px -8px rgb(212 175 55 / 0.55);
+        }
+
+        .btn-ghost {
+            transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-ghost:hover {
+            transform: translateY(-1px);
+            border-color: rgba(255, 255, 255, 0.65);
+        }
+
+        .stats-band {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        }
+
+        .stat-item {
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .stat-item:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 15%;
+                height: 70%;
+                width: 1px;
+                background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.35), transparent);
+            }
+        }
+
+        .sticky-header {
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.92);
+        }
+
+        .sticky-header-scrolled {
+            backdrop-filter: blur(16px);
+            background-color: rgba(255, 255, 255, 0.97);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #d4af37, #f0d78c);
+            border-radius: 2px;
+            transition: width 0.25s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.nav-active::after {
+            width: 100%;
+        }
+
+        .mobile-cta-bar {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgb(226 232 240 / 0.9);
+            box-shadow: 0 -8px 24px -8px rgb(15 23 42 / 0.12);
+        }
+
+        .page-hero {
+            background-position: center 30%;
+        }
+
+        .form-field {
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-field:focus {
+            outline: none;
+            border-color: #d4af37;
+            box-shadow: 0 0 0 4px rgb(212 175 55 / 0.12);
+        }
+
+        .info-tile {
+            transition: border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .info-tile:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
         }
 
         .section-header {
@@ -117,13 +248,19 @@
             font-variant-numeric: tabular-nums;
         }
 
-        .sticky-header {
-            backdrop-filter: blur(12px);
-            background-color: rgba(255,255,255,0.95);
+        .page-transition {
+            animation: fadeInUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
-        .page-transition {
-            animation: fadeInUp 0.4s ease forwards;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .flag {
@@ -132,9 +269,10 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800" x-data="etaxApp()">
+<body class="bg-slate-50 text-slate-800 pb-20 md:pb-0" x-data="etaxApp()">
     <!-- HEADER / NAV -->
-    <header class="sticky top-0 z-50 border-b border-slate-200 sticky-header">
+    <header class="sticky top-0 z-50 transition-all duration-300"
+            :class="headerScrolled ? 'sticky-header-scrolled border-b border-slate-200/80 shadow-lg shadow-slate-900/5' : 'sticky-header border-b border-slate-200/60'">
         <div class="max-w-7xl mx-auto">
             <div class="px-6 lg:px-10 py-4 flex items-center justify-between">
                 <!-- Logo -->
@@ -149,19 +287,19 @@
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center gap-x-8 text-sm font-medium">
                     <a href="#" @click.prevent="navigateTo('home')" 
-                       class="hover:text-[#d4af37] transition-colors" 
+                       class="nav-link hover:text-[#d4af37] transition-colors" 
                        :class="{ 'nav-active': currentPage === 'home' }" x-text="t('nav.home')"></a>
                     <a href="#" @click.prevent="navigateTo('about')" 
-                       class="hover:text-[#d4af37] transition-colors"
+                       class="nav-link hover:text-[#d4af37] transition-colors"
                        :class="{ 'nav-active': currentPage === 'about' }" x-text="t('nav.about')"></a>
                     <a href="#" @click.prevent="navigateTo('services')" 
-                       class="hover:text-[#d4af37] transition-colors"
+                       class="nav-link hover:text-[#d4af37] transition-colors"
                        :class="{ 'nav-active': currentPage === 'services' }" x-text="t('nav.services')"></a>
                     <a href="#" @click.prevent="navigateTo('careers')" 
-                       class="hover:text-[#d4af37] transition-colors"
+                       class="nav-link hover:text-[#d4af37] transition-colors"
                        :class="{ 'nav-active': currentPage === 'careers' }" x-text="t('nav.careers')"></a>
                     <a href="#" @click.prevent="navigateTo('contact')" 
-                       class="hover:text-[#d4af37] transition-colors"
+                       class="nav-link hover:text-[#d4af37] transition-colors"
                        :class="{ 'nav-active': currentPage === 'contact' }" x-text="t('nav.contact')"></a>
                 </nav>
 
@@ -234,9 +372,24 @@
     </header>
 
     <!-- MAIN CONTENT AREA -->
-    <main id="page-content" class="min-h-[calc(100vh-140px)]">
+    <main id="page-content" class="min-h-[calc(100vh-140px)] page-transition">
         <!-- Content is dynamically rendered by JS / Alpine -->
     </main>
+
+    <!-- MOBILE QUICK CTA -->
+    <div class="mobile-cta-bar fixed bottom-0 inset-x-0 z-40 md:hidden px-4 py-3">
+        <div class="flex gap-2 max-w-lg mx-auto">
+            <a :href="'tel:' + t('common.hotline').replace(/[^0-9+]/g, '')"
+               class="flex-1 inline-flex items-center justify-center gap-2 h-12 rounded-xl bg-[#0f172a] text-white text-sm font-semibold">
+                <svg class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92Z"/></svg>
+                <span x-text="t('common.hotline')"></span>
+            </a>
+            <button @click="navigateTo('contact')"
+                    class="flex-1 inline-flex items-center justify-center h-12 rounded-xl bg-[#d4af37] text-[#0f172a] text-sm font-semibold">
+                <span x-text="t('nav.consult_now')"></span>
+            </button>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="bg-[#0f172a] text-slate-300 pt-14 pb-8">
@@ -271,6 +424,14 @@
                                 class="inline-flex items-center gap-x-2 text-sm font-semibold px-5 py-2.5 rounded-2xl border border-white/30 hover:bg-white hover:text-[#0f172a] transition-all active:scale-[0.985]">
                             <span x-text="t('common.footer_consult_button')"></span>
                         </button>
+                    </div>
+                    <div class="mt-8">
+                        <div class="font-semibold text-white mb-3 tracking-wider text-xs uppercase" x-text="t('common.follow_us')"></div>
+                        <a href="https://www.facebook.com/ETAXHCMVN/" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-x-2 text-slate-400 hover:text-white transition-colors">
+                            <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            <span x-text="t('common.facebook')"></span>
+                        </a>
                     </div>
                 </div>
 
@@ -395,6 +556,13 @@
                 selectedService: null,
                 showToast: false,
                 toastMessage: '',
+                headerScrolled: false,
+
+                // News
+                newsData: { facebookUrl: '', posts: [] },
+                newsLoaded: false,
+                newsLoading: false,
+                selectedNewsSlug: null,
                 
                 // Initialize
                 async init() {
@@ -414,6 +582,10 @@
                         this.detectLocaleFromURL();
                         this.renderCurrentPage();
                     });
+
+                    window.addEventListener('scroll', () => {
+                        this.headerScrolled = window.scrollY > 16;
+                    }, { passive: true });
                     
                     // Update document title & meta on init
                     this.updateSEO();
@@ -435,6 +607,7 @@
                     
                     let locale = 'en';           // ← Mặc định là English
                     let page = 'home';
+                    let newsSlug = null;
                     
                     if (segments.length > 0) {
                         const first = segments[0];
@@ -443,20 +616,30 @@
                             locale = 'vi';
                             if (segments.length > 1) {
                                 page = this.mapSlugToPage(segments[1]);
+                                if (page === 'news' && segments.length > 2) {
+                                    newsSlug = segments[2];
+                                }
                             }
                         } else if (first === 'zh') {
                             locale = 'zh';
                             if (segments.length > 1) {
                                 page = this.mapSlugToPage(segments[1]);
+                                if (page === 'news' && segments.length > 2) {
+                                    newsSlug = segments[2];
+                                }
                             }
                         } else {
                             // Mọi trường hợp còn lại (không có prefix hoặc prefix lạ) → English
                             page = this.mapSlugToPage(first);
+                            if (page === 'news' && segments.length > 1) {
+                                newsSlug = segments[1];
+                            }
                         }
                     }
                     
                     this.currentLocale = locale;
                     this.currentPage = page;
+                    this.selectedNewsSlug = newsSlug;
                 },
                 
                 mapSlugToPage(slug) {
@@ -468,6 +651,8 @@
                         'about': 'about',
                         'dich-vu': 'services',
                         'services': 'services',
+                        'tin-tuc': 'home',
+                        'news': 'home',
                         'tuyen-dung': 'careers',
                         'careers': 'careers',
                         'lien-he': 'contact',
@@ -503,7 +688,7 @@
                     if (slug) {
                         newPath += slug;
                     }
-                    
+
                     // Giữ nguyên ngôn ngữ khi chuyển trang
                     if (window.location.pathname !== newPath) {
                         history.pushState({ locale: this.currentLocale }, '', newPath);
@@ -607,10 +792,14 @@
                             html = this.getHomeHTML();
                     }
                     
+                    container.classList.remove('page-transition');
                     container.innerHTML = html;
+                    void container.offsetWidth;
+                    container.classList.add('page-transition');
                     
                     // Re-attach form listeners after rendering
                     this.attachFormListeners();
+                    this.updateSEO();
                 },
                 
                 attachFormListeners() {
@@ -637,18 +826,15 @@
                 },
 
                 attachServiceCardListeners() {
-                    const grid = document.getElementById('services-grid');
-                    if (!grid) return;
-
-                    // Xóa listener cũ nếu có
-                    grid.onclick = null;
-
-                    grid.addEventListener('click', (e) => {
-                        const card = e.target.closest('.service-card');
-                        if (card && card.dataset.serviceId) {
-                            const serviceId = parseInt(card.dataset.serviceId);
-                            this.openServiceModal(serviceId);
-                        }
+                    document.querySelectorAll('.services-interactive-grid').forEach((grid) => {
+                        grid.onclick = null;
+                        grid.addEventListener('click', (e) => {
+                            const card = e.target.closest('.service-card');
+                            if (card && card.dataset.serviceId) {
+                                const serviceId = parseInt(card.dataset.serviceId);
+                                this.openServiceModal(serviceId);
+                            }
+                        });
                     });
                 },
                 
@@ -766,23 +952,122 @@
                 updateSEO() {
                     try {
                         const meta = this.t('meta') || {};
-                        if (meta.title) {
-                            document.title = meta.title;
+                        let title = meta.title;
+                        let description = meta.description;
+
+                        if (title) {
+                            document.title = title;
                         }
                         const descTag = document.querySelector('meta[name="description"]');
-                        if (descTag && meta.description) {
-                            descTag.setAttribute('content', meta.description);
+                        if (descTag && description) {
+                            descTag.setAttribute('content', description);
                         }
                     } catch (e) {
                         console.warn('[ETAX] SEO update warning:', e);
                     }
                 },
+
+                async loadNewsData() {
+                    if (this.newsLoading) return;
+
+                    this.newsLoading = true;
+                    const endpoints = ['/api/news', '/data/news.json'];
+
+                    try {
+                        let loaded = false;
+
+                        for (const endpoint of endpoints) {
+                            try {
+                                const res = await fetch(endpoint, { cache: 'no-store' });
+                                if (!res.ok) continue;
+
+                                const data = await res.json();
+                                this.newsData = {
+                                    facebookUrl: data.facebookUrl || 'https://www.facebook.com/ETAXHCMVN/',
+                                    posts: Array.isArray(data.posts) ? data.posts : []
+                                };
+                                this.newsLoaded = true;
+                                loaded = true;
+                                break;
+                            } catch (endpointError) {
+                                console.warn(`[ETAX] News endpoint failed (${endpoint}):`, endpointError);
+                            }
+                        }
+
+                        if (!loaded) {
+                            throw new Error('Failed to load news');
+                        }
+                    } catch (error) {
+                        console.warn('[ETAX] News load warning:', error);
+                        if (!this.newsLoaded) {
+                            this.newsData = { facebookUrl: 'https://www.facebook.com/ETAXHCMVN/', posts: [] };
+                        }
+                    } finally {
+                        this.newsLoading = false;
+                    }
+                },
+
+                getFacebookUrl() {
+                    const url = (this.newsData && this.newsData.facebookUrl) || '';
+                    return url.trim();
+                },
+
+                getNewsField(post, field) {
+                    if (!post || !post[field]) return '';
+                    const value = post[field];
+                    if (typeof value === 'string') return value;
+                    return value[this.currentLocale] || value.en || value.vi || '';
+                },
+
+                getNewsPost(slug) {
+                    const posts = (this.newsData && this.newsData.posts) || [];
+                    return posts.find(p => p.slug === slug);
+                },
+
+                formatNewsDate(dateStr) {
+                    if (!dateStr) return '';
+                    try {
+                        const date = new Date(dateStr + 'T00:00:00');
+                        const localeMap = { vi: 'vi-VN', en: 'en-US', zh: 'zh-CN' };
+                        return date.toLocaleDateString(localeMap[this.currentLocale] || 'en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                    } catch (e) {
+                        return dateStr;
+                    }
+                },
+
+                escapeHtml(text) {
+                    if (!text) return '';
+                    const div = document.createElement('div');
+                    div.textContent = text;
+                    return div.innerHTML;
+                },
+
+                openNewsPost(slug) {
+                    this.selectedNewsSlug = slug;
+                    this.currentPage = 'news';
+                    this.updateURL();
+                    this.renderCurrentPage();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                },
+
+                backToNewsList() {
+                    this.selectedNewsSlug = null;
+                    this.currentPage = 'news';
+                    this.updateURL();
+                    this.renderCurrentPage();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                },
                 
                 // Navigate to page
-                navigateTo(page) {
+                async navigateTo(page) {
                     this.currentPage = page;
                     this.updateURL();
                     this.renderCurrentPage();
+                    this.updateSEO();
                     
                     // Close mobile menu if open
                     this.mobileMenuOpen = false;
@@ -805,11 +1090,37 @@
                     }
                 },
                 
+                heroAssetVersion: '4',
+
+                getPageHeroHTML(badge, title, subtitle, image = '/assets/bason-bridge.jpg', position = 'center 35%') {
+                    const assetUrl = image.includes('?') ? image : `${image}?v=${this.heroAssetVersion}`;
+                    return `
+                        <div class="page-hero relative text-white overflow-hidden bg-cover bg-center"
+                             style="background-image: linear-gradient(90deg, rgba(15,23,42,.94) 0%, rgba(15,23,42,.82) 42%, rgba(15,23,42,.45) 100%), url('${assetUrl}'); min-height: 360px; background-position: ${position}; background-size: cover;">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent pointer-events-none"></div>
+                            <div class="relative max-w-7xl mx-auto px-6 lg:px-10 py-14 sm:py-16">
+                                <div class="max-w-3xl">
+                                    <div class="inline-flex items-center px-3.5 py-1 rounded-full bg-white/10 text-[11px] font-semibold tracking-[2px] mb-4">${badge}</div>
+                                    <h1 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-tight leading-tight">${title}</h1>
+                                    <p class="mt-4 text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl">${subtitle}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                },
+
                 // Get Home page HTML
                 getHomeHTML() {
                     const whyItems = this.t('home.why_items') || [];
                     const stats = this.t('home.stats') || [];
                     const credentials = this.t('home.credentials') || [];
+                    const previewServices = (this.t('services.list') || []).slice(0, 4);
+                    const previewIcons = [
+                        '<path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14M8 7h8M8 11h3M15 11h1M8 15h3M15 15h1M3 21h18"/>',
+                        '<path d="M12 3v18M5 8h14M5 16h14M7 12h10"/>',
+                        '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2"/>',
+                        '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>'
+                    ];
                     
                     return `
                         <!-- HERO SECTION -->
@@ -832,12 +1143,13 @@
                                     
                                     <div class="mt-10 flex flex-wrap gap-4">
                                         <button onclick="goTo('services')" 
-                                                class="w-full sm:w-auto inline-flex items-center justify-center gap-x-3 bg-[#d4af37] hover:bg-amber-300 transition-all text-[#0f172a] font-semibold px-8 h-14 rounded-xl text-base shadow-lg shadow-black/10">
+                                                class="btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-x-3 bg-[#d4af37] hover:bg-amber-300 text-[#0f172a] font-semibold px-8 h-14 rounded-xl text-base shadow-lg shadow-black/10 active:scale-[0.985]">
                                             ${this.t('home.cta_services')}
+                                            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                                         </button>
                                         
                                         <button onclick="goTo('contact')" 
-                                                class="w-full sm:w-auto inline-flex items-center justify-center gap-x-3 border border-white/40 hover:bg-white/10 font-semibold px-8 h-14 rounded-xl text-base transition-all">
+                                                class="btn-ghost w-full sm:w-auto inline-flex items-center justify-center gap-x-3 border border-white/40 hover:bg-white/10 font-semibold px-8 h-14 rounded-xl text-base active:scale-[0.985]">
                                             ${this.t('home.cta_consult')}
                                         </button>
                                     </div>
@@ -866,7 +1178,7 @@
                             
                             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                                 ${whyItems.map((item, idx) => `
-                                    <div class="editorial-card bg-white border border-slate-200/80 p-7 hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-900/5 transition-all duration-300 group">
+                                    <div class="editorial-card feature-card bg-white border border-slate-200/80 p-7 hover:-translate-y-1 transition-all duration-300 group">
                                         <div class="w-11 h-11 flex items-center justify-center bg-amber-100 text-amber-700 rounded-xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
                                             <span class="font-bold text-xl">${idx + 1}</span>
                                         </div>
@@ -876,15 +1188,47 @@
                                 `).join('')}
                             </div>
                         </div>
+
+                        <!-- SERVICES PREVIEW -->
+                        <div class="bg-slate-100/70 border-y border-slate-200/60">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+                                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+                                    <div class="max-w-2xl">
+                                        <div class="text-xs font-bold tracking-[3px] text-amber-600 mb-3">${this.t('home.services_preview_badge')}</div>
+                                        <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">${this.t('home.services_preview_title')}</h2>
+                                        <p class="mt-4 text-[15px] text-slate-600 leading-relaxed">${this.t('home.services_preview_subtitle')}</p>
+                                    </div>
+                                    <button onclick="goTo('services')"
+                                            class="btn-primary shrink-0 inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl bg-[#0f172a] hover:bg-slate-900 text-white text-sm font-semibold shadow-lg shadow-slate-900/15 active:scale-[0.985]">
+                                        ${this.t('home.view_all_services')}
+                                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                    </button>
+                                </div>
+                                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 services-interactive-grid" id="home-services-grid">
+                                    ${previewServices.map((service, index) => `
+                                        <div data-service-id="${service.id}"
+                                             class="service-card editorial-card group cursor-pointer bg-white border border-slate-200/80 p-6 flex flex-col h-full">
+                                            <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-amber-100 text-amber-700 transition-colors group-hover:bg-amber-600 group-hover:text-white">
+                                                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${previewIcons[index] || previewIcons[0]}</svg>
+                                            </div>
+                                            <div class="font-semibold text-lg tracking-tight leading-snug flex-1">${service.title}</div>
+                                            <p class="mt-3 text-sm text-slate-600 leading-relaxed line-clamp-3">${service.short_desc}</p>
+                                            <div class="mt-5 text-sm font-semibold text-amber-700 group-hover:text-amber-800">${this.t('common.view_detail')}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
                         
                         <!-- STATS -->
-                        <div class="bg-white border-y">
-                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-10">
-                                <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8 text-center">
+                        <div class="stats-band relative overflow-hidden">
+                            <div class="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.18),transparent_55%)]"></div>
+                            <div class="relative max-w-7xl mx-auto px-6 lg:px-10 py-14">
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6">
                                     ${stats.map(stat => `
-                                        <div>
-                                            <div class="text-5xl font-semibold tracking-tighter text-slate-900 stat-number">${stat.number}</div>
-                                            <div class="mt-1.5 text-sm font-medium text-slate-500">${stat.label}</div>
+                                        <div class="stat-item text-center px-2">
+                                            <div class="text-4xl sm:text-5xl font-bold tracking-tight text-white stat-number">${stat.number}</div>
+                                            <div class="mt-2 text-sm font-medium text-amber-200/90">${stat.label}</div>
                                         </div>
                                     `).join('')}
                                 </div>
@@ -996,18 +1340,14 @@
                     ];
                     
                     return `
-                        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
-                            <div class="max-w-2xl mb-10">
-                                <div class="text-xs tracking-[3px] text-amber-600 font-bold mb-2" x-text="t('common.professional_label')"></div>
-                                <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">${this.t('services.title')}</h1>
-                                <p class="mt-4 text-lg text-slate-600">${this.t('services.intro')}</p>
-                            </div>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6" id="services-grid">
+                        ${this.getPageHeroHTML(this.t('common.professional_label'), this.t('services.title'), this.t('services.intro'), '/assets/hero-services.jpg', 'center 55%')}
+                        <div class="bg-slate-50">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 sm:py-20">
+                            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 services-interactive-grid" id="services-grid">
                                 ${services.map((service, index) => `
                                     <div data-service-id="${service.id}" 
                                          onclick="openServiceModal(${service.id})"
-                                         class="service-card editorial-card group cursor-pointer bg-white border border-slate-200/80 hover:border-amber-300 p-7 flex flex-col h-full">
+                                         class="service-card editorial-card feature-card group cursor-pointer bg-white border border-slate-200/80 p-7 flex flex-col h-full">
                                         
                                         <div class="flex-1">
                                             <div class="mb-6 flex items-center justify-between">
@@ -1026,86 +1366,220 @@
                                             </p>
                                         </div>
                                         
-                                        <div class="mt-auto pt-6 flex items-center text-sm font-semibold text-amber-700 group-hover:gap-x-2 transition-all">
-                                            <span x-text="t('common.view_detail')"></span>
+                                        <div class="mt-auto pt-6 flex items-center gap-2 text-sm font-semibold text-amber-700 group-hover:text-amber-800 transition-all">
+                                            <span>${this.t('common.view_detail')}</span>
                                         </div>
                                     </div>
                                 `).join('')}
-                                <div class="editorial-card bg-[#0f172a] text-white border border-slate-900 p-7 flex flex-col min-h-[308px]">
-                                    <div class="inline-block px-3.5 py-1 text-xs font-bold tracking-wider bg-amber-300/15 text-amber-200 rounded-full mb-5">${this.t('services.consultation_badge')}</div>
-                                    <h3 class="font-semibold text-2xl tracking-tight leading-tight">${this.t('services.consultation_title')}</h3>
-                                    <p class="mt-4 text-[15px] text-slate-300 leading-relaxed">${this.t('services.consultation_desc')}</p>
-                                    <div class="mt-5 space-y-2">
+                                <div class="editorial-card bg-white border border-slate-200/80 border-t-[3px] border-t-amber-500 p-7 flex flex-col h-full min-h-[308px]">
+                                    <div class="text-[11px] font-semibold tracking-[0.14em] uppercase text-amber-600">${this.t('services.consultation_badge')}</div>
+                                    <h3 class="mt-3 font-semibold text-2xl tracking-tight leading-tight text-[#0f172a]">${this.t('services.consultation_title')}</h3>
+                                    <p class="mt-4 text-[15px] text-slate-600 leading-relaxed">${this.t('services.consultation_desc')}</p>
+                                    <ul class="mt-5 space-y-2.5 text-sm text-slate-600">
                                         ${consultationPoints.map(point => `
-                                            <div class="flex items-center gap-x-2 text-sm text-slate-200">
-                                                <span class="h-1.5 w-1.5 rounded-full bg-amber-300"></span>
+                                            <li class="flex gap-2.5 leading-relaxed">
+                                                <span class="shrink-0 text-amber-600 font-medium">—</span>
                                                 <span>${point}</span>
-                                            </div>
+                                            </li>
                                         `).join('')}
-                                    </div>
+                                    </ul>
                                     <button onclick="goTo('contact')"
-                                            class="mt-auto w-full h-12 rounded-2xl bg-[#d4af37] hover:bg-amber-300 text-[#0f172a] font-semibold text-sm transition-all active:scale-[0.985]">
+                                            class="btn-primary mt-auto w-full h-12 rounded-2xl bg-[#0f172a] hover:bg-slate-900 text-white font-semibold text-sm active:scale-[0.985]">
                                         ${this.t('services.consultation_button')}
                                     </button>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     `;
                 },
                 
+                getNewsHTML() {
+                    const facebookUrl = this.getFacebookUrl();
+                    const posts = [...((this.newsData && this.newsData.posts) || [])].sort((a, b) => {
+                        return new Date(b.date || 0) - new Date(a.date || 0);
+                    });
+
+                    if (this.selectedNewsSlug) {
+                        const post = this.getNewsPost(this.selectedNewsSlug);
+                        if (!post) {
+                            return `
+                                <div class="max-w-3xl mx-auto px-6 lg:px-10 py-16">
+                                    <button onclick="backToNewsList()" class="text-sm text-amber-700 hover:text-amber-800 font-semibold mb-8">${this.t('news.back_to_list')}</button>
+                                    <div class="text-center py-16 bg-white border border-slate-200/80 rounded-2xl">
+                                        <h1 class="text-2xl font-semibold">${this.t('news.empty_title')}</h1>
+                                    </div>
+                                </div>
+                            `;
+                        }
+
+                        const title = this.escapeHtml(this.getNewsField(post, 'title'));
+                        const bodyParagraphs = this.escapeHtml(this.getNewsField(post, 'body'))
+                            .split('\n')
+                            .map(p => p.trim())
+                            .filter(Boolean)
+                            .map(p => `<p class="mt-4">${p}</p>`)
+                            .join('');
+                        const image = post.image
+                            ? `<img src="${this.escapeHtml(post.image)}" alt="${title}" class="w-full rounded-2xl border border-slate-200/80 mb-8 object-cover max-h-[420px]">`
+                            : '';
+                        const facebookLink = post.facebookUrl || (post.source === 'facebook' ? this.getFacebookUrl() : '');
+                        const facebookButton = facebookLink
+                            ? `<a href="${this.escapeHtml(facebookLink)}" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center gap-x-2 text-sm font-semibold text-[#1877F2] hover:text-[#166fe5]">${this.t('news.view_on_facebook')}</a>`
+                            : '';
+
+                        return `
+                            <div class="max-w-3xl mx-auto px-6 lg:px-10 py-16">
+                                <button onclick="backToNewsList()" class="text-sm text-amber-700 hover:text-amber-800 font-semibold mb-8">${this.t('news.back_to_list')}</button>
+                                <article>
+                                    <time class="text-sm text-slate-500">${this.formatNewsDate(post.date)}</time>
+                                    <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mt-2">${title}</h1>
+                                    ${image}
+                                    <div class="mt-6 text-[15.5px] text-slate-700 leading-relaxed">${bodyParagraphs}</div>
+                                    ${facebookButton}
+                                </article>
+                            </div>
+                        `;
+                    }
+
+                    const postsHTML = posts.length
+                        ? posts.map(post => {
+                            const slug = this.escapeHtml(post.slug);
+                            const title = this.escapeHtml(this.getNewsField(post, 'title'));
+                            const excerpt = this.escapeHtml(this.getNewsField(post, 'excerpt'));
+                            const image = post.image
+                                ? `<img src="${this.escapeHtml(post.image)}" alt="${title}" class="w-full h-48 object-cover border-b border-slate-200/80">`
+                                : '';
+
+                            const sourceBadge = post.source === 'facebook'
+                                ? `<span class="inline-flex items-center rounded-full bg-[#1877F2]/10 text-[#1877F2] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 mb-2">${this.t('news.facebook_badge')}</span>`
+                                : '';
+
+                            return `
+                                <article class="editorial-card bg-white border border-slate-200/80 rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-900/5 transition-all duration-300 cursor-pointer" onclick="openNewsPost('${slug}')">
+                                    ${image}
+                                    <div class="p-7">
+                                        ${sourceBadge}
+                                        <time class="text-xs text-slate-500">${this.formatNewsDate(post.date)}</time>
+                                        <h2 class="font-semibold text-xl tracking-tight mt-2">${title}</h2>
+                                        <p class="mt-3 text-[15px] text-slate-600 leading-relaxed">${excerpt}</p>
+                                        <div class="mt-5 text-sm font-semibold text-amber-700">${this.t('news.read_more')}</div>
+                                    </div>
+                                </article>
+                            `;
+                        }).join('')
+                        : `
+                            <div class="col-span-full text-center py-16 bg-white border border-slate-200/80 rounded-2xl">
+                                <h2 class="text-xl font-semibold text-slate-800">${this.t('news.empty_title')}</h2>
+                                <p class="mt-3 text-slate-500 max-w-md mx-auto">${this.t('news.empty_desc')}</p>
+                            </div>
+                        `;
+
+                    const facebookCTA = facebookUrl
+                        ? `
+                            <div class="mt-12 bg-[#0f172a] rounded-2xl p-8 sm:p-10 text-white flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+                                <div>
+                                    <h3 class="font-semibold text-xl">${this.t('news.facebook_cta_title')}</h3>
+                                    <p class="mt-2 text-slate-300 text-sm">${this.t('news.facebook_cta_desc')}</p>
+                                </div>
+                                <a href="${this.escapeHtml(facebookUrl)}" target="_blank" rel="noopener noreferrer"
+                                   class="shrink-0 inline-flex items-center justify-center gap-x-2 bg-[#1877F2] hover:bg-[#166fe5] text-white font-semibold px-6 h-12 rounded-xl transition-all">
+                                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                    ${this.t('news.follow_facebook')}
+                                </a>
+                            </div>
+                        `
+                        : '';
+
+                    const facebookEmbed = facebookUrl
+                        ? `
+                            <div id="facebook-feed-mount" class="bg-white border border-slate-200/80 rounded-2xl p-4 sm:p-6 overflow-hidden">
+                                <div class="font-semibold text-lg tracking-tight mb-4">${this.t('news.facebook_feed_title')}</div>
+                                <div class="fb-page"
+                                     data-href="${this.escapeHtml(facebookUrl)}"
+                                     data-tabs="timeline"
+                                     data-width="500"
+                                     data-height="640"
+                                     data-small-header="false"
+                                     data-adapt-container-width="true"
+                                     data-hide-cover="false"
+                                     data-show-facepile="false">
+                                </div>
+                            </div>
+                        `
+                        : '';
+
+                    return `
+                        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
+                            <div class="max-w-3xl">
+                                <div class="uppercase tracking-[3px] text-xs font-bold text-amber-600">${this.t('news.badge')}</div>
+                                <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mt-2">${this.t('news.title')}</h1>
+                                <p class="mt-5 text-xl text-slate-600">${this.t('news.intro')}</p>
+                            </div>
+
+                            <div class="mt-12 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                                ${postsHTML}
+                            </div>
+
+                            ${facebookEmbed ? `
+                                <div class="mt-12 max-w-xl">
+                                    <p class="text-sm text-slate-500 mb-4">${this.t('news.facebook_sync_note')}</p>
+                                    ${facebookEmbed}
+                                </div>
+                            ` : ''}
+
+                            ${facebookCTA}
+                        </div>
+                    `;
+                },
+
                 getCareersHTML() {
                     const openings = this.t('careers.openings') || [];
                     const benefits = this.t('careers.benefits') || [];
                     
                     return `
-                        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
-                            <div class="max-w-3xl">
-                                <div class="uppercase tracking-[3px] text-xs font-bold text-amber-600" x-text="t('common.careers_badge')"></div>
-                                <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mt-2">${this.t('careers.title')}</h1>
-                                <p class="mt-5 text-xl text-slate-600">${this.t('careers.intro')}</p>
+                        ${this.getPageHeroHTML(this.t('common.careers_badge'), this.t('careers.title'), this.t('careers.intro'), '/assets/hero-careers.jpg', 'center 40%')}
+                        <div class="bg-slate-50">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 sm:py-20">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+                                <div class="font-semibold tracking-tight text-2xl">${this.t('careers.openings_title')}</div>
+                                <span class="inline-flex w-fit text-xs px-3.5 py-1.5 bg-emerald-100 text-emerald-700 font-bold rounded-full">${openings.length} ${this.t('common.positions_count')}</span>
                             </div>
                             
-                            <!-- Open Positions -->
-                            <div class="mt-12">
-                                <div class="font-semibold tracking-tight text-2xl mb-6 flex items-center gap-x-3">
-                                    ${this.t('careers.openings_title')}
-                                    <span class="text-xs px-3 py-1 bg-emerald-100 text-emerald-700 font-bold rounded-full">${openings.length} <span x-text="t('common.positions_count')"></span></span>
-                                </div>
-                                
-                                <div class="space-y-4">
-                                    ${openings.map(job => `
-                                        <div class="editorial-card border border-slate-200/80 bg-white p-7 flex flex-col lg:flex-row lg:items-center gap-y-5">
-                                            <div class="flex-1">
-                                                <div class="font-semibold text-xl tracking-tight">${job.title}</div>
-                                                <div class="text-sm text-slate-500 mt-1 flex items-center gap-x-4">
-                                                    <span>${job.location}</span> 
-                                                    <span class="inline-block w-1 h-1 bg-slate-300 rounded-full"></span> 
-                                                    <span>${job.type}</span>
-                                                </div>
-                                                <p class="mt-3 text-[15px] text-slate-600 pr-6">${job.desc}</p>
-                                            </div>
-                                            
-                                            <!-- NÚT "ỨNG TUYỂN NGAY" ĐÃ BỊ XOÁ THEO YÊU CẦU -->
+                            <div class="space-y-4">
+                                ${openings.map(job => `
+                                    <div class="editorial-card feature-card border border-slate-200/80 bg-white p-7 sm:p-8">
+                                        <div class="font-semibold text-xl tracking-tight">${job.title}</div>
+                                        <div class="text-sm text-slate-500 mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                                            <span class="inline-flex items-center gap-1.5"><span class="text-amber-600">●</span>${job.location}</span>
+                                            <span class="inline-flex items-center gap-1.5"><span class="text-amber-600">●</span>${job.type}</span>
                                         </div>
-                                    `).join('')}
-                                </div>
+                                        <p class="mt-4 text-[15px] text-slate-600 leading-relaxed">${job.desc}</p>
+                                    </div>
+                                `).join('')}
                             </div>
-                            
-                            <!-- Benefits -->
-                            <div class="mt-14">
-                                <div class="font-semibold text-2xl tracking-tight mb-6">${this.t('careers.benefits_title')}</div>
-                                <div class="grid md:grid-cols-2 gap-x-8 gap-y-3 text-[15px]">
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-100/70 border-y border-slate-200/60">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 sm:py-20">
+                                <div class="text-xs font-bold tracking-[3px] text-amber-600 mb-3">${this.t('common.careers_badge')}</div>
+                                <div class="font-semibold text-2xl sm:text-3xl tracking-tight mb-8">${this.t('careers.benefits_title')}</div>
+                                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                                     ${benefits.map(b => `
-                                        <div class="flex items-start gap-x-3 py-1">
-                                            <span class="text-emerald-500 mt-1">✓</span> 
-                                            <span>${b}</span>
+                                        <div class="editorial-card info-tile bg-white border border-slate-200/80 p-5 flex gap-3">
+                                            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-amber-700 text-sm font-bold">✓</span>
+                                            <span class="text-[15px] text-slate-700 leading-relaxed">${b}</span>
                                         </div>
                                     `).join('')}
                                 </div>
                             </div>
-                            
-                            <!-- Application Form -->
-                            <div id="careers-form-section" class="mt-16 bg-white border border-slate-200/80 rounded-2xl p-7 sm:p-9 max-w-3xl">
+                        </div>
+
+                        <div class="bg-slate-50">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 sm:py-20">
+                            <div id="careers-form-section" class="max-w-3xl mx-auto bg-white border border-slate-200/80 rounded-2xl p-7 sm:p-10 shadow-sm shadow-slate-900/5">
+                                <div class="text-xs font-bold tracking-[3px] text-amber-600 mb-3">${this.t('common.careers_badge')}</div>
                                 <h3 class="font-semibold text-2xl tracking-tight mb-2">${this.t('careers.form_title')}</h3>
                                 <p class="text-sm text-slate-500 mb-8">${this.t('careers.form_note')}</p>
                                 
@@ -1120,41 +1594,42 @@
 
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                         <div>
-                                            <label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5" x-text="t('careers.form_full_name_label')"></label>
-                                            <input type="text" name="full_name" required class="w-full border border-slate-200 focus:border-amber-400 rounded-2xl px-5 h-12 text-sm outline-none">
+                                            <label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5">${this.t('careers.form_full_name_label')}</label>
+                                            <input type="text" name="full_name" required class="form-field w-full border border-slate-200 rounded-2xl px-5 h-12 text-sm">
                                         </div>
                                         <div>
-                                            <label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5" x-text="t('careers.form_email_label')"></label>
-                                            <input type="email" name="email" required class="w-full border border-slate-200 focus:border-amber-400 rounded-2xl px-5 h-12 text-sm outline-none">
+                                            <label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5">${this.t('careers.form_email_label')}</label>
+                                            <input type="email" name="email" required class="form-field w-full border border-slate-200 rounded-2xl px-5 h-12 text-sm">
                                         </div>
                                     </div>
                                     
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                         <div>
-                                            <label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5" x-text="t('careers.form_phone_label')"></label>
-                                            <input type="tel" name="phone" required class="w-full border border-slate-200 focus:border-amber-400 rounded-2xl px-5 h-12 text-sm outline-none">
+                                            <label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5">${this.t('careers.form_phone_label')}</label>
+                                            <input type="tel" name="phone" required class="form-field w-full border border-slate-200 rounded-2xl px-5 h-12 text-sm">
                                         </div>
                                         <div>
-                                            <label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5" x-text="t('careers.form_position_label')"></label>
-                                            <input type="text" name="position" placeholder="${this.t('careers.placeholder_position')}" required class="w-full border border-slate-200 focus:border-amber-400 rounded-2xl px-5 h-12 text-sm outline-none">
+                                            <label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5">${this.t('careers.form_position_label')}</label>
+                                            <input type="text" name="position" placeholder="${this.t('careers.placeholder_position')}" required class="form-field w-full border border-slate-200 rounded-2xl px-5 h-12 text-sm">
                                         </div>
                                     </div>
                                     
                                     <div>
-                                        <label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5" x-text="t('careers.form_message_label')"></label>
-                                        <textarea name="message" rows="4" required placeholder="${this.t('careers.placeholder_message_careers')}" class="w-full border border-slate-200 focus:border-amber-400 rounded-xl px-5 py-4 text-sm outline-none resize-y"></textarea>
+                                        <label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5">${this.t('careers.form_message_label')}</label>
+                                        <textarea name="message" rows="4" required placeholder="${this.t('careers.placeholder_message_careers')}" class="form-field w-full border border-slate-200 rounded-xl px-5 py-4 text-sm resize-y"></textarea>
                                     </div>
                                     
                                     <div>
-                                        <label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5" x-text="t('careers.form_cv_label')"></label>
+                                        <label class="text-xs font-semibold tracking-wider text-slate-500 block mb-1.5">${this.t('careers.form_cv_label')}</label>
                                         <input type="file" name="attachment" accept=".pdf,.doc,.docx" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2.5 file:px-6 file:rounded-2xl file:border-0 file:text-sm file:font-semibold file:bg-slate-100 hover:file:bg-slate-200">
                                     </div>
                                     
                                     <button type="submit" 
-                                            class="mt-3 w-full bg-[#0f172a] hover:bg-black transition text-white font-semibold h-14 rounded-2xl text-sm tracking-wider"
-                                            x-text="t('careers.form_submit_label')">
+                                            class="btn-primary mt-3 w-full bg-[#0f172a] hover:bg-slate-900 text-white font-semibold h-14 rounded-2xl text-sm tracking-wider active:scale-[0.985]">
+                                            ${this.t('careers.form_submit_label')}
                                     </button>
                                 </form>
+                            </div>
                             </div>
                         </div>
                     `;
@@ -1163,17 +1638,18 @@
                 getContactHTML() {
                     const options = this.t('contact.form_services_options') || [];
                     
+                    const hotline = this.t('common.hotline');
+                    const hotlineTel = hotline.replace(/[^0-9+]/g, '');
+                    const email = this.t('common.email');
+
                     return `
-                        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
-                            <div class="max-w-2xl mb-10">
-                                <div class="text-xs tracking-[3px] text-amber-600 font-bold" x-text="t('common.contact_badge')"></div>
-                                <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mt-1">${this.t('contact.title')}</h1>
-                                <p class="mt-4 text-xl text-slate-600">${this.t('contact.intro')}</p>
-                            </div>
-                            
+                        ${this.getPageHeroHTML(this.t('common.contact_badge'), this.t('contact.title'), this.t('contact.intro'), '/assets/hero-contact.jpg', 'center 50%')}
+                        <div class="bg-slate-50">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 sm:py-20">
                             <div class="grid lg:grid-cols-5 gap-x-8 gap-y-12">
                                 <!-- Form -->
-                                <div class="lg:col-span-3 bg-white border border-slate-200/80 rounded-2xl p-7 sm:p-9">
+                                <div class="lg:col-span-3 editorial-card bg-white border border-slate-200/80 rounded-2xl p-7 sm:p-10 shadow-sm shadow-slate-900/5">
+                                    <div class="text-xs font-bold tracking-[3px] text-amber-600 mb-3">${this.t('common.contact_badge')}</div>
                                     <h3 class="font-semibold text-2xl tracking-tight mb-7">${this.t('contact.form_title')}</h3>
                                     
                                     <form id="contact-form" class="space-y-6">
@@ -1187,76 +1663,72 @@
 
                                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-6">
                                             <div>
-                                                <label class="block text-xs font-bold tracking-widest text-slate-500 mb-2" x-text="t('contact.form_full_name')"></label>
-                                                <input type="text" name="full_name" required class="w-full h-12 border border-slate-200 focus:border-amber-400 px-5 rounded-2xl text-sm">
+                                                <label class="block text-xs font-bold tracking-widest text-slate-500 mb-2">${this.t('contact.form_full_name')}</label>
+                                                <input type="text" name="full_name" required class="form-field w-full h-12 border border-slate-200 px-5 rounded-2xl text-sm">
                                             </div>
                                             <div>
-                                                <label class="block text-xs font-bold tracking-widest text-slate-500 mb-2" x-text="t('contact.form_email')"></label>
-                                                <input type="email" name="email" required class="w-full h-12 border border-slate-200 focus:border-amber-400 px-5 rounded-2xl text-sm">
+                                                <label class="block text-xs font-bold tracking-widest text-slate-500 mb-2">${this.t('contact.form_email')}</label>
+                                                <input type="email" name="email" required class="form-field w-full h-12 border border-slate-200 px-5 rounded-2xl text-sm">
                                             </div>
                                         </div>
                                         
                                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-6">
                                             <div>
-                                                <label class="block text-xs font-bold tracking-widest text-slate-500 mb-2" x-text="t('contact.form_phone')"></label>
-                                                <input type="tel" name="phone" required class="w-full h-12 border border-slate-200 focus:border-amber-400 px-5 rounded-2xl text-sm">
+                                                <label class="block text-xs font-bold tracking-widest text-slate-500 mb-2">${this.t('contact.form_phone')}</label>
+                                                <input type="tel" name="phone" required class="form-field w-full h-12 border border-slate-200 px-5 rounded-2xl text-sm">
                                             </div>
                                             <div>
                                                 <label class="block text-xs font-bold tracking-widest text-slate-500 mb-2">${this.t('contact.form_service_label')} *</label>
-                                                <select name="service" required class="w-full h-12 border border-slate-200 focus:border-amber-400 px-5 rounded-2xl text-sm bg-white">
+                                                <select name="service" required class="form-field w-full h-12 border border-slate-200 px-5 rounded-2xl text-sm bg-white">
                                                     ${options.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
                                                 </select>
                                             </div>
                                         </div>
                                         
                                         <div>
-                                            <label class="block text-xs font-bold tracking-widest text-slate-500 mb-2" x-text="t('contact.form_message')"></label>
-                                            <textarea name="message" rows="5" required placeholder="${this.t('contact.placeholder_message_contact')}" class="w-full border border-slate-200 focus:border-amber-400 px-5 py-4 rounded-xl text-sm"></textarea>
+                                            <label class="block text-xs font-bold tracking-widest text-slate-500 mb-2">${this.t('contact.form_message')}</label>
+                                            <textarea name="message" rows="5" required placeholder="${this.t('contact.placeholder_message_contact')}" class="form-field w-full border border-slate-200 px-5 py-4 rounded-xl text-sm"></textarea>
                                         </div>
                                         
                                         <button type="submit"
-                                                class="w-full h-14 bg-[#0f172a] active:bg-black text-white font-semibold rounded-2xl text-sm tracking-[0.5px]" x-text="t('contact.form_submit')">
+                                                class="btn-primary w-full h-14 bg-[#0f172a] hover:bg-slate-900 text-white font-semibold rounded-2xl text-sm tracking-wide active:scale-[0.985]">
+                                                ${this.t('contact.form_submit')}
                                         </button>
                                         
-                                        <p class="text-center text-xs text-slate-400" x-text="t('contact.response_commitment')"></p>
+                                        <p class="text-center text-xs text-slate-400">${this.t('contact.response_commitment')}</p>
                                     </form>
                                 </div>
                                 
                                 <!-- Contact Info + Map -->
-                                <div class="lg:col-span-2 space-y-8">
-                                    <div class="bg-white border border-slate-200/80 rounded-2xl p-8">
-                                        <div class="font-semibold tracking-tight text-xl mb-6">${this.t('contact.info_title')}</div>
-                                        <div class="font-semibold text-lg text-[#0f172a] mb-4">${this.t('common.legal_name')}</div>
-                                        <div class="space-y-5 text-sm">
-                                            <div>
-                                                <div class="text-xs text-slate-500" x-text="t('contact.hotline_label')"></div>
-                                                <!-- ĐÃ SỬA: Bỏ hardcode số cũ, dùng dynamic + định dạng tel quốc tế -->
-                                                <a :href="'tel:' + this.t('common.hotline').replace(/[^0-9+]/g, '')" 
-                                                   class="block mt-0.5 text-xl font-semibold text-[#0f172a] hover:text-amber-700">${this.t('common.hotline')}</a>
+                                <div class="lg:col-span-2 space-y-6">
+                                    <div class="bg-white border border-slate-200/80 rounded-2xl p-7 sm:p-8">
+                                        <h3 class="font-semibold tracking-tight text-xl text-[#0f172a]">${this.t('contact.info_title')}</h3>
+                                        <p class="mt-1 text-sm text-slate-500">${this.t('common.legal_name')}</p>
+                                        <dl class="mt-8 divide-y divide-slate-100">
+                                            <div class="py-5 first:pt-0">
+                                                <dt class="text-[11px] font-semibold tracking-[0.14em] uppercase text-slate-400">${this.t('contact.hotline_label')}</dt>
+                                                <dd class="mt-2">
+                                                    <a href="tel:${hotlineTel}" class="text-2xl font-semibold tracking-tight text-[#0f172a] hover:text-amber-700 transition-colors">${hotline}</a>
+                                                </dd>
                                             </div>
-                                            
-                                            <div>
-                                                <div class="text-xs text-slate-500" x-text="t('contact.email_label')"></div>
-                                                <a :href="'mailto:' + t('common.email')" 
-                                                    class="block mt-0.5 text-lg font-medium hover:text-amber-700 break-all" 
-                                                    x-text="t('common.email')"></a>
+                                            <div class="py-5">
+                                                <dt class="text-[11px] font-semibold tracking-[0.14em] uppercase text-slate-400">${this.t('contact.email_label')}</dt>
+                                                <dd class="mt-2">
+                                                    <a href="mailto:${email}" class="text-base font-medium text-slate-700 hover:text-amber-700 break-all transition-colors">${email}</a>
+                                                </dd>
                                             </div>
-                                            
-                                            <div>
-                                                <div class="text-xs text-slate-500" x-text="t('contact.address_label')"></div>
-                                                <div class="mt-0.5 leading-snug">${this.t('common.address')}</div>
+                                            <div class="py-5 pb-0">
+                                                <dt class="text-[11px] font-semibold tracking-[0.14em] uppercase text-slate-400">${this.t('contact.address_label')}</dt>
+                                                <dd class="mt-2 text-[15px] leading-relaxed text-slate-600">${this.t('common.address')}</dd>
                                             </div>
-                                            
-                                            <div class="pt-3 border-t text-xs text-emerald-600 font-medium">
-                                                ${this.t('contact.working_hours')}
-                                            </div>
-                                        </div>
+                                        </dl>
+                                        <p class="mt-7 pt-6 border-t border-slate-100 text-sm text-slate-500">${this.t('contact.working_hours')}</p>
                                     </div>
                                     
                                     <!-- Google Map -->
-                                    <div>
-                                        <div class="text-xs font-bold tracking-wider text-slate-500 mb-3 px-1">${this.t('contact.map_title')}</div>
-                                        <div class="aspect-video w-full rounded-2xl overflow-hidden border shadow-inner">
+                                    <div class="editorial-card bg-white border border-slate-200/80 rounded-2xl p-4 sm:p-5">
+                                        <div class="text-xs font-bold tracking-wider text-slate-500 mb-3">${this.t('contact.map_title')}</div>
+                                        <div class="aspect-video w-full rounded-xl overflow-hidden border border-slate-200/80">
                                             <!-- ĐÃ CẬP NHẬT: Dùng link embed chính thức từ Google Maps (thay vì share link) -->
                                             <iframe 
                                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14165.441850465686!2d106.6997399!3d10.8136457!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403d9b4ce2038f97%3A0xcf0ceefd87d0ba40!2sC%C3%B4ng%20ty%20TNHH%20Royal%20Vi%E1%BB%87t%20Nam!5e1!3m2!1svi!2s!4v1783570631110!5m2!1svi!2s" 
@@ -1271,12 +1743,27 @@
                                     </div>
                                 </div>
                             </div>
+                            </div>
                         </div>
                     `;
                 }
             }
         }
         
+        window.openNewsPost = function(slug) {
+            const alpineEl = document.querySelector('[x-data]');
+            if (alpineEl && alpineEl.__x && alpineEl.__x.$data && typeof alpineEl.__x.$data.openNewsPost === 'function') {
+                alpineEl.__x.$data.openNewsPost(slug);
+            }
+        };
+
+        window.backToNewsList = function() {
+            const alpineEl = document.querySelector('[x-data]');
+            if (alpineEl && alpineEl.__x && alpineEl.__x.$data && typeof alpineEl.__x.$data.backToNewsList === 'function') {
+                alpineEl.__x.$data.backToNewsList();
+            }
+        };
+
         // Global navigate helper (ĐÃ VIẾT LẠI - ĐƠN GIẢN VÀ ỔN ĐỊNH HƠN)
         window.goTo = function(page) {
             const alpineEl = document.querySelector('[x-data]');

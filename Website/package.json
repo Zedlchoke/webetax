@@ -1,0 +1,17 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "wrangler pages dev . --port 8788",
+    "deploy": "wrangler pages deploy . --project-name=minhlong",
+    "deploy:cron": "wrangler deploy --config workers/facebook-sync-cron/wrangler.toml",
+    "whoami": "wrangler whoami"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "devDependencies": {
+    "wrangler": "^4.130.0"
+  }
+}
