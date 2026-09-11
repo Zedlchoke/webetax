@@ -7,6 +7,7 @@
     "home": "Trang chủ",
     "about": "Giới thiệu",
     "services": "Dịch vụ",
+    "news": "Tin tức",
     "careers": "Tuyển dụng",
     "contact": "Liên hệ",
     "consult_now": "Tư vấn ngay"
@@ -42,12 +43,15 @@
     "professional_label": "DỊCH VỤ CHUYÊN NGHIỆP",
     "service_badge": "DỊCH VỤ",
     "why_choose_us": "TẠI SAO CHỌN CHÚNG TÔI",
-    "contact_badge": "LIÊN HỆ CHÚNG TÔI"
+    "contact_badge": "LIÊN HỆ CHÚNG TÔI",
+    "follow_us": "Theo dõi chúng tôi",
+    "facebook": "Facebook"
   },
   "footer": {
     "quick_links": "Liên kết nhanh",
     "about_company": "Giới thiệu công ty",
     "services_main": "Các dịch vụ chính",
+    "news_updates": "Tin tức & Cập nhật",
     "careers_opportunity": "Cơ hội nghề nghiệp",
     "contact_consult": "Liên hệ & Tư vấn",
     "contact_info": "Thông tin liên hệ",
@@ -83,6 +87,10 @@
     "final_cta_title": "Chưa chắc doanh nghiệp của bạn cần giải pháp nào?",
     "final_cta_desc": "Chia sẻ hiện trạng và mục tiêu của doanh nghiệp. Đội ngũ ETAX sẽ giúp bạn xác định hướng xử lý phù hợp, rõ ràng và thực tế.",
     "final_cta_button": "Đặt lịch tư vấn miễn phí",
+    "services_preview_badge": "DỊCH VỤ CHÍNH",
+    "services_preview_title": "Giải pháp tư vấn toàn diện",
+    "services_preview_subtitle": "Từ pháp lý, thuế, kế toán đến nhân sự và quản lý — ETAX đồng hành cùng doanh nghiệp Việt Nam & FDI.",
+    "view_all_services": "Xem tất cả dịch vụ",
     "why_items": [
       {
         "title": "Chuyên môn sâu về Doanh nghiệp & FDI",
@@ -269,6 +277,23 @@
     "form_submit_label": "GỬI HỒ SƠ ỨNG TUYỂN",
     "placeholder_position": "Ví dụ: Chuyên viên Tư vấn Thuế",
     "placeholder_message_careers": "Giới thiệu ngắn gọn về bản thân và lý do bạn muốn gia nhập ETAX..."
+  },
+  "news": {
+    "title": "Tin tức & Cập nhật",
+    "intro": "Cập nhật mới nhất từ ETAX Hồ Chí Minh — tin tức, thông báo và chia sẻ chuyên môn.",
+    "badge": "TIN TỨC",
+    "read_more": "Đọc tiếp",
+    "back_to_list": "← Quay lại danh sách tin",
+    "empty_title": "Chưa có bài viết",
+    "empty_desc": "Chúng tôi sẽ cập nhật tin tức mới sớm. Theo dõi Facebook để nhận thông tin nhanh nhất.",
+    "follow_facebook": "Theo dõi Facebook",
+    "facebook_cta_title": "Theo dõi ETAX trên Facebook",
+    "facebook_cta_desc": "Nhận tin tức, thông báo và chia sẻ chuyên môn mới nhất từ chúng tôi.",
+    "facebook_not_configured": "Liên kết Facebook sẽ được cập nhật sớm.",
+    "view_on_facebook": "Xem trên Facebook →",
+    "facebook_feed_title": "Bài viết từ Facebook",
+    "facebook_badge": "Facebook",
+    "facebook_sync_note": "Bài viết tự động đồng bộ từ Facebook mỗi 30 phút. Dưới đây là bảng tin trực tiếp từ fanpage."
   },
   "contact": {
     "title": "Liên hệ & Tư vấn Miễn phí",

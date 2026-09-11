@@ -7,6 +7,7 @@
     "home": "首页",
     "about": "关于我们",
     "services": "服务项目",
+    "news": "新闻动态",
     "careers": "人才招聘",
     "contact": "联系我们",
     "consult_now": "立即咨询"
@@ -42,12 +43,15 @@
     "careers_badge": "人才招聘",
     "footer_consult_button": "请求咨询",
     "why_choose_us": "为什么选择我们",
-    "contact_badge": "联系我们"
+    "contact_badge": "联系我们",
+    "follow_us": "关注我们",
+    "facebook": "Facebook"
   },
   "footer": {
     "quick_links": "快速链接",
     "about_company": "关于公司",
     "services_main": "主要服务",
+    "news_updates": "新闻动态",
     "careers_opportunity": "职业机会",
     "contact_consult": "联系与咨询",
     "contact_info": "联系信息",
@@ -83,6 +87,10 @@
     "final_cta_title": "不确定您的企业需要哪种解决方案？",
     "final_cta_desc": "告诉我们企业的现状与目标。ETAX 团队将协助您制定清晰、务实且合适的处理方向。",
     "final_cta_button": "预约免费咨询",
+    "services_preview_badge": "核心服务",
+    "services_preview_title": "全方位咨询服务",
+    "services_preview_subtitle": "涵盖法律、税务、会计、人力资源及管理咨询 — ETAX 陪伴越南企业与 FDI 企业成长。",
+    "view_all_services": "查看全部服务",
     "why_items": [
       {
         "title": "深耕企业与外资企业服务领域",
@@ -269,6 +277,23 @@
     "form_submit_label": "提交申请",
     "placeholder_position": "例如：税务咨询专员",
     "placeholder_message_careers": "请简要介绍您自己以及为什么想加入ETAX…"
+  },
+  "news": {
+    "title": "新闻动态",
+    "intro": "ETAX胡志明市最新资讯 — 新闻、公告与专业分享。",
+    "badge": "新闻",
+    "read_more": "阅读更多",
+    "back_to_list": "← 返回新闻列表",
+    "empty_title": "暂无文章",
+    "empty_desc": "我们将很快发布新内容。请关注Facebook获取最新资讯。",
+    "follow_facebook": "关注Facebook",
+    "facebook_cta_title": "在Facebook关注ETAX",
+    "facebook_cta_desc": "获取最新新闻、公告和专业分享。",
+    "facebook_not_configured": "Facebook链接即将更新。",
+    "view_on_facebook": "在Facebook查看 →",
+    "facebook_feed_title": "Facebook动态",
+    "facebook_badge": "Facebook",
+    "facebook_sync_note": "内容每30分钟从Facebook自动同步。下方为粉丝页实时动态。"
   },
   "contact": {
     "title": "免费咨询服务",

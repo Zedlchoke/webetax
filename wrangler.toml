@@ -1,0 +1,4 @@
+# Cloudflare Pages — deploy from Website/ subdirectory (monorepo root)
+name = "minhlong"
+pages_build_output_dir = "Website"
+compatibility_date = "2024-09-10"

@@ -1,0 +1,10 @@
+name = "webetax"
+compatibility_date = "2024-09-10"
+pages_build_output_dir = "."
+
+[vars]
+FB_PAGE_ID = "1244201652099769"
+
+[[kv_namespaces]]
+binding = "NEWS_KV"
+id = "64d2bc957a1440db8baca2f92ffdc175"

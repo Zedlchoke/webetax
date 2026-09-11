@@ -1,0 +1,9 @@
+name = "etax-facebook-sync"
+main = "src/index.js"
+compatibility_date = "2024-09-10"
+
+[vars]
+SYNC_URL = "https://etaxhcm.com/api/sync/facebook"
+
+[triggers]
+crons = ["*/30 * * * *"]
