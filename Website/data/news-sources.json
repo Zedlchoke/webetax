@@ -1,0 +1,39 @@
+{
+  "_guide": {
+    "rss": "Tin tức tự lấy tiêu đề từ mảng feeds bên dưới. Sửa url, source, lang rồi deploy. Không cần API key.",
+    "where": "File này: Website/data/news-sources.json. lang chỉ nhận vi, en hoặc zh.",
+    "optional_api": "Muốn thêm nhiều báo hơn: đăng ký miễn phí tại https://newsdata.io. Vào Cloudflare Dashboard → Workers & Pages → project minhlong → Settings → Variables and Secrets, tạo secret NEWSDATA_API_KEY. Không ghi key vào file này. /api/headlines sẽ tự gọi thêm khi secret tồn tại."
+  },
+  "feeds": [
+    {
+      "id": "tuoitre-business",
+      "lang": "vi",
+      "source": "Tuổi Trẻ",
+      "url": "https://tuoitre.vn/rss/kinh-doanh.rss"
+    },
+    {
+      "id": "cafef-market",
+      "lang": "vi",
+      "source": "CafeF",
+      "url": "https://cafef.vn/thi-truong.rss"
+    },
+    {
+      "id": "thanhnien-economy",
+      "lang": "vi",
+      "source": "Thanh Niên",
+      "url": "https://thanhnien.vn/rss/kinh-te.rss"
+    },
+    {
+      "id": "bbc-business",
+      "lang": "en",
+      "source": "BBC Business",
+      "url": "https://feeds.bbci.co.uk/news/business/rss.xml"
+    },
+    {
+      "id": "chinanews-finance",
+      "lang": "zh",
+      "source": "中国新闻网",
+      "url": "https://www.chinanews.com.cn/rss/finance.xml"
+    }
+  ]
+}

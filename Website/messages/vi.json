@@ -138,16 +138,19 @@
     "education_items": [
       {
         "initials": "UL",
+        "image": "/assets/schools/ul-hcmc.png",
         "name": "Đại học Luật TP.HCM",
         "location": "Pháp lý doanh nghiệp"
       },
       {
         "initials": "RMIT",
+        "image": "/assets/schools/rmit.png",
         "name": "RMIT South Saigon",
         "location": "Quản trị & kinh doanh"
       },
       {
         "initials": "UEH",
+        "image": "/assets/schools/ueh.png",
         "name": "Đại học Kinh tế TP.HCM (UEH)",
         "location": "Tài chính & kinh tế"
       }
@@ -161,6 +164,28 @@
       "Quy trình làm việc chuẩn mực, minh bạch và cam kết tiến độ",
       "Hỗ trợ trọn gói từ thành lập đến vận hành và tái cấu trúc",
       "Mối quan hệ bền chặt với cơ quan quản lý nhà nước các cấp"
+    ],
+    "mission_label": "VAI TRÒ CỦA ETAX",
+    "mission_title": "Một đầu mối cho pháp lý, thuế và vận hành",
+    "pledges_label": "CAM KẾT LÀM VIỆC",
+    "pledges_title": "Khách hàng biết việc gì đang được làm",
+    "pledges": [
+      {
+        "title": "Phản hồi trong 24 giờ làm việc",
+        "desc": "Mỗi yêu cầu được trả lời kèm hướng xử lý ban đầu, không để chờ không rõ lý do."
+      },
+      {
+        "title": "Phạm vi và chi phí nói trước",
+        "desc": "Việc làm, mốc thời gian và chi phí được thống nhất trước khi triển khai."
+      },
+      {
+        "title": "Tiến độ bằng văn bản",
+        "desc": "Hồ sơ, mốc việc và kết quả được ghi lại để ban giám đốc theo dõi."
+      },
+      {
+        "title": "Hồ sơ chỉ dùng cho việc đã giao",
+        "desc": "Số liệu thuế, kế toán và pháp lý không dùng ngoài phạm vi đã thống nhất."
+      }
     ]
   },
   "services": {
@@ -176,6 +201,66 @@
       "Buổi tư vấn đầu tiên miễn phí"
     ],
     "consultation_button": "Liên hệ tư vấn miễn phí",
+    "includes_label": "Phạm vi chính",
+    "proof_label": "NĂNG LỰC & CHỨNG CHỈ",
+    "proof_title": "Chuẩn mực đội ngũ đang dùng",
+    "proof_desc": "Các dấu dưới đây là năng lực ETAX đã nêu trên trang chủ: kiểm toán quốc tế, kế toán công chứng và chứng chỉ hành nghề tại Việt Nam.",
+    "proof_items": [
+      {
+        "mark": "ACCA",
+        "image": "/assets/credentials/acca.png",
+        "name": "Kiểm toán quốc tế ACCA",
+        "detail": "Dùng khi rà soát báo cáo và tư vấn tài chính theo chuẩn mực quốc tế."
+      },
+      {
+        "mark": "CPA",
+        "image": "/assets/credentials/cpa.png",
+        "name": "CPA Australia",
+        "detail": "Nền tảng lập, soát xét và giải trình số liệu báo cáo tài chính."
+      },
+      {
+        "mark": "TAX",
+        "image": "/assets/credentials/tax.svg",
+        "name": "Hành nghề dịch vụ thuế",
+        "detail": "Chứng chỉ làm thủ tục về thuế theo quy định hiện hành tại Việt Nam."
+      },
+      {
+        "mark": "LAW",
+        "image": "/assets/credentials/law.svg",
+        "name": "Hành nghề luật sư",
+        "detail": "Chứng chỉ cho hồ sơ thành lập, đầu tư và tư vấn pháp lý doanh nghiệp."
+      }
+    ],
+    "pledge_label": "CAM KẾT KHI NHẬN VIỆC",
+    "pledge_title": "Bốn điều giữ nguyên trong mọi hợp đồng",
+    "pledges": [
+      {
+        "title": "24 giờ cho lần trả lời đầu",
+        "desc": "Yêu cầu tư vấn được phản hồi trong một ngày làm việc, kèm hướng đi đầu tiên."
+      },
+      {
+        "title": "Không phát sinh ngoài thỏa thuận",
+        "desc": "Phạm vi, thời gian và chi phí được chốt trước. Việc thêm phải được xác nhận lại."
+      },
+      {
+        "title": "Có người chịu trách nhiệm hồ sơ",
+        "desc": "Mỗi việc có đầu mối theo dõi từ lúc nhận tài liệu đến khi bàn giao kết quả."
+      },
+      {
+        "title": "Giải trình được với cơ quan nhà nước",
+        "desc": "Số liệu và hồ sơ được chuẩn bị để doanh nghiệp làm việc với thuế, đăng ký kinh doanh và bảo hiểm."
+      }
+    ],
+    "highlights": {
+      "1": ["Chọn loại hình và hồ sơ thành lập", "Thay đổi đăng ký kinh doanh", "Tạm ngừng hoặc giải thể đúng luật"],
+      "2": ["GTGT, TNDN, TNCN", "Hoàn thuế và miễn giảm", "Giải trình với cơ quan thuế"],
+      "3": ["Sổ sách và báo cáo tài chính", "Kê khai tháng, quý, năm", "Kế toán trưởng thuê ngoài"],
+      "4": ["Hợp đồng, nội quy, thang lương", "Lương và BHXH trọn gói", "Nhân sự kế toán và vận hành"],
+      "5": ["Kiểm soát nội bộ và dòng tiền", "Tồn kho và giá vốn", "Điều lệ, cổ đông, hội đồng"],
+      "6": ["Công ty 100% vốn nước ngoài", "Văn phòng đại diện và nhà thầu", "Pháp lý định kỳ cho FDI"],
+      "7": ["Định giá và đàm phán M&A", "Tái cấu trúc tài chính", "Chuyển đổi loại hình doanh nghiệp"],
+      "8": ["Chọn phần mềm phù hợp", "Cài đặt và đào tạo", "Chỉnh sửa, bảo trì theo việc thực tế"]
+    },
     "list": [
       {
         "id": 1,
@@ -293,7 +378,15 @@
     "view_on_facebook": "Xem trên Facebook →",
     "facebook_feed_title": "Bài viết từ Facebook",
     "facebook_badge": "Facebook",
-    "facebook_sync_note": "Bài viết tự động đồng bộ từ Facebook mỗi 30 phút. Dưới đây là bảng tin trực tiếp từ fanpage."
+    "facebook_sync_note": "Bài viết tự động đồng bộ từ Facebook mỗi 30 phút. Dưới đây là bảng tin trực tiếp từ fanpage.",
+    "market_label": "BẢN TIN THỊ TRƯỜNG",
+    "market_title": "Thuế, kinh doanh và tài chính",
+    "market_note": "Tiêu đề lấy từ bản tin công khai của từng báo. Bấm để đọc bài gốc.",
+    "market_read": "Đọc bài gốc",
+    "market_loading": "Đang lấy tin mới…",
+    "market_empty": "Chưa lấy được bản tin. Vui lòng tải lại trang sau ít phút.",
+    "market_all": "Tất cả",
+    "company_label": "TỪ ETAX"
   },
   "contact": {
     "title": "Liên hệ & Tư vấn Miễn phí",
