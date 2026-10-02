@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ETAX Hồ Chí Minh - Đối tác chiến lược tin cậy cho doanh nghiệp Việt Nam và FDI từ nhỏ đến lớn. Dịch vụ tư vấn pháp lý, thuế, kế toán, thành lập công ty, M&A và quản lý dự án tại Việt Nam.">
     <title>ETAX Hồ Chí Minh | Tư vấn Đầu tư Nước Ngoài &amp; Dịch vụ Doanh nghiệp FDI</title>
+    <link rel="canonical" href="https://etaxhcm.com/">
+
+    <!-- Xem trước khi gửi link trên Zalo, Messenger, Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="ETAX HCM">
+    <meta property="og:url" content="https://etaxhcm.com/">
+    <meta property="og:title" content="ETAX Hồ Chí Minh | Tư vấn Đầu tư Nước Ngoài &amp; Dịch vụ Doanh nghiệp FDI">
+    <meta property="og:description" content="ETAX Hồ Chí Minh - Đối tác chiến lược tin cậy cho doanh nghiệp Việt Nam và FDI từ nhỏ đến lớn. Dịch vụ tư vấn pháp lý, thuế, kế toán, thành lập công ty, M&A và quản lý dự án tại Việt Nam.">
+    <meta property="og:image" content="https://etaxhcm.com/assets/og-share.jpg">
+    <meta property="og:image:url" content="https://etaxhcm.com/assets/og-share.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ETAX HCM - Thuế và Kế toán">
+    <link rel="image_src" href="https://etaxhcm.com/assets/og-share.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ETAX Hồ Chí Minh | Tư vấn Đầu tư Nước Ngoài &amp; Dịch vụ Doanh nghiệp FDI">
+    <meta name="twitter:description" content="ETAX Hồ Chí Minh - Đối tác chiến lược tin cậy cho doanh nghiệp Việt Nam và FDI từ nhỏ đến lớn. Dịch vụ tư vấn pháp lý, thuế, kế toán, thành lập công ty, M&A và quản lý dự án tại Việt Nam.">
+    <meta name="twitter:image" content="https://etaxhcm.com/assets/og-share.jpg">
     
     <!-- Favicon -->
     <link rel="icon" href="/assets/favicon.ico">
@@ -285,7 +305,7 @@
                 </div>
 
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <nav class="hidden md:flex items-center gap-x-6 text-sm font-medium">
                     <a href="#" @click.prevent="navigateTo('home')" 
                        class="nav-link hover:text-[#d4af37] transition-colors" 
                        :class="{ 'nav-active': currentPage === 'home' }" x-text="t('nav.home')"></a>
@@ -295,6 +315,9 @@
                     <a href="#" @click.prevent="navigateTo('services')" 
                        class="nav-link hover:text-[#d4af37] transition-colors"
                        :class="{ 'nav-active': currentPage === 'services' }" x-text="t('nav.services')"></a>
+                    <a href="#" @click.prevent="navigateTo('news')" 
+                       class="nav-link hover:text-[#d4af37] transition-colors"
+                       :class="{ 'nav-active': currentPage === 'news' }" x-text="t('nav.news')"></a>
                     <a href="#" @click.prevent="navigateTo('careers')" 
                        class="nav-link hover:text-[#d4af37] transition-colors"
                        :class="{ 'nav-active': currentPage === 'careers' }" x-text="t('nav.careers')"></a>
@@ -358,6 +381,7 @@
                 <a href="#" @click.prevent="navigateTo('home'); mobileMenuOpen=false" class="py-3 px-4 rounded-xl hover:bg-slate-50" x-text="t('nav.home')"></a>
                 <a href="#" @click.prevent="navigateTo('about'); mobileMenuOpen=false" class="py-3 px-4 rounded-xl hover:bg-slate-50" x-text="t('nav.about')"></a>
                 <a href="#" @click.prevent="navigateTo('services'); mobileMenuOpen=false" class="py-3 px-4 rounded-xl hover:bg-slate-50" x-text="t('nav.services')"></a>
+                <a href="#" @click.prevent="navigateTo('news'); mobileMenuOpen=false" class="py-3 px-4 rounded-xl hover:bg-slate-50" x-text="t('nav.news')"></a>
                 <a href="#" @click.prevent="navigateTo('careers'); mobileMenuOpen=false" class="py-3 px-4 rounded-xl hover:bg-slate-50" x-text="t('nav.careers')"></a>
                 <a href="#" @click.prevent="navigateTo('contact'); mobileMenuOpen=false" class="py-3 px-4 rounded-xl hover:bg-slate-50" x-text="t('nav.contact')"></a>
                 
@@ -441,6 +465,7 @@
                     <div class="space-y-2.5">
                         <div @click="navigateTo('about')" class="cursor-pointer hover:text-white transition-colors" x-text="t('footer.about_company')"></div>
                         <div @click="navigateTo('services')" class="cursor-pointer hover:text-white transition-colors" x-text="t('footer.services_main')"></div>
+                        <div @click="navigateTo('news')" class="cursor-pointer hover:text-white transition-colors" x-text="t('nav.news')"></div>
                         <div @click="navigateTo('careers')" class="cursor-pointer hover:text-white transition-colors" x-text="t('footer.careers_opportunity')"></div>
                         <div @click="navigateTo('contact')" class="cursor-pointer hover:text-white transition-colors" x-text="t('footer.contact_consult')"></div>
                     </div>
@@ -563,6 +588,10 @@
                 newsLoaded: false,
                 newsLoading: false,
                 selectedNewsSlug: null,
+                headlines: [],
+                headlinesLoaded: false,
+                headlinesLoading: false,
+                headlineFilter: 'all',
                 
                 // Initialize
                 async init() {
@@ -576,11 +605,19 @@
                     
                     // Render initial page
                     this.renderCurrentPage();
+                    if (this.currentPage === 'news') {
+                        this.loadHeadlines();
+                        this.loadNewsData();
+                    }
                     
                     // Listen for browser back/forward
                     window.addEventListener('popstate', () => {
                         this.detectLocaleFromURL();
                         this.renderCurrentPage();
+                        if (this.currentPage === 'news') {
+                            this.loadHeadlines();
+                            this.loadNewsData();
+                        }
                     });
 
                     window.addEventListener('scroll', () => {
@@ -651,8 +688,8 @@
                         'about': 'about',
                         'dich-vu': 'services',
                         'services': 'services',
-                        'tin-tuc': 'home',
-                        'news': 'home',
+                        'tin-tuc': 'news',
+                        'news': 'news',
                         'tuyen-dung': 'careers',
                         'careers': 'careers',
                         'lien-he': 'contact',
@@ -667,6 +704,7 @@
                         'home': '',
                         'about': 'about',
                         'services': 'services',
+                        'news': 'news',
                         'careers': 'careers',
                         'contact': 'contact'
                     };
@@ -687,6 +725,9 @@
                     
                     if (slug) {
                         newPath += slug;
+                    }
+                    if (this.currentPage === 'news' && this.selectedNewsSlug) {
+                        newPath = newPath.replace(/\/$/, '') + '/' + this.selectedNewsSlug;
                     }
 
                     // Giữ nguyên ngôn ngữ khi chuyển trang
@@ -781,6 +822,9 @@
                             break;
                         case 'services':
                             html = this.getServicesHTML();
+                            break;
+                        case 'news':
+                            html = this.getNewsHTML();
                             break;
                         case 'careers':
                             html = this.getCareersHTML();
@@ -968,7 +1012,7 @@
                 },
 
                 async loadNewsData() {
-                    if (this.newsLoading) return;
+                    if (this.newsLoading || this.newsLoaded) return;
 
                     this.newsLoading = true;
                     const endpoints = ['/api/news', '/data/news.json'];
@@ -1027,7 +1071,9 @@
                 formatNewsDate(dateStr) {
                     if (!dateStr) return '';
                     try {
-                        const date = new Date(dateStr + 'T00:00:00');
+                        const hasTime = /[T,:]/.test(dateStr) && !/^\d{4}-\d{2}-\d{2}$/.test(dateStr);
+                        const date = hasTime ? new Date(dateStr) : new Date(dateStr + 'T00:00:00');
+                        if (Number.isNaN(date.getTime())) return '';
                         const localeMap = { vi: 'vi-VN', en: 'en-US', zh: 'zh-CN' };
                         return date.toLocaleDateString(localeMap[this.currentLocale] || 'en-US', {
                             year: 'numeric',
@@ -1044,6 +1090,35 @@
                     const div = document.createElement('div');
                     div.textContent = text;
                     return div.innerHTML;
+                },
+
+                async loadHeadlines() {
+                    if (this.headlinesLoading || this.headlinesLoaded) return;
+                    this.headlinesLoading = true;
+
+                    try {
+                        const res = await fetch('/api/headlines');
+                        if (!res.ok) throw new Error('Failed to load headlines');
+                        const data = await res.json();
+                        this.headlines = Array.isArray(data.items) ? data.items : [];
+                        this.headlinesLoaded = true;
+                    } catch (error) {
+                        console.warn('[ETAX] Headlines load warning:', error);
+                        this.headlines = [];
+                        this.headlinesLoaded = true;
+                    } finally {
+                        this.headlinesLoading = false;
+                        if (this.currentPage === 'news' && !this.selectedNewsSlug) {
+                            this.renderCurrentPage();
+                        }
+                    }
+                },
+
+                setHeadlineFilter(lang) {
+                    this.headlineFilter = lang;
+                    if (this.currentPage === 'news') {
+                        this.renderCurrentPage();
+                    }
                 },
 
                 openNewsPost(slug) {
@@ -1071,9 +1146,12 @@
                     
                     // Close mobile menu if open
                     this.mobileMenuOpen = false;
-
-                    // Cuộn mượt về đầu trang khi chuyển trang (áp dụng cho nav, quick links, CTA buttons)
                     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                    if (page === 'news') {
+                        this.loadHeadlines();
+                        this.loadNewsData();
+                    }
                 },
                 
                 // Mở modal chi tiết dịch vụ (ĐÃ VIẾT LẠI - ỔN ĐỊNH HƠN)
@@ -1258,67 +1336,88 @@
                 getAboutHTML() {
                     const strengths = this.t('about.strengths') || [];
                     const educationItems = this.t('about.education_items') || [];
-                    
-                    return `
-                        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
-                            <div class="max-w-3xl mx-auto text-center mb-14">
-                                <div class="uppercase text-xs tracking-[3px] text-amber-600 font-bold mb-3" x-text="t('common.about_us')"></div>
-                                <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">${this.t('about.title')}</h1>
-                            </div>
-                            
-                            <div class="max-w-4xl mx-auto">
-                                <div class="prose prose-lg max-w-none text-[15.5px] text-slate-700">
-                                    <p class="lead text-xl">${this.t('about.intro')}</p>
-                                    
-                                    <p class="mt-6">${this.t('about.mission')}</p>
-                                </div>
+                    const pledges = this.t('about.pledges') || [];
+                    const stats = this.t('home.stats') || [];
 
-                                <div class="mt-12 bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm">
-                                    <div class="grid lg:grid-cols-5">
-                                        <div class="lg:col-span-2 bg-[#0f172a] text-white p-8 flex flex-col justify-between">
-                                            <div>
-                                                <div class="uppercase tracking-[2.5px] text-xs font-bold text-amber-300 mb-4">${this.t('about.education_label')}</div>
-                                                <h2 class="text-3xl font-semibold tracking-tight leading-tight">${this.t('about.education_title')}</h2>
-                                            </div>
-                                            <p class="mt-6 text-sm leading-relaxed text-slate-300">${this.t('about.education_intro')}</p>
-                                        </div>
-                                        <div class="lg:col-span-3 p-7 lg:p-8">
-                                            <div class="grid sm:grid-cols-3 gap-4">
-                                                ${educationItems.map(item => `
-                                                    <div class="rounded-2xl border border-slate-100 bg-slate-50 p-5 min-h-[132px] flex flex-col justify-between">
-                                                        <div class="h-9 w-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-semibold text-sm">${item.initials}</div>
-                                                        <div>
-                                                            <div class="mt-5 font-semibold tracking-tight text-slate-900 leading-snug">${item.name}</div>
-                                                            <div class="mt-1 text-xs uppercase tracking-[1.5px] text-slate-500">${item.location}</div>
-                                                        </div>
-                                                    </div>
-                                                `).join('')}
-                                            </div>
-                                        </div>
+                    return `
+                        ${this.getPageHeroHTML(this.t('common.about_us'), this.t('about.title'), this.t('about.intro'), '/assets/hero-about.jpg', 'center 38%')}
+                        <div class="bg-slate-50">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 sm:py-20">
+                                <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+                                    <div class="lg:col-span-5">
+                                        <div class="text-xs font-bold tracking-[3px] text-amber-600">${this.t('about.mission_label')}</div>
+                                        <h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight leading-tight">${this.t('about.mission_title')}</h2>
+                                    </div>
+                                    <div class="lg:col-span-7 text-[15.5px] leading-relaxed text-slate-700">
+                                        <p>${this.t('about.mission')}</p>
+                                        <p class="mt-5 text-slate-600">${this.t('about.philosophy_desc')}</p>
                                     </div>
                                 </div>
-                                
-                                <div class="my-14 border-t border-b py-9 grid md:grid-cols-5 gap-y-8">
-                                    <div class="md:col-span-2">
-                                        <div class="uppercase tracking-widest text-xs font-bold text-amber-600 mb-3" x-text="t('common.our_philosophy')"></div>
-                                        <div class="text-4xl font-semibold tracking-tight leading-none">${this.t('about.philosophy_title')}</div>
-                                    </div>
-                                    <div class="md:col-span-3 text-[15.5px]">
-                                        ${this.t('about.philosophy_desc')}
-                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="stats-band text-white">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12">
+                                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                                    ${stats.map(stat => `
+                                        <div class="stat-item text-center lg:text-left">
+                                            <div class="text-3xl sm:text-4xl font-semibold tracking-tight text-amber-300">${stat.number}</div>
+                                            <div class="mt-2 text-sm text-slate-300">${stat.label}</div>
+                                        </div>
+                                    `).join('')}
                                 </div>
-                                
-                                <div>
-                                    <div class="uppercase tracking-[2.5px] text-xs font-bold text-amber-600 mb-4">${this.t('about.strength_title')}</div>
-                                    
-                                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 text-[15px]">
-                                        ${strengths.map(s => `
-                                            <div class="flex items-start gap-x-3">
-                                                <span class="mt-1.5 text-emerald-500">●</span>
-                                                <span>${s}</span>
-                                            </div>
-                                        `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="bg-white">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 sm:py-20">
+                                <div class="grid lg:grid-cols-12 gap-8 items-end mb-8">
+                                    <div class="lg:col-span-5">
+                                        <div class="text-xs font-bold tracking-[3px] text-amber-600">${this.t('about.education_label')}</div>
+                                        <h2 class="mt-3 text-3xl font-semibold tracking-tight leading-tight">${this.t('about.education_title')}</h2>
                                     </div>
+                                    <p class="lg:col-span-7 text-[15px] leading-relaxed text-slate-600">${this.t('about.education_intro')}</p>
+                                </div>
+                                <div class="grid md:grid-cols-3 gap-4">
+                                    ${educationItems.map(item => `
+                                        <div class="editorial-card border border-slate-200/80 bg-white p-6">
+                                            <div class="flex h-28 items-center justify-center rounded-xl bg-slate-50 px-4">
+                                                <img src="${item.image}" alt="${item.name}" class="max-h-24 w-auto max-w-full object-contain">
+                                            </div>
+                                            <div class="mt-6 font-semibold tracking-tight text-lg leading-snug">${item.name}</div>
+                                            <div class="mt-2 text-xs uppercase tracking-[1.5px] text-slate-500">${item.location}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 border-y border-slate-200/70">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 sm:py-20">
+                                <div class="text-xs font-bold tracking-[3px] text-amber-600 mb-3">${this.t('about.strength_title')}</div>
+                                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                    ${strengths.map(item => `
+                                        <div class="editorial-card bg-white border border-slate-200/80 p-5 flex gap-3">
+                                            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-amber-700 text-sm font-bold">✓</span>
+                                            <span class="text-[15px] text-slate-700 leading-relaxed">${item}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 sm:py-20">
+                                <div class="text-xs font-bold tracking-[3px] text-amber-600">${this.t('about.pledges_label')}</div>
+                                <h2 class="mt-3 text-3xl font-semibold tracking-tight">${this.t('about.pledges_title')}</h2>
+                                <div class="mt-8 grid md:grid-cols-2 gap-4">
+                                    ${pledges.map((item, index) => `
+                                        <div class="editorial-card border border-slate-200/80 p-6 sm:p-7">
+                                            <div class="text-xs font-semibold tabular-nums text-amber-600">0${index + 1}</div>
+                                            <h3 class="mt-3 font-semibold text-xl tracking-tight">${item.title}</h3>
+                                            <p class="mt-3 text-[15px] leading-relaxed text-slate-600">${item.desc}</p>
+                                        </div>
+                                    `).join('')}
                                 </div>
                             </div>
                         </div>
@@ -1328,6 +1427,9 @@
                 getServicesHTML() {
                     const services = this.t('services.list') || [];
                     const consultationPoints = this.t('services.consultation_points') || [];
+                    const proofItems = this.t('services.proof_items') || [];
+                    const pledges = this.t('services.pledges') || [];
+                    const highlights = this.t('services.highlights') || {};
                     const serviceIcons = [
                         '<path d="M4 21h16M6 21V7l6-4 6 4v14M9 10h6M9 14h6M9 18h6"/>',
                         '<path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14M8 7h8M8 11h3M15 11h1M8 15h3M15 15h1M3 21h18"/>',
@@ -1341,9 +1443,29 @@
                     
                     return `
                         ${this.getPageHeroHTML(this.t('common.professional_label'), this.t('services.title'), this.t('services.intro'), '/assets/hero-services.jpg', 'center 55%')}
+                        <div class="bg-[#0f172a] text-white">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-14 sm:py-16">
+                                <div class="max-w-2xl">
+                                    <div class="text-xs font-bold tracking-[3px] text-amber-300">${this.t('services.proof_label')}</div>
+                                    <h2 class="mt-3 text-3xl font-semibold tracking-tight">${this.t('services.proof_title')}</h2>
+                                    <p class="mt-4 text-sm sm:text-[15px] leading-relaxed text-slate-300">${this.t('services.proof_desc')}</p>
+                                </div>
+                                <div class="mt-10 grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
+                                    ${proofItems.map(item => `
+                                        <div class="rounded-2xl border border-white/10 bg-white p-4">
+                                            <div class="flex h-24 items-center justify-center rounded-xl bg-white">
+                                                <img src="${item.image}" alt="${item.mark}" class="max-h-20 w-full object-contain">
+                                            </div>
+                                            <h3 class="mt-4 font-semibold tracking-tight text-slate-900">${item.name}</h3>
+                                            <p class="mt-2 text-sm leading-relaxed text-slate-600">${item.detail}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
                         <div class="bg-slate-50">
                             <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 sm:py-20">
-                            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 services-interactive-grid" id="services-grid">
+                            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 services-interactive-grid" id="services-grid">
                                 ${services.map((service, index) => `
                                     <div data-service-id="${service.id}" 
                                          onclick="openServiceModal(${service.id})"
@@ -1361,9 +1483,18 @@
                                                 ${service.title}
                                             </h3>
                                             
-                                            <p class="text-[15px] text-slate-600 leading-relaxed line-clamp-4">
+                                            <p class="text-[15px] text-slate-600 leading-relaxed">
                                                 ${service.short_desc}
                                             </p>
+                                            <div class="mt-5 text-[11px] font-semibold tracking-[0.14em] uppercase text-slate-400">${this.t('services.includes_label')}</div>
+                                            <ul class="mt-3 space-y-2 text-sm text-slate-700">
+                                                ${(highlights[String(service.id)] || []).map(point => `
+                                                    <li class="flex gap-2.5 leading-relaxed">
+                                                        <span class="shrink-0 text-amber-600">—</span>
+                                                        <span>${point}</span>
+                                                    </li>
+                                                `).join('')}
+                                            </ul>
                                         </div>
                                         
                                         <div class="mt-auto pt-6 flex items-center gap-2 text-sm font-semibold text-amber-700 group-hover:text-amber-800 transition-all">
@@ -1389,6 +1520,20 @@
                                     </button>
                                 </div>
                             </div>
+                            </div>
+                        </div>
+                        <div class="bg-white border-t border-slate-200/70">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 sm:py-20">
+                                <div class="text-xs font-bold tracking-[3px] text-amber-600">${this.t('services.pledge_label')}</div>
+                                <h2 class="mt-3 text-3xl font-semibold tracking-tight">${this.t('services.pledge_title')}</h2>
+                                <div class="mt-8 grid md:grid-cols-2 xl:grid-cols-4 gap-4">
+                                    ${pledges.map(item => `
+                                        <div class="editorial-card border border-slate-200/80 bg-slate-50 p-6">
+                                            <h3 class="font-semibold tracking-tight">${item.title}</h3>
+                                            <p class="mt-3 text-sm leading-relaxed text-slate-600">${item.desc}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
                             </div>
                         </div>
                     `;
@@ -1491,44 +1636,80 @@
                         `
                         : '';
 
-                    const facebookEmbed = facebookUrl
-                        ? `
-                            <div id="facebook-feed-mount" class="bg-white border border-slate-200/80 rounded-2xl p-4 sm:p-6 overflow-hidden">
-                                <div class="font-semibold text-lg tracking-tight mb-4">${this.t('news.facebook_feed_title')}</div>
-                                <div class="fb-page"
-                                     data-href="${this.escapeHtml(facebookUrl)}"
-                                     data-tabs="timeline"
-                                     data-width="500"
-                                     data-height="640"
-                                     data-small-header="false"
-                                     data-adapt-container-width="true"
-                                     data-hide-cover="false"
-                                     data-show-facepile="false">
-                                </div>
-                            </div>
-                        `
-                        : '';
+                    const filters = [
+                        { id: 'all', label: this.t('news.market_all') },
+                        { id: 'vi', label: 'Việt Nam' },
+                        { id: 'en', label: 'English' },
+                        { id: 'zh', label: '中文' }
+                    ];
+                    const visibleHeadlines = (this.headlines || []).filter(item => (
+                        this.headlineFilter === 'all' || item.lang === this.headlineFilter
+                    ));
+                    const langMark = { vi: 'VI', en: 'EN', zh: '中文' };
+                    const headlineHTML = !this.headlinesLoaded
+                        ? `<div class="col-span-full rounded-2xl border border-slate-200/80 bg-white px-6 py-12 text-center text-slate-500">${this.t('news.market_loading')}</div>`
+                        : visibleHeadlines.length
+                            ? visibleHeadlines.map(item => `
+                                <a href="${this.escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer"
+                                   class="editorial-card flex h-full flex-col overflow-hidden border border-slate-200/80 bg-white hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-900/5 transition-all">
+                                    ${item.image ? `<img src="${this.escapeHtml(item.image)}" alt="" class="h-44 w-full object-cover bg-slate-100" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
+                                    <div class="flex flex-1 flex-col p-6">
+                                    <div class="flex items-center justify-between gap-3 text-xs">
+                                        <span class="font-semibold uppercase tracking-[1.5px] text-amber-700">${this.escapeHtml(item.source)}</span>
+                                        <span class="rounded-full bg-slate-100 px-2.5 py-1 font-semibold text-slate-500">${langMark[item.lang] || ''}</span>
+                                    </div>
+                                    <h2 class="mt-4 font-semibold text-xl tracking-tight leading-snug">${this.escapeHtml(item.title)}</h2>
+                                    ${item.excerpt ? `<p class="mt-3 text-sm leading-relaxed text-slate-600">${this.escapeHtml(item.excerpt)}</p>` : ''}
+                                    <div class="mt-auto pt-5 flex items-center justify-between text-sm">
+                                        <time class="text-slate-500">${this.formatNewsDate(item.date)}</time>
+                                        <span class="font-semibold text-amber-700">${this.t('news.market_read')}</span>
+                                    </div>
+                                    </div>
+                                </a>
+                            `).join('')
+                            : `<div class="col-span-full rounded-2xl border border-slate-200/80 bg-white px-6 py-12 text-center text-slate-500">${this.t('news.market_empty')}</div>`;
 
                     return `
-                        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
-                            <div class="max-w-3xl">
-                                <div class="uppercase tracking-[3px] text-xs font-bold text-amber-600">${this.t('news.badge')}</div>
-                                <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mt-2">${this.t('news.title')}</h1>
-                                <p class="mt-5 text-xl text-slate-600">${this.t('news.intro')}</p>
-                            </div>
-
-                            <div class="mt-12 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-                                ${postsHTML}
-                            </div>
-
-                            ${facebookEmbed ? `
-                                <div class="mt-12 max-w-xl">
-                                    <p class="text-sm text-slate-500 mb-4">${this.t('news.facebook_sync_note')}</p>
-                                    ${facebookEmbed}
+                        ${this.getPageHeroHTML(this.t('news.badge'), this.t('news.title'), this.t('news.intro'), '/assets/hero-news.jpg', 'center 42%')}
+                        <div class="bg-slate-50">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 sm:py-20">
+                                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+                                    <div class="max-w-2xl">
+                                        <div class="text-xs font-bold tracking-[3px] text-amber-600">${this.t('news.market_label')}</div>
+                                        <h2 class="mt-3 text-3xl font-semibold tracking-tight">${this.t('news.market_title')}</h2>
+                                        <p class="mt-3 text-sm leading-relaxed text-slate-500">${this.t('news.market_note')}</p>
+                                    </div>
+                                    <div class="flex flex-wrap gap-2">
+                                        ${filters.map(filter => `
+                                            <button type="button" onclick="setHeadlineFilter('${filter.id}')"
+                                                    class="h-10 rounded-full px-4 text-sm font-semibold ${this.headlineFilter === filter.id ? 'bg-[#0f172a] text-white' : 'bg-white text-slate-600 border border-slate-200'}">
+                                                ${filter.label}
+                                            </button>
+                                        `).join('')}
+                                    </div>
                                 </div>
-                            ` : ''}
+                                <div class="mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+                                    ${headlineHTML}
+                                </div>
+                            </div>
+                        </div>
 
-                            ${facebookCTA}
+                        ${posts.length ? `
+                            <div class="bg-white border-t border-slate-200/70">
+                                <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 sm:py-20">
+                                    <div class="text-xs font-bold tracking-[3px] text-amber-600">${this.t('news.company_label')}</div>
+                                    <h2 class="mt-3 text-3xl font-semibold tracking-tight">${this.t('news.facebook_feed_title')}</h2>
+                                    <div class="mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                                        ${postsHTML}
+                                    </div>
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        <div class="bg-slate-50">
+                            <div class="max-w-7xl mx-auto px-6 lg:px-10 pb-16">
+                                ${facebookCTA}
+                            </div>
                         </div>
                     `;
                 },
@@ -1750,18 +1931,31 @@
             }
         }
         
-        window.openNewsPost = function(slug) {
+        function getEtaxApp() {
             const alpineEl = document.querySelector('[x-data]');
-            if (alpineEl && alpineEl.__x && alpineEl.__x.$data && typeof alpineEl.__x.$data.openNewsPost === 'function') {
-                alpineEl.__x.$data.openNewsPost(slug);
+            if (!alpineEl) return null;
+            if (window.Alpine && typeof Alpine.$data === 'function') {
+                const data = Alpine.$data(alpineEl);
+                if (data) return data;
             }
+            if (alpineEl._x_dataStack && alpineEl._x_dataStack[0]) return alpineEl._x_dataStack[0];
+            if (alpineEl.__x && alpineEl.__x.$data) return alpineEl.__x.$data;
+            return null;
+        }
+
+        window.openNewsPost = function(slug) {
+            const app = getEtaxApp();
+            if (app && typeof app.openNewsPost === 'function') app.openNewsPost(slug);
         };
 
         window.backToNewsList = function() {
-            const alpineEl = document.querySelector('[x-data]');
-            if (alpineEl && alpineEl.__x && alpineEl.__x.$data && typeof alpineEl.__x.$data.backToNewsList === 'function') {
-                alpineEl.__x.$data.backToNewsList();
-            }
+            const app = getEtaxApp();
+            if (app && typeof app.backToNewsList === 'function') app.backToNewsList();
+        };
+
+        window.setHeadlineFilter = function(lang) {
+            const app = getEtaxApp();
+            if (app && typeof app.setHeadlineFilter === 'function') app.setHeadlineFilter(lang);
         };
 
         // Global navigate helper (ĐÃ VIẾT LẠI - ĐƠN GIẢN VÀ ỔN ĐỊNH HƠN)

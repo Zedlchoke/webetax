@@ -138,16 +138,19 @@
     "education_items": [
       {
         "initials": "UL",
+        "image": "/assets/schools/ul-hcmc.png",
         "name": "Ho Chi Minh City University of Law",
         "location": "Legal Training"
       },
       {
         "initials": "RMIT",
+        "image": "/assets/schools/rmit.png",
         "name": "RMIT South Saigon",
         "location": "Business & Management"
       },
       {
         "initials": "UEH",
+        "image": "/assets/schools/ueh.png",
         "name": "University of Economics Ho Chi Minh City",
         "location": "Finance & Economics"
       }
@@ -161,6 +164,28 @@
       "Standardized, transparent processes with strict adherence to deadlines",
       "End-to-end support from establishment to operations and restructuring",
       "Strong, long-standing relationships with government regulatory bodies at all levels"
+    ],
+    "mission_label": "WHAT ETAX DOES",
+    "mission_title": "One desk for legal, tax, and operations",
+    "pledges_label": "HOW WE WORK",
+    "pledges_title": "Clients can see what is being done",
+    "pledges": [
+      {
+        "title": "A reply within one business day",
+        "desc": "Every inquiry gets a response with a first recommendation, not an open-ended wait."
+      },
+      {
+        "title": "Scope and fees agreed first",
+        "desc": "The work, timeline, and fee are confirmed before we start."
+      },
+      {
+        "title": "Progress in writing",
+        "desc": "Filings, milestones, and results are recorded so management can follow them."
+      },
+      {
+        "title": "Files stay on the agreed work",
+        "desc": "Tax, accounting, and legal records are used only for the engagement we agreed."
+      }
     ]
   },
   "services": {
@@ -176,6 +201,66 @@
       "No-obligation first consultation"
     ],
     "consultation_button": "Contact for Free Consultation",
+    "includes_label": "What is included",
+    "proof_label": "CREDENTIALS",
+    "proof_title": "Standards the team works to",
+    "proof_desc": "These marks match the credentials already stated on the homepage: international audit, certified accounting, and Vietnam practice licences.",
+    "proof_items": [
+      {
+        "mark": "ACCA",
+        "image": "/assets/credentials/acca.png",
+        "name": "ACCA international audit",
+        "detail": "Used when reviewing reports and advising on finance under international standards."
+      },
+      {
+        "mark": "CPA",
+        "image": "/assets/credentials/cpa.png",
+        "name": "CPA Australia",
+        "detail": "The base for preparing, reviewing, and explaining financial statements."
+      },
+      {
+        "mark": "TAX",
+        "image": "/assets/credentials/tax.svg",
+        "name": "Tax practice licence",
+        "detail": "The Vietnam licence for tax procedure services under current rules."
+      },
+      {
+        "mark": "LAW",
+        "image": "/assets/credentials/law.svg",
+        "name": "Lawyer practice licence",
+        "detail": "The licence behind company setup, investment files, and legal advice."
+      }
+    ],
+    "pledge_label": "WHAT WE COMMIT TO",
+    "pledge_title": "Four terms that stay in every engagement",
+    "pledges": [
+      {
+        "title": "A first reply in 24 hours",
+        "desc": "Advisory requests get an answer within one business day, with a first direction."
+      },
+      {
+        "title": "No work outside the agreement",
+        "desc": "Scope, timing, and fees are set first. Extra work needs a new confirmation."
+      },
+      {
+        "title": "One person owns the file",
+        "desc": "Each matter has a lead from the documents we receive to the result we hand over."
+      },
+      {
+        "title": "Ready for the authorities",
+        "desc": "Figures and files are prepared for tax, business registration, and insurance meetings."
+      }
+    ],
+    "highlights": {
+      "1": ["Entity choice and incorporation files", "Business registration changes", "Suspension or dissolution"],
+      "2": ["VAT, CIT, and PIT", "Refunds and incentives", "Explanations to the tax office"],
+      "3": ["Books and financial statements", "Monthly, quarterly, and annual filings", "Outsourced chief accountant"],
+      "4": ["Contracts, rules, and salary scales", "Payroll and social insurance", "Accounting and operations staff"],
+      "5": ["Internal control and cash", "Inventory and cost", "Charter, shareholders, and the board"],
+      "6": ["Wholly foreign-owned companies", "Representative offices and contractors", "Ongoing FDI legal support"],
+      "7": ["M&A valuation and negotiation", "Financial restructuring", "Converting the company form"],
+      "8": ["Software selection", "Setup and training", "Changes and maintenance for the real workflow"]
+    },
     "list": [
       {
         "id": 1,
@@ -293,7 +378,15 @@
     "view_on_facebook": "View on Facebook →",
     "facebook_feed_title": "Posts from Facebook",
     "facebook_badge": "Facebook",
-    "facebook_sync_note": "Posts sync automatically from Facebook every 30 minutes. Below is the live feed from our fanpage."
+    "facebook_sync_note": "Posts sync automatically from Facebook every 30 minutes. Below is the live feed from our fanpage.",
+    "market_label": "MARKET BRIEF",
+    "market_title": "Tax, business, and finance",
+    "market_note": "Headlines come from each publisher's public feed. Open the original article to read it.",
+    "market_read": "Read the original",
+    "market_loading": "Loading the latest headlines…",
+    "market_empty": "The feeds are not available right now. Please refresh in a few minutes.",
+    "market_all": "All",
+    "company_label": "FROM ETAX"
   },
   "contact": {
     "title": "Contact & Free Consultation",

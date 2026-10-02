@@ -138,16 +138,19 @@
     "education_items": [
       {
         "initials": "UL",
+        "image": "/assets/schools/ul-hcmc.png",
         "name": "胡志明市法律大学",
         "location": "企业法律"
       },
       {
         "initials": "RMIT",
+        "image": "/assets/schools/rmit.png",
         "name": "RMIT South Saigon",
         "location": "商业与管理"
       },
       {
         "initials": "UEH",
+        "image": "/assets/schools/ueh.png",
         "name": "胡志明市经济大学 UEH",
         "location": "金融与经济"
       }
@@ -161,6 +164,28 @@
       "高标准、透明化、可追踪的执行流程",
       "全生命周期企业服务（设立—运营—重组)",
       "稳固的政府及监管机构合作网络"
+    ],
+    "mission_label": "ETAX 的角色",
+    "mission_title": "法律、税务与运营的同一对接窗口",
+    "pledges_label": "工作承诺",
+    "pledges_title": "客户清楚每一步在做什么",
+    "pledges": [
+      {
+        "title": "一个工作日内回复",
+        "desc": "每项咨询都会得到回复，并附上初步处理方向。"
+      },
+      {
+        "title": "先说清范围和费用",
+        "desc": "工作内容、时间和费用在启动前确认。"
+      },
+      {
+        "title": "进度以书面记录",
+        "desc": "申报、节点和结果都有记录，方便管理层跟进。"
+      },
+      {
+        "title": "资料只用于约定工作",
+        "desc": "税务、会计和法律资料不超出已约定的工作范围。"
+      }
     ]
   },
   "services": {
@@ -176,6 +201,66 @@
       "首次咨询不收取费用"
     ],
     "consultation_button": "联系免费咨询",
+    "includes_label": "主要范围",
+    "proof_label": "专业资质",
+    "proof_title": "团队使用的专业标准",
+    "proof_desc": "这些标识与首页已列的能力一致：国际审计、注册会计师，以及在越南的执业资格。",
+    "proof_items": [
+      {
+        "mark": "ACCA",
+        "image": "/assets/credentials/acca.png",
+        "name": "ACCA 国际审计",
+        "detail": "用于按国际准则审阅报告并提供财务建议。"
+      },
+      {
+        "mark": "CPA",
+        "image": "/assets/credentials/cpa.png",
+        "name": "CPA Australia",
+        "detail": "编制、审阅和解释财务报表的基础。"
+      },
+      {
+        "mark": "TAX",
+        "image": "/assets/credentials/tax.svg",
+        "name": "税务执业资格",
+        "detail": "按越南现行规定办理税务手续的执业资格。"
+      },
+      {
+        "mark": "LAW",
+        "image": "/assets/credentials/law.svg",
+        "name": "律师执业资格",
+        "detail": "公司设立、投资文件和法律咨询所依据的资格。"
+      }
+    ],
+    "pledge_label": "承接工作时的承诺",
+    "pledge_title": "每份委托都保持的四件事",
+    "pledges": [
+      {
+        "title": "24 小时内首次回复",
+        "desc": "咨询请求在一个工作日内得到答复，并给出初步方向。"
+      },
+      {
+        "title": "不在约定之外加工作",
+        "desc": "范围、时间和费用先确认。额外工作需要重新确认。"
+      },
+      {
+        "title": "每份档案有负责人",
+        "desc": "从收到资料到交付结果，每项工作都有人对接。"
+      },
+      {
+        "title": "能向主管部门说明",
+        "desc": "数据和文件按税务、企业登记和社保约谈的需要准备。"
+      }
+    ],
+    "highlights": {
+      "1": ["企业类型与设立文件", "营业登记变更", "暂停经营或解散"],
+      "2": ["增值税、企业所得税、个人所得税", "退税与优惠", "向税务机关说明"],
+      "3": ["账簿与财务报表", "月度、季度、年度申报", "外聘总会计师"],
+      "4": ["合同、规章与工资表", "工资与社保一揽子", "会计与运营人员"],
+      "5": ["内部控制与现金流", "库存与成本", "章程、股东与董事会"],
+      "6": ["100% 外资公司", "代表处与外国承包商", "FDI 日常法律支持"],
+      "7": ["并购估值与谈判", "财务重组", "企业类型转换"],
+      "8": ["选择合适软件", "安装与培训", "按实际流程修改和维护"]
+    },
     "list": [
       {
         "id": 1,
@@ -293,7 +378,15 @@
     "view_on_facebook": "在Facebook查看 →",
     "facebook_feed_title": "Facebook动态",
     "facebook_badge": "Facebook",
-    "facebook_sync_note": "内容每30分钟从Facebook自动同步。下方为粉丝页实时动态。"
+    "facebook_sync_note": "内容每30分钟从Facebook自动同步。下方为粉丝页实时动态。",
+    "market_label": "市场简报",
+    "market_title": "税务、商业与金融",
+    "market_note": "标题来自各报社的公开源。请打开原文阅读。",
+    "market_read": "阅读原文",
+    "market_loading": "正在获取最新标题…",
+    "market_empty": "暂时无法获取新闻。请过几分钟再刷新。",
+    "market_all": "全部",
+    "company_label": "来自 ETAX"
   },
   "contact": {
     "title": "免费咨询服务",
