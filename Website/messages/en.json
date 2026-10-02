@@ -6,7 +6,7 @@
   "nav": {
     "home": "Home",
     "about": "About Us",
-    "services": "Services",
+    "services": "Service",
     "news": "News",
     "careers": "Careers",
     "contact": "Contact",
@@ -25,7 +25,7 @@
     "address": "54/6 Nguyen Xi Street, Binh Thanh Ward, Ho Chi Minh City, Vietnam",
     "hotline": "(+84) 961.133.139",
     "email": "business@etaxhcm.com",
-    "services_label": "SERVICES",
+    "services_label": "SERVICE",
     "view_detail": "VIEW DETAILS →",
     "consult_now": "Get Free Consultation",
     "submit_failed": "Submission failed",
@@ -42,7 +42,7 @@
     "footer_consult_button": "Request Consultation",
     "careers_badge": "CAREERS",
     "positions_count": "positions",
-    "professional_label": "PROFESSIONAL SERVICES",
+    "professional_label": "PROFESSIONAL SERVICE",
     "contact_badge": "CONTACT US",
     "follow_us": "Follow Us",
     "facebook": "Facebook"
@@ -50,7 +50,7 @@
   "footer": {
     "quick_links": "Quick Links",
     "about_company": "About the Company",
-    "services_main": "Main Services",
+    "services_main": "Service",
     "news_updates": "News & Updates",
     "careers_opportunity": "Career Opportunities",
     "contact_consult": "Contact & Consultation",
@@ -72,7 +72,7 @@
   "home": {
     "hero_title": "Comprehensive Consulting Solutions for Vietnamese & FDI Companies",
     "hero_subtitle": "Tangible benefits through every service. Partnering with businesses from SMEs to large enterprises — from idea to sustainable operations.",
-    "cta_services": "Explore Services",
+    "cta_services": "Explore Service",
     "cta_consult": "Get Free Consultation",
     "why_title": "Why Choose ETAX Ho Chi Minh?",
     "trusted_by": "Trusted by 300+ Vietnamese & FDI Companies",
@@ -87,7 +87,7 @@
     "final_cta_title": "Not sure which solution your business needs?",
     "final_cta_desc": "Share your current situation and business goals. The ETAX team will help identify a practical, clear and suitable course of action.",
     "final_cta_button": "Book a Free Consultation",
-    "services_preview_badge": "CORE SERVICES",
+    "services_preview_badge": "SERVICE",
     "services_preview_title": "Comprehensive consulting solutions",
     "services_preview_subtitle": "From legal, tax and accounting to HR and management — ETAX partners with Vietnamese and FDI companies.",
     "view_all_services": "View all services",
@@ -189,9 +189,9 @@
     ]
   },
   "services": {
-    "title": "Our 8 Core Services",
+    "title": "Service",
     "intro": "ETAX Ho Chi Minh offers a complete ecosystem of services to help Vietnamese companies and FDI enterprises operate efficiently, stay compliant, and optimize costs in Vietnam.",
-    "professional_label": "PROFESSIONAL SERVICES",
+    "professional_label": "PROFESSIONAL SERVICE",
     "consultation_badge": "FREE CONSULTATION",
     "consultation_title": "Need help choosing the right solution?",
     "consultation_desc": "Tell us your current system, compliance needs, and operating pain points. ETAX will suggest a practical next step before you commit.",
